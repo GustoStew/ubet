@@ -8,6 +8,7 @@ import { Meteor } from 'meteor/meteor';
 
 // import { name as Socially } from '../imports/ui/components/socially/socially';
 // hi from Michael
+// Hi from Job
 
 function onReady() {
     angular.bootstrap(document, [
