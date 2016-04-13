@@ -11,7 +11,7 @@ import { Meteor } from 'meteor/meteor';
 // Hi from Job
 // hi from fab
 
-function onReady()
+function onReady() {
     angular.bootstrap(document, [
         Ubet
     ], {
