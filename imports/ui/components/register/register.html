@@ -1,0 +1,55 @@
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-1 control-label">Civilité</label>
+        <div class="col-md-2">
+            <select class="form-control" ng-model="register.credentials.civility" ng-required="true">
+                <option value="Monsieur">Monsieur</option>
+                <option value="Madame">Madame</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Nom</label>
+        <div class="col-md-2">
+            <input class="form-control" type="text" placeholder="Nom" ng-model="register.credentials.lastName" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Prénom</label>
+        <div class="col-md-2">
+            <input class="form-control" type="text" placeholder="Prénom" ng-model="register.credentials.firstName" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Téléphone</label>
+        <div class="col-md-2">
+            <input class="form-control" type="tel" placeholder="Téléphone" ng-model="register.credentials.phone" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Campus</label>
+        <div class="col-md-2">
+            <select class="form-control" ng-model="register.credentials.campus" value="1" required>
+                <option value="1">Bordeaux 1</option>
+                <option value="2">Bordeaux 2</option>
+                <option value="3">Bordeaux 3</option>
+                <option value="4">Bordeaux 4</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Email</label>
+        <div class="col-md-2">
+            <input class="form-control" type="email" placeholder="Email" ng-model="register.credentials.email" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 control-label">Mot de passe</label>
+        <div class="col-md-2">
+            <input class="form-control" type="password" placeholder="Mot de passe" ng-model="register.credentials.password" required>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+        <button class="btn" ng-click="register.register()">S'enregistrer</button>
+    </div>
+</div>
