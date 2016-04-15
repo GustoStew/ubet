@@ -5,7 +5,8 @@ import uiRouter from 'angular-ui-router';
 import './ubet.html';
 import { name as Auth } from '../auth/auth';
 import { name as Navigation } from '../navigation/navigation';
-import { name as UserInfos } from '../userInfos/userInfos'
+import { name as UserInfos } from '../userInfos/userInfos';
+
 class Ubet {}
 
 const name = 'ubet';
@@ -31,7 +32,7 @@ function config($locationProvider, $urlRouterProvider) {
 
     $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 }
 
 function run($rootScope, $state) {
@@ -40,7 +41,7 @@ function run($rootScope, $state) {
     $rootScope.$on('$stateChangeError',
         (event, toState, toParams, fromState, fromParams, error) => {
             if (error === 'AUTH_REQUIRED') {
-                $state.go('/');
+                $state.go('login');
             }
         }
     );

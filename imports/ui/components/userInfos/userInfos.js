@@ -15,6 +15,14 @@ class UserInfos {
         this.helpers({
             currentUser(){
                 return Meteor.user();
+            },
+
+            enableModification (){
+                return false;
+            },
+
+            modifSuccess(){
+                return false;
             }
         });
     }
@@ -34,9 +42,21 @@ class UserInfos {
                 console.log('Oops, unable to update infos...');
             } else {
                 console.log('Done!');
+                this.enableModification = false;
+                this.modifSuccess = true;
             }
         });
     }
+
+    enableModif(){
+        this.enableModification = true;
+        this.modifSuccess = false;
+    }
+
+    resetSuccess(){
+        this.modifSuccess = false;
+    }
+
 }
 
 const name = 'userInfos';
@@ -57,6 +77,15 @@ function config($stateProvider) {
     $stateProvider
         .state('infos', {
             url: '/infos',
-            template: '<user-infos></user-infos>'
+            template: '<user-infos></user-infos>',
+            resolve: {
+                currentUser($q) {
+                    if (Meteor.userId() === null) {
+                        return $q.reject('AUTH_REQUIRED');
+                    } else {
+                        return $q.resolve();
+                    }
+                }
+            }
         });
 }
