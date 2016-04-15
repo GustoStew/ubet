@@ -6,7 +6,9 @@ import { Meteor } from 'meteor/meteor';
 
 import './login.html';
 
-// import { name as Register } from '../register/register';
+import {name as Register} from '../register/register';
+
+
 
 class Login {
     constructor($scope, $reactive, $state) {
@@ -42,7 +44,8 @@ const name = 'login';
 // create a module
 export default angular.module(name, [
         angularMeteor,
-        uiRouter
+        uiRouter,
+        Register
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
@@ -50,6 +53,9 @@ export default angular.module(name, [
         controller: Login
     })
     .config(config);
+
+
+
 
 function config($stateProvider) {
     'ngInject';
@@ -59,3 +65,4 @@ function config($stateProvider) {
         template: '<login></login>'
     });
 }
+

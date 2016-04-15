@@ -1,6 +1,4 @@
 <div class="row">
-    <button class="btn" ui-sref="login" ng-hide="auth.isLoggedIn">Se connecter</button>
-    <button class="btn" ui-sref="register" ng-hide="auth.isLoggedIn">S'enregistrer</button>
     <button class="btn" ng-click="auth.logout()" ng-show="auth.isLoggedIn">Déconnexion</button>
     <button class="btn" ui-sref="infos" ng-show="auth.isLoggedIn">Mon compte</button>
 </div>
