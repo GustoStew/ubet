@@ -1,11 +1,12 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+//import ngMdIcons from 'angular-material-icons';
 
 import './ubet.html';
 import { name as Auth } from '../auth/auth';
 import { name as Navigation } from '../navigation/navigation';
-import { name as UserInfos } from '../userInfos/userInfos'
+import { name as UserInfos } from '../userInfos/userInfos';
 class Ubet {}
 
 const name = 'ubet';
@@ -17,6 +18,7 @@ export default angular.module(name, [
     Auth,
     Navigation,
     UserInfos,
+    //ngMdIcons,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
@@ -31,7 +33,7 @@ function config($locationProvider, $urlRouterProvider) {
 
     $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('login');
 }
 
 function run($rootScope, $state) {
@@ -40,8 +42,9 @@ function run($rootScope, $state) {
     $rootScope.$on('$stateChangeError',
         (event, toState, toParams, fromState, fromParams, error) => {
             if (error === 'AUTH_REQUIRED') {
-                $state.go('/');
+                $state.go('login');
             }
         }
     );
 }
+
