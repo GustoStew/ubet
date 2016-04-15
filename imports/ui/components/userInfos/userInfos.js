@@ -10,11 +10,51 @@ class UserInfos {
 
         $reactive(this).attach($scope);
 
-        this.subscribe('userData');
+        // this.subscribe('userData');
 
         this.helpers({
+            currentUser(){
+                return Meteor.user();
+            },
 
+            enableModification (){
+                return false;
+            },
+
+            modifSuccess(){
+                return false;
+            }
         });
+    }
+
+    modify() {
+        Meteor.users.update(Meteor.userId(), {
+            $set: {
+                "profile.firstName": this.currentUser.profile.firstName,
+                "profile.lastName": this.currentUser.profile.lastName,
+                "profile.phone": this.currentUser.profile.phone,
+                "profile.campus": this.currentUser.profile.campus,
+                "profile.civility": this.currentUser.profile.civility
+
+            }
+        }, (error) => {
+            if (error) {
+                console.log('Oops, unable to update infos...');
+            } else {
+                console.log('Done!');
+                this.enableModification = false;
+                this.modifSuccess = true;
+            }
+        });
+    }
+
+    enableModif(){
+        this.enableModification = true;
+        this.modifSuccess = false;
+    }
+
+    resetSuccess(){
+        this.modifSuccess = false;
     }
 
 }
@@ -37,6 +77,15 @@ function config($stateProvider) {
     $stateProvider
         .state('infos', {
             url: '/infos',
-            template: '<user-infos></user-infos>'
+            template: '<user-infos></user-infos>',
+            resolve: {
+                currentUser($q) {
+                    if (Meteor.userId() === null) {
+                        return $q.reject('AUTH_REQUIRED');
+                    } else {
+                        return $q.resolve();
+                    }
+                }
+            }
         });
 }

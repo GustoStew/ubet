@@ -32,7 +32,7 @@ class Login {
                 if (err) {
                     this.error = err;
                 } else {
-                    this.$state.go('');
+                    this.$state.go('infos');
                 }
             })
         );

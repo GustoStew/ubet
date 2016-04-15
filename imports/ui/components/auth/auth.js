@@ -11,8 +11,10 @@ import {name as Login} from '../login/login';
 const name = 'auth';
 
 class Auth {
-    constructor($scope, $reactive) {
+    constructor($scope, $reactive, $state) {
         'ngInject';
+
+        this.$state = $state;
 
         $reactive(this).attach($scope);
 
@@ -24,10 +26,18 @@ class Auth {
                 return Meteor.user();
             }
         });
+
+        this.error = '';
     }
 
     logout() {
-        Accounts.logout();
+        Meteor.logout(this.$bindToContext((err) => {
+            if (err) {
+                this.error = err;
+            } else {
+                this.$state.go('login');
+            }
+        }));
     }
 }
 
