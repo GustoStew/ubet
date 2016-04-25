@@ -1,23 +1,49 @@
-<div class="form-horizontal">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 
-    <ng-md-icon icon="person" size="100"></ng-md-icon>
-
-    <div class="form-group">
-        <label class="col-md-1 control-label">Email</label>
-        <div class="col-md-2">
-            <input class="form-control" type="email" placeholder="Email" ng-model="login.credentials.email" required>
-        </div>
+<div id="login-page" class="row login">
+    <div class="col s4 z-depth-6 card-panel">
+        <form class="login-form">
+            <div class="row">
+                <div class="input-field col s12 center">
+                    <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-content-mail prefix"></i>
+                    <input class="form-control validate" id="email"  type="email"  ng-model="login.credentials.email" required>
+                    <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-lock-outline prefix"></i>
+                    <input class="form-control" id="password" type="password" ng-model="login.credentials.password"
+                           required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12  login-text">
+                    <input type="checkbox" id="remember-me" />
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-light col s12" ng-click="login.login()">Se connecter</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m6 l6">
+                    <p class="margin medium-small"><a ui-sref="register">S'enregistrer</a></p>
+                </div>
+                <div class="input-field col s6 m6 l6">
+                    <p class="margin right-align medium-small"><a href="forgot-password.html">Mot de passe oublié ?</a></p>
+                </div>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Mot de passe</label>
-        <div class="col-md-2">
-            <input class="form-control" type="password" placeholder="Mot de passe" ng-model="login.credentials.password"
-                   required>
-        </div>
-    </div>
-    <div class="col-md-offset-1 col-md-2">
-        <button class="btn" ng-click="login.login()">Se connecter</button>
-    </div>
-
-    <button class="btn" ui-sref="register">S'enregistrer</button>
 </div>
