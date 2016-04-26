@@ -1,14 +1,13 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+//import ngMaterial from 'angular-material';
 
 import { Meteor } from 'meteor/meteor';
 
 import './login.html';
 
 import {name as Register} from '../register/register';
-
-
 
 class Login {
     constructor($scope, $reactive, $state) {
@@ -32,7 +31,7 @@ class Login {
                 if (err) {
                     this.error = err;
                 } else {
-                    this.$state.go('infos');
+                    this.$state.go('home');
                 }
             })
         );
@@ -42,6 +41,7 @@ class Login {
 const name = 'login';
 
 // create a module
+
 export default angular.module(name, [
         angularMeteor,
         uiRouter,
@@ -53,8 +53,6 @@ export default angular.module(name, [
         controller: Login
     })
     .config(config);
-
-
 
 
 function config($stateProvider) {

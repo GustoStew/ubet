@@ -1,6 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+//import ngMaterial from 'angular-material';
 
 import { Accounts } from 'meteor/accounts-base';
 
@@ -47,6 +48,7 @@ const name = 'register';
 export default angular.module(name, [
         angularMeteor,
         uiRouter
+        //ngMaterial
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
