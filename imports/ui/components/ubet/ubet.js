@@ -6,6 +6,11 @@ import './ubet.html';
 import { name as Auth } from '../auth/auth';
 import { name as Navigation } from '../navigation/navigation';
 import { name as UserInfos } from '../userInfos/userInfos';
+import { name as Events} from '../userEvents/userEvents';
+import { name as Register} from '../register/register';
+import { name as AddEvent} from '../addEvent/addEvent';
+import { name as Home} from '../home/home';
+
 
 class Ubet {}
 
@@ -18,6 +23,10 @@ export default angular.module(name, [
     Auth,
     Navigation,
     UserInfos,
+    Events,
+    Register,
+    AddEvent,
+    Home,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
@@ -32,7 +41,7 @@ function config($locationProvider, $urlRouterProvider) {
 
     $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/home');
 }
 
 function run($rootScope, $state) {

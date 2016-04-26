@@ -1,0 +1,9 @@
+<div class="container">
+    <button class="btn" ui-sref="addEvent.theme">Ajouter un évènement</button>
+    <ul>
+        <li ng-repeat="event in userEvents.events">
+            <p>{{event.title}}</p>
+            <p>{{event.description}}</p>
+        </li>
+    </ul>
+</div>

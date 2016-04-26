@@ -5,7 +5,7 @@ import uiRouter from 'angular-ui-router';
 
 import './home.html';
 
-class Login {
+class Home {
     constructor($scope, $reactive, $state) {
         'ngInject';
 
@@ -23,12 +23,12 @@ const name = 'home';
 export default angular.module(name, [
     angularMeteor,
     uiRouter
-//  ngMaterial
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
-    controllerAs: name
-});
-
+        templateUrl: `imports/ui/components/${name}/${name}.html`,
+        controllerAs: name,
+        controller: Home
+    })
+    .config(config);
 
 function config($stateProvider) {
     'ngInject';
