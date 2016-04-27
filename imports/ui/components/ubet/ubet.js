@@ -10,6 +10,8 @@ import { name as Events} from '../userEvents/userEvents';
 import { name as Register} from '../register/register';
 import { name as AddEvent} from '../addEvent/addEvent';
 import { name as Home} from '../home/home';
+import { name as UserServices } from '../userServices/userServices';
+import { name as AddService } from '../addService/addService';
 
 
 class Ubet {}
@@ -27,6 +29,8 @@ export default angular.module(name, [
     Register,
     AddEvent,
     Home,
+    UserServices,
+    AddService,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,

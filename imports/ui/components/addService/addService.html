@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div id="form-container">
+
+            <div class="page-header text-center">
+                <h2>Nouveau service</h2>
+
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".theme"><span>1</span> Choix du Thème</a>
+                    <a ui-sref-active="active" ui-sref=".form"><span>2</span> Saisie de la description</a>
+                    <a ui-sref-active="active" ui-sref=".resume"><span>3</span> Terminer !</a>
+                </div>
+            </div>
+
+            <form id="signup-form" ng-submit="addService.submit()">
+                <div id="form-views" ui-view></div>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+
+
