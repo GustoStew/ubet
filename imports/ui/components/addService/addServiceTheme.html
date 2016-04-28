@@ -1,0 +1,29 @@
+<label>Choisissez le thème de votre service</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="addService.newService.theme" value="shelter">
+            Maison
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="addEvent.newEvent.theme" value="University">
+            Université
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="addEvent.newEvent.theme" value="other">
+            Plus...
+        </label>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <a ui-sref="addService.form" class="btn btn-block btn-info">
+            Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+</div>
