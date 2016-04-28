@@ -9,102 +9,86 @@
 
                 <md-content >
 
-                    <form class="form-register" method="post" name="register" novalidate>
+                    <div layout="row" layout-align="center">
+                        <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
+                    </div>
 
-                        <div layout="row" layout-align="center">
-                            <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
-                        </div>
+                    <div class="form-horizontal">
 
                         <div layout-gt-sm="row">
                             <md-input-container>
-                            <label>Civilité</label>
-                            <md-select ng-model="register.credentials.civility" required>
-                                <md-option value="Madame">Mme.</md-option>
-                                <md-option value="Monsieur">M.</md-option>
-                            </md-select>
+                                <label>Civilité</label>
+                                    <md-select ng-model="register.credentials.civility" required>
+                                        <md-option value="Madame">Mme.</md-option>
+                                        <md-option value="Monsieur">M.</md-option>
+                                    </md-select>
                             </md-input-container>
                         </div>
 
+
                         <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin">perm_identity</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="email" data-error="wrong" data-success="right" class="center-align">Prénom</label>
-                                <input id="prenom" class="form-control" type="text" ng-model="register.credentials.firstName" required>
-                            </md-input-container>
+                        <i class="material-icons md-light md-36 md-margin">perm_identity</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                        <label for="firstname" data-error="wrong" data-success="right" class="center-align">Prénom</label>
+                        <input id="firstname" class="form-control" type="text" ng-model="register.credentials.firstName" required>
+                        </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin">perm_identity</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="email" data-error="wrong" data-success="right" class="center-align">Nom</label>
-                                <input id="nom" class="form-control" type="text" ng-model="register.credentials.lastName" required>
-                            </md-input-container>
+                        <i class="material-icons md-light md-36 md-margin">perm_identity</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                        <label for="lastname" data-error="wrong" data-success="right" class="center-align">Nom</label>
+                        <input id="lastname" class="form-control" type="text" ng-model="register.credentials.lastName" required>
+                        </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin">email</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
-                                <input id="email" class="form-control" type="email" ng-model="register.credentials.email" required>
-                            </md-input-container>
-                        </div>
-
-                        <p class="alert alert-danger" ng-show="form-register.email.$error.email">Le format de votre adresse email est invalide.</p>
-
-                        <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin">phone</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="telephone" data-error="wrong" data-success="right" class="center-align">Téléphone</label>
-                                <input id="telephone" class="form-control" type="tel" ng-model="register.credentials.phone">
-                            </md-input-container>
+                        <i class="material-icons md-light md-36 md-margin">email</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                        <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
+                        <input id="email" class="form-control" type="email" ng-model="register.credentials.email" required>
+                        </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin" >account_balance</i>
-                            <md-input-container>
-                                <label>Campus</label>
-                                <md-select ng-model="register.credentials.campus" required>
-                                    <md-option value="Bordeaux I">Bordeaux I</md-option>
-                                    <md-option value="Bordeaux II">Bordeaux II</md-option>
-                                    <md-option value="Bordeaux III">Bordeaux III</md-option>
-                                    <md-option value="Bordeaux IV">Bordeaux IV</md-option>
-                                </md-select>
-                            </md-input-container>
+                        <i class="material-icons md-light md-36 md-margin">phone</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                        <label for="phone" data-error="wrong" data-success="right" class="center-align">Téléphone</label>
+                        <input id="phone" class="form-control" type="tel" ng-model="register.credentials.phone">
+                        </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
+                        <i class="material-icons md-light md-36 md-margin" >account_balance</i>
+                        <md-input-container>
+                        <label>Campus</label>
+                        <md-select ng-model="register.credentials.campus" required>
+                        <md-option value="Bordeaux I">Bordeaux I</md-option>
+                        <md-option value="Bordeaux II">Bordeaux II</md-option>
+                        <md-option value="Bordeaux III">Bordeaux III</md-option>
+                        <md-option value="Bordeaux IV">Bordeaux IV</md-option>
+                        </md-select>
+                        </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
                             <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="password">Password</label>
-                                <input class="form-control" id="password" type="password" ng-model="register.credentials.password"
-                                       required>
+                                <input class="form-control" id="password" type="password" ng-model="register.credentials.password" required>
                             </md-input-container>
                         </div>
-
-                        <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Votre mot de passe doit contenir au moins 6 caract&egrave;res.</p>
-
-                        <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="password">Confirmer Password</label>
-                                <input class="form-control" id="password" type="password" ng-model="register.credentials.password"
-                                       required>
-                            </md-input-container>
-                        </div>
-
-                        <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Votre mot de passe doit contenir au moins 6 caract&egrave;res.</p>
-
 
                         <div layout="row" class="space-top text-center center">
-                            <md-button flex="50" ng-disabled="form-register.$invalid" class="md-raised done">
+                            <md-button ng-disabled="form-register.$invalid" ng-click="register.register()" class="md-raised done">
                                 <i class="material-icons left">done</i> Valider
                             </md-button>
-                            <md-button flex="50" type="button" class="md-raised cancel">
+                            <md-button type="button" class="md-raised cancel">
                                 <i class="material-icons left">clear</i>Annuler
                             </md-button>
                         </div>
 
-                    </form>
+                    </div>
 
                 </md-content>
             </md-whiteframe>

@@ -8,42 +8,42 @@
             <md-whiteframe class="md-whiteframe-z1" layout="column" flex="30" layout-padding>
 
                 <md-content >
+                    <div layout="row" layout-align="center">
+                        <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
+                    </div>
 
-                        <div layout="row" layout-align="center">
-                            <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
-                        </div>
+                    <div layout-gt-sm="row">
+                        <i class="material-icons md-light md-36 md-margin">email</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
+                            <input class="form-control validate" id="email"  type="email"  ng-model="login.credentials.email" required>
+                        </md-input-container>
+                    </div>
 
-                        <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin">email</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
-                                <input class="form-control validate" id="email"  type="email"  ng-model="login.credentials.email" required>
-                            </md-input-container>
-                        </div>
-
-                        <div layout-gt-sm="row">
-                            <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label for="password">Password</label>
-                                <input class="form-control" id="password" type="password" ng-model="login.credentials.password"
-                                       required>
-                            </md-input-container>
-                        </div>
-
-
-                        <div layout="row" layout-align="center">
-                            <md-button class="md-raised" ng-click="login.login()">Se connecter</md-button>
-                        </div>
-
-                        <div layout="row" class="margin-top">
-                            <p class="" flex="50" ><a ui-sref="register" layout-align="start">S'enregistrer</a></p>
-                            <p class="" flex="50" ><a class="forget" href="forgot-password.html" >Mot de passe oublié ?</a></p>
-                        </div>
+                    <div layout-gt-sm="row">
+                        <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label for="password">Password</label>
+                            <input class="form-control" id="password" type="password" ng-model="login.credentials.password"
+                                   required>
+                        </md-input-container>
+                    </div>
 
 
+                    <div layout="row" layout-align="center">
+                        <md-button class="md-raised" ng-click="login.login()">Se connecter</md-button>
+                    </div>
+
+                    <div layout="row" class="margin-top">
+                        <p class="" flex="50" ><a ui-sref="register" layout-align="start">S'enregistrer</a></p>
+                        <p class="" flex="50" ><a class="forget" href="forgot-password.html" >Mot de passe oublié ?</a></p>
+                    </div>
                 </md-content>
             </md-whiteframe>
         </div>
 
     </md-content>
 </div>
+
+
+
