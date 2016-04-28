@@ -2,19 +2,19 @@
 <div class="form-group">
     <div class="radio">
         <label>
-            <input type="radio" ng-model="addService.newService.theme" value="shelter">
+            <input type="radio" ng-model="addService.newService.theme" value="home">
             Maison
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="addEvent.newEvent.theme" value="University">
+            <input type="radio" ng-model="addService.newService.theme" value="university">
             Université
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="addEvent.newEvent.theme" value="other">
+            <input type="radio" ng-model="addService.newService.theme" value="other">
             Plus...
         </label>
     </div>
@@ -22,7 +22,7 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-        <a ui-sref="addService.form" class="btn btn-block btn-info">
+        <a ui-sref="addService.form" class="btn btn-block btn-info" ng-disabled="!addService.newService.theme">
             Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
     </div>

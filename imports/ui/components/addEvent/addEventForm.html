@@ -1,4 +1,10 @@
 <div class="form-horizontal">
+    <md-input-container>
+        <label>Type d'évènement</label>
+        <md-select ng-model="addEvent.newEvent.subtheme" ng-disabled="!addEvent.newEvent.theme">
+            <md-option ng-repeat="subtheme in addEvent.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+        </md-select>
+    </md-input-container>
     <div class="form-group">
         <label class="col-md-1 control-label">Titre</label>
         <div class="col-md-2">
@@ -6,6 +12,7 @@
                    required>
         </div>
     </div>
+    <!-- Ajouter l'input pour la date de l'évènement -->
     <div class="form-group">
         <label class="col-md-1 control-label">Adresse</label>
         <div class="col-md-2">
@@ -16,14 +23,14 @@
     <div class="form-group">
         <label class="col-md-1 control-label">Code Postal</label>
         <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="33000" ng-model="addEvent.newEvent.zipcode"
+            <input class="form-control" type="number" placeholder="33000" ng-model="addEvent.newEvent.zipCode"
                    required>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-1 control-label">Ville</label>
         <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Bordeaux" ng-model="addEvent.newEvent.town"
+            <input class="form-control" type="text" placeholder="Bordeaux" ng-model="addEvent.newEvent.city"
                    required>
         </div>
     </div>
@@ -38,8 +45,13 @@
     </div>
 </div>
 <div class="form-group row">
-    <div class="col-xs-6 col-xs-offset-3">
-        <a ui-sref="addEvent.resume" class="btn btn-block btn-info">
+    <div class="col-xs-5 col-xs-offset-0">
+        <a ui-sref="addEvent.theme" class="btn btn-block btn-info">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Etape précédente
+        </a>
+    </div>
+    <div class="col-xs-5 col-xs-offset-2">
+        <a ui-sref="addEvent.resume" class="btn btn-block btn-info" ng-disabled="!addEvent.newEvent.subtheme || !addEvent.newEvent.title ||!addEvent.newEvent.address || !addEvent.newEvent.zipCode || !addEvent.newEvent.city || !addEvent.newEvent.description">
             Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
     </div>

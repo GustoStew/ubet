@@ -46,7 +46,7 @@ const name = 'register';
 // create a module
 export default angular.module(name, [
         angularMeteor,
-        uiRouter,
+        uiRouter
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,

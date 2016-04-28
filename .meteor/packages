@@ -27,11 +27,12 @@ velocity:html-reporter
 velocity:console-reporter
 accounts-password
 dotansimha:accounts-ui-angular
-accounts-facebook
-accounts-twitter
-tmeasday:publish-counts
+#accounts-facebook
+#accounts-twitter
+#tmeasday:publish-counts
 check
 email
 twbs:bootstrap
 msavin:mongol
 less
+#angular:angular-material

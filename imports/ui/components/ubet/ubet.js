@@ -7,12 +7,13 @@ import './ubet.html';
 import { name as Auth } from '../auth/auth';
 import { name as Navigation } from '../navigation/navigation';
 import { name as UserInfos } from '../userInfos/userInfos';
-import { name as Events} from '../userEvents/userEvents';
+import { name as UserEvents} from '../userEvents/userEvents';
 import { name as Register} from '../register/register';
 import { name as AddEvent} from '../addEvent/addEvent';
 import { name as Home} from '../home/home';
 import { name as UserServices } from '../userServices/userServices';
 import { name as AddService } from '../addService/addService';
+import { name as ListEvents} from '../listEvents/listEvents';
 
 
 class Ubet {}
@@ -26,12 +27,13 @@ export default angular.module(name, [
     Auth,
     Navigation,
     UserInfos,
-    Events,
+    UserEvents,
     Register,
     AddEvent,
     Home,
     UserServices,
     AddService,
+    ListEvents,
     ngMaterial,
     'accounts.ui'
 ]).component(name, {

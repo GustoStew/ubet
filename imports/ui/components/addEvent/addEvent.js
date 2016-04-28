@@ -4,6 +4,7 @@ import uiRouter from 'angular-ui-router';
 import ngAnimate from 'angular-animate';
 
 import { Meteor } from 'meteor/meteor';
+import { ThemesEvent} from '../../../api/themesEvent';
 
 import './addEvent.html';
 import './addEventTheme.html';
@@ -21,7 +22,20 @@ class AddEvent {
 
         this.$state = $state;
 
+        this.subscribe('themesEvent');
+
         this.newEvent = {};
+
+        this.helpers({
+            themes() {
+                return ThemesEvent.find();
+            },
+            themeSelected() {
+                return ThemesEvent.findOne({
+                        _id: this.getReactively('newEvent.theme')
+                });
+            }
+        });
 
     }
 

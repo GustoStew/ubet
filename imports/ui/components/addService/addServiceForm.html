@@ -16,43 +16,48 @@
     <div class="form-group">
         <label class="col-md-1 control-label">Sous thème* </label>
         <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Sous thème" ng-model="addService.newService.subtheme" required>
+            <input class="form-control" type="text" placeholder="Sous thème" ng-model="addService.newService.subtheme">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-1 control-label">Adresse* </label>
         <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Address" ng-model="addService.newService.address" required>
+            <input class="form-control" type="text" placeholder="Address" ng-model="addService.newService.address">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-1 control-label">Code postal* </label>
         <div class="col-md-2">
-            <input class="form-control" type="number" placeholder="Code postal" ng-model="addService.newService.zipCode" required>
+            <input class="form-control" type="number" placeholder="Code postal" ng-model="addService.newService.zipCode">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-1 control-label">Ville* </label>
         <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Ville" ng-model="addService.newService.city" required>
+            <input class="form-control" type="text" placeholder="Ville" ng-model="addService.newService.city">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-1 control-label">Description* </label>
         <div class="col-md-2">
-            <textarea class="form-control" rows="5" placeholder="Description de votre service..." ng-model="addService.newService.description" required></textarea>
-            <p>* En soignat votre annonce vous augmentez vos chances d'être compris</p>
+            <textarea class="form-control" rows="5" placeholder="Description de votre service..." ng-model="addService.newService.description"></textarea>
+            <p>* En soignant votre annonce vous augmentez vos chances d'être compris</p>
         </div>
     </div>
     <div class="form-group">
         <div class="checkbox">
-            <label><input type="checkbox" value="">Je ne voudrai pas que mon numéro de téléphone soit affiché dans l'annonce</label>
+            <label><input type="checkbox" value="" ng-model="addService.newService.private">Je ne voudrai pas que mon numéro de téléphone soit affiché dans l'annonce</label>
         </div>
     </div>
     <!--button class="btn" ng-click="addService.submit()">Valider</button-->
     <div class="form-group row">
-        <div class="col-xs-6 col-xs-offset-3">
-            <a ui-sref="addService.resume" class="btn btn-block btn-info">
+        <div class="col-xs-5 col-xs-offset-0">
+            <a ui-sref="addService.theme" class="btn btn-block btn-info">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span> Etape précédente
+            </a>
+        </div>
+        <div class="col-xs-5 col-xs-offset-2">
+            <a ui-sref="addEvent.resume" class="btn btn-block btn-info" ng-disabled="!addService.newService.title ||!addService.newService.subtheme || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description">
                 Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
             </a>
         </div>
