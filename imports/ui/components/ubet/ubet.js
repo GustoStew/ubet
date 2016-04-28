@@ -1,6 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+import ngMaterial from 'angular-material'
 
 import './ubet.html';
 import { name as Auth } from '../auth/auth';
@@ -27,6 +28,7 @@ export default angular.module(name, [
     Register,
     AddEvent,
     Home,
+    ngMaterial,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
