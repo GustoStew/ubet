@@ -22,35 +22,51 @@
             </md-button>
         </div>
     </md-toolbar>
-    <md-sidenav class="md-sidenav-left" md-whiteframe="5"
-                md-component-id="left">
-        <md-toolbar layout="row">
-            <div class="md-toolbar-tools">
-                <h2>
-                    <span>Menu</span>
-                </h2>
-                <span flex></span>
-                <md-button class="md-icon-button" aria-label="Fermer" ng-click="navigation.closeSideNavPanel()">
-                    <md-tooltip>Fermer</md-tooltip>
-                    <i class="material-icons">clear</i>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-content flex layout-padding>
-            <md-button ui-sref="home">
-                Accueil
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Menu</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="navigation.closeSideNavPanel()">
+                <md-tooltip>Close Menu</md-tooltip>
+                <md-icon  class="material-icons">&#xE5CD;</md-icon>
             </md-button>
-            <md-button ui-sref="userEvents">
-                Mes évènements
-            </md-button>
-            <md-button ui-sref="listEvents">
-                Tout les évènements
-            </md-button>
-            <md-button ui-sref="userServices">
-                Mes services
-            </md-button>
-        </md-content>
-    </md-sidenav>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <md-button ui-sref="home">Accueil</md-button>
+    </md-content>
+    <md-list>
+        <md-subheader class="md-no-sticky">Services</md-subheader>
+        <md-list-item>
+            <md-icon  class="material-icons">&#xE0C9;</md-icon>
+            <p ui-sref="userServices">Mes services</p>
+            <div class="md-secondary">2</div>
+        </md-list-item>
+        <md-list-item>
+            <md-icon  class="material-icons">&#xE878;</md-icon>
+            <p>Tous les services</p>
+            <md-icon class="md-secondary">2</md-icon>
+        </md-list-item>
+
+        <md-divider></md-divider>
+        <md-subheader class="md-no-sticky">Evenements</md-subheader>
+        <md-list-item>
+            <md-icon  class="material-icons">&#xE7F9;</md-icon>
+            <p ui-sref="userEvents">Mes evenements</p>
+            <div class="md-secondary">2</div>
+        </md-list-item>
+        <md-list-item>
+            <md-icon  class="material-icons">&#xE1BC;</md-icon>
+            <p ui-sref="listEvents">Tous les evenements</p>
+            <div class="md-secondary">20+</div>
+        </md-list-item>
+    </md-list>
+</md-sidenav>
+
 </div>
 
 
