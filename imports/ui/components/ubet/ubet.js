@@ -4,7 +4,6 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './ubet.html';
-import { name as Auth } from '../auth/auth';
 import { name as Navigation } from '../navigation/navigation';
 import { name as UserInfos } from '../userInfos/userInfos';
 import { name as UserEvents} from '../userEvents/userEvents';
@@ -24,7 +23,6 @@ const name = 'ubet';
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
-    Auth,
     Navigation,
     UserInfos,
     UserEvents,

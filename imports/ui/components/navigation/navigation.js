@@ -5,12 +5,16 @@ import uiRouter from 'angular-ui-router';
 import './navigation.html';
 
 class Navigation {
-  constructor($scope, $reactive, $state) {
+  constructor($scope, $reactive, $state, $mdSidenav) {
     'ngInject';
 
     this.$state = $state;
 
     $reactive(this).attach($scope);
+
+    this.showMobileMainHeader = true;
+
+    this.$mdSidenav = $mdSidenav;
 
     this.helpers({
       isLoggedIn() {
@@ -18,6 +22,21 @@ class Navigation {
       }
     });
 
+  }
+  openSideNavPanel() {
+    this.$mdSidenav('left').open();
+  }
+  closeSideNavPanel() {
+    this.$mdSidenav('left').close();
+  }
+  logout() {
+    Meteor.logout(this.$bindToContext((err) => {
+      if (err) {
+        this.error = err;
+      } else {
+        this.$state.go('login');
+      }
+    }));
   }
 }
 
