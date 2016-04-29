@@ -4,6 +4,9 @@ import uiRouter from 'angular-ui-router';
 
 import './navigation.html';
 
+import {name as Login} from '../login/login';
+
+
 class Navigation {
   constructor($scope, $reactive, $state, $mdSidenav) {
     'ngInject';
@@ -45,7 +48,8 @@ const name = 'navigation';
 // create a module
 export default angular.module(name, [
   angularMeteor,
-  uiRouter
+  uiRouter,
+  Login
 ]).component(name, {
   templateUrl: `imports/ui/components/${name}/${name}.html`,
   controllerAs: name,
