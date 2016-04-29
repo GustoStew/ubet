@@ -1,57 +1,88 @@
-<div class="row" ng-if="userInfos.modifSuccess">
-<!--    <div class="alert alert-success alert-dismissible col-md-offset-1 col-md-2" role="alert" >
-        <a class="alert-link">Modification effectuée !</a>
-    </div>-->
-    <div class="alert alert-success alert-dismissible col-md-offset-1 col-md-2 fade in" role="alert">
-        <button ng-click="userInfos.resetSuccess()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Modification effectuée !
-    </div>
-</div>
-<div class="form-horizontal">
-    <div class="form-group">
-        <label class="col-md-1 control-label">Civilité</label>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                <input type="radio" ng-model="userInfos.currentUser.profile.civility" value="Monsieur" ng-disabled="!userInfos.enableModification"> Mr
-            </label>
-            <label class="radio-inline">
-                <input type="radio" ng-model="userInfos.currentUser.profile.civility" value="Madame" ng-disabled="!userInfos.enableModification"> Mme
-            </label>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<div layout="column" flex id="content" role="main">
+    <md-content layout="vertical" flex id="content">
+
+        <div layout="row" layout-align="center center" layout-fill>
+
+            <md-whiteframe class="md-whiteframe-z1" layout="column" flex="50" layout-padding>
+
+                <md-content >
+
+                    <div class="form-horizontal">
+
+                        <div layout="row" layout-align="center">
+                            <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
+                        </div>
+
+                        <div layout-gt-sm="row">
+                            <md-input-container>
+                                <label>Civilité</label>
+                                <md-select ng-model="register.credentials.civility" required>
+                                    <md-option type="radio" ng-model="userInfos.currentUser.profile.civility" value="Monsieur" ng-disabled="!userInfos.enableModification">Mme.</md-option>
+                                    <md-option type="radio" ng-model="userInfos.currentUser.profile.civility" value="Madame" ng-disabled="!userInfos.enableModification">M.</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
+                            <i class="material-icons md-light md-36 md-margin">perm_identity</i>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <input class="form-control" type="text" placeholder="Nom" ng-model="userInfos.currentUser.profile.lastName" ng-disabled="!userInfos.enableModification" required>
+                            </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
+                            <i class="material-icons md-light md-36 md-margin">perm_identity</i>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <input class="form-control" type="text"  placeholder="Prénom" ng-model="userInfos.currentUser.profile.firstName" ng-disabled="!userInfos.enableModification" required>
+                            </md-input-container>
+                        </div>
+
+
+                        <div layout-gt-sm="row">
+                            <i class="material-icons md-light md-36 md-margin">phone</i>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <input class="form-control" type="tel" placeholder="Téléphone" ng-model="userInfos.currentUser.profile.phone" ng-disabled="!userInfos.enableModification" required>
+                            </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
+                            <i class="material-icons md-light md-36 md-margin" >account_balance</i>
+                            <md-input-container>
+                                <label>Campus</label>
+                                <md-select ng-model="userInfos.currentUser.profile.campus" ng-disabled="!userInfos.enableModification" required>
+                                    <md-option value="Bordeaux I">Bordeaux I</md-option>
+                                    <md-option value="Bordeaux II">Bordeaux II</md-option>
+                                    <md-option value="Bordeaux III">Bordeaux III</md-option>
+                                    <md-option value="Bordeaux IV">Bordeaux IV</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                        <div layout="row" layout-align="center" ng-if="userInfos.modifSuccess" class=" space-top text-center center">
+                            <div class="alert alert-success alert-dismissible fade in bite" role="alert">
+                                <md-button ng-click="userInfos.resetSuccess()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    Modification effectuée !
+                                </md-button>
+                            </div>
+                        </div>
+
+                        <div layout="row" layout-align="center" class="space-top text-center center" ng-show="userInfos.enableModification">
+                            <md-button ng-click="userInfos.modify()" class="md-raised done">
+                                <i class="material-icons left">done</i> Valider
+                            </md-button>
+                        </div>
+
+                        <div layout="row" layout-align="center" class="space-top text-center center" ng-hide="userInfos.enableModification">
+                            <md-button ng-click="userInfos.enableModif()" class="md-raised done">
+                                <i class="material-icons left">done</i> Modifier
+                            </md-button>
+                        </div>
+
+                    </div>
+                </md-content>
+            </md-whiteframe>
         </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Nom</label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" ng-model="userInfos.currentUser.profile.lastName" ng-disabled="!userInfos.enableModification" required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Prénom</label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Prénom" ng-model="userInfos.currentUser.profile.firstName" ng-disabled="!userInfos.enableModification" required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Téléphone</label>
-        <div class="col-md-2">
-            <input class="form-control" type="tel" placeholder="Téléphone" ng-model="userInfos.currentUser.profile.phone" ng-disabled="!userInfos.enableModification" required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Campus</label>
-        <div class="col-md-2">
-            <select class="form-control" ng-model="userInfos.currentUser.profile.campus" ng-disabled="!userInfos.enableModification" required>
-                <option value="1">Bordeaux 1</option>
-                <option value="2">Bordeaux 2</option>
-                <option value="3">Bordeaux 3</option>
-                <option value="4">Bordeaux 4</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-md-offset-1 col-md-2" ng-show="userInfos.enableModification">
-        <button class="btn btn-success" ng-click="userInfos.modify()">Valider</button>
-    </div>
-    <div class="col-md-offset-1 col-md-2" ng-hide="userInfos.enableModification">
-        <button class="btn btn-success" ng-click="userInfos.enableModif()">Modifier</button>
-    </div>
+    </md-content>
 </div>

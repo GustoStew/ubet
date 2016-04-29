@@ -35,7 +35,6 @@ class UserInfos {
                 "profile.phone": this.currentUser.profile.phone,
                 "profile.campus": this.currentUser.profile.campus,
                 "profile.civility": this.currentUser.profile.civility
-
             }
         }, (error) => {
             if (error) {
