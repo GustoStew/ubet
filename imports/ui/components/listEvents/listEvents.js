@@ -16,15 +16,40 @@ class ListEvents {
 
         $reactive(this).attach($scope);
 
-        this.subscribe('events');
-        this.subscribe('themesEvent')
+        this.searchText = '';
+
+        this.themeID = '';
+
+        this.subscribe('events', this.getReactively('themeID'));
+
+        this.subscribe('themesEvent');
 
         this.helpers({
             events() {
-                return Events.find();
+                return Events.find({
+                    $or: [
+                        {
+                            title: {
+                                $regex: `.*${this.getReactively('searchText')}.*`,
+                                $options: 'i'
+                            }
+                        },
+                        {
+                            description: {
+                                $regex: `.*${this.getReactively('searchText')}.*`,
+                                $options: 'i'
+                            }
+                        }
+                    ]
+                });
             },
             themes() {
                 return ThemesEvent.find();
+            },
+            themeSelected() {
+                return ThemesEvent.findOne({
+                    _id: this.getReactively('themeID')
+                });
             }
         });
     }

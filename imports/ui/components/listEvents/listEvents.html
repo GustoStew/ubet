@@ -1,23 +1,41 @@
 <div class="container">
     <h3>Tout les évènements</h3>
-    <ul>
-        <li ng-repeat="theme in listEvents.themes">
-            <p>{{theme.key}}</p>
-            <p>{{theme.description}}</p>
-            <ul>
-                <li ng-repeat="subtheme in theme.subthemes">
-                    <p>{{subtheme.key}}</p>
-                    <p>{{subtheme.description}}</p>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<div class="container">
-    <ul>
-        <li ng-repeat="event in listEvents.events">
-            <p>{{event.title}}</p>
-            <p>{{event.description}}</p>
-        </li>
-    </ul>
+    <md-content layout="row">
+        <md-input-container style="margin-right: 10px;">
+            <label>Thème</label>
+            <md-select ng-model="listEvents.themeID">
+                <md-option ng-repeat="theme in listEvents.themes" ng-value="theme._id">{{theme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Type d'évènement</label>
+            <md-select ng-model="listEvents.subtheme" ng-disabled="!listEvents.themeID">
+                <md-option ng-repeat="subtheme in listEvents.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+    <md-content layout="row">
+        <md-input-container>
+            <label>Recherche</label>
+            <input type="text" ng-model="listEvents.searchText"/>
+        </md-input-container>
+    </md-content>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="event in listEvents.events">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{event.title}}</span>
+                        <span class="md-subhead">{{event.description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Détails</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
 </div>
