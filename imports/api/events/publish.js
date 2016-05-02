@@ -4,6 +4,8 @@ import { Events } from './collection';
 
 if (Meteor.isServer) {
     Meteor.publish('events', function() {
-        return Events.find();
+            return Events.find();
     });
 }
+
+

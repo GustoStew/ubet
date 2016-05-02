@@ -12,81 +12,70 @@
                 <span>UBET</span>
             </h2>
             <span flex></span>
-            <md-button class="md-icon-button" aria-label="Side Panel" ui-sref="home">
+            <md-button class="md-icon-button" aria-label="Home" ui-sref="home" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Home</md-tooltip>
-                <i class="material-icons">home</i>
+                <md-icon class="material-icons">home</md-icon>
             </md-button>
             <md-button class="md-icon-button" aria-label="User" ui-sref="infos" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Mon Compte</md-tooltip>
-                <i class="material-icons">face</i>
+                <md-icon class="material-icons">face</md-icon>
             </md-button>
             <md-button class="md-icon-button" aria-label="Logout" ng-click="navigation.logout()" ng-show="navigation.isLoggedIn">
-                <md-tooltip>Déconnection</md-tooltip>
-                <i class="material-icons">lock</i>
+                <md-tooltip>Déconnexion</md-tooltip>
+                <md-icon class="material-icons">power_settings_new</md-icon>
             </md-button>
         </div>
     </md-toolbar>
-<md-sidenav class="md-sidenav-left md-whiteframe-z2"
-            md-component-id="left">
-    <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-            <h2>
-                <span>Menu</span>
-            </h2>
-            <span flex></span>
-            <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="navigation.closeSideNavPanel()">
-                <md-tooltip>Close Menu</md-tooltip>
-                <md-icon  class="material-icons">&#xE5CD;</md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-    <md-content layout-padding="">
-        <md-button ui-sref="home">Accueil</md-button>
-    </md-content>
-    <md-list>
-        <md-subheader class="md-no-sticky">Services</md-subheader>
-        <md-list-item>
-            <md-icon  class="material-icons">&#xE0C9;</md-icon>
-            <p ui-sref="userServices">Mes services</p>
-            <div class="md-secondary">2</div>
-        </md-list-item>
-        <md-list-item>
-            <md-icon  class="material-icons">&#xE878;</md-icon>
-            <p>Tous les services</p>
-            <md-icon class="md-secondary">2</md-icon>
-        </md-list-item>
-        <md-list-item>
-            <div layout-gt-sm="row">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+                md-component-id="left">
+        <md-toolbar layout="row">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Menu</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="navigation.closeSideNavPanel()">
+                    <md-tooltip>Close Menu</md-tooltip>
+                    <md-icon  class="material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content>
+            <md-list>
+                <md-list-item>
+                    <md-icon  class="material-icons">home</md-icon>
+                    <md-button ui-sref="home">Accueil</md-button>
+                </md-list-item>
+            </md-list>
+            <md-divider></md-divider>
+        </md-content>
+        <md-list>
+            <md-subheader class="md-no-sticky">Services</md-subheader>
+            <md-list-item>
+                <md-icon  class="material-icons">publish</md-icon>
+                <md-button ui-sref="userServices">Mes services</md-button>
+                <div class="md-secondary">2</div>
+            </md-list-item>
+            <md-list-item>
+                <md-icon  class="material-icons">supervisor_account</md-icon>
+                <md-button ui-sref="listServices">Tous les services</md-button>
+                <div class="md-secondary">20+</div>
+            </md-list-item>
+
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Événements</md-subheader>
+            <md-list-item>
                 <md-icon  class="material-icons">&#xE878;</md-icon>
-                <md-button ui-sref="home">Accueil</md-button>
-                <md-icon class="md-secondary">2</md-icon>
-            </div>
-        </md-list-item>
-
-        <md-list-item>
-            <div layout-gt-sm="row">
-                <i class="material-icons md-light md-36 md-margin">perm_identity</i>
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label for="lastname" data-error="wrong" data-success="right" class="center-align">Nom</label>
-                    <input id="lastname" class="form-control" type="text" ng-model="register.credentials.lastName" required>
-                </md-input-container>
-            </div>
-        </md-list-item>
-
-        <md-divider></md-divider>
-        <md-subheader class="md-no-sticky">Evenements</md-subheader>
-        <md-list-item>
-            <md-icon  class="material-icons">&#xE7F9;</md-icon>
-            <p ui-sref="userEvents">Mes evenements</p>
-            <div class="md-secondary">2</div>
-        </md-list-item>
-        <md-list-item>
-            <md-icon  class="material-icons">&#xE1BC;</md-icon>
-            <p ui-sref="listEvents">Tous les evenements</p>
-            <div class="md-secondary">20+</div>
-        </md-list-item>
-    </md-list>
-</md-sidenav>
+                <md-button ui-sref="userEvents">Mes événements</md-button>
+                <div class="md-secondary">2</div>
+            </md-list-item>
+            <md-list-item>
+                <md-icon  class="material-icons">view_list</md-icon>
+                <md-button ui-sref="listEvents">Tous les évenements</md-button>
+                <div class="md-secondary">20+</div>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
 
 </div>
 
