@@ -20,9 +20,14 @@
             <input type="text" ng-model="listEvents.searchText"/>
         </md-input-container>
     </md-content>
+    <md-content layout="row">
+        <md-input-container>
+            <md-button ng-click="listEvents.clear()" class="md-raised">Réinitialiser recherche</md-button>
+        </md-input-container>
+    </md-content>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-repeat="event in listEvents.events">
+            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.themeID, subtheme:listEvents.subtheme}">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{event.title}}</span>

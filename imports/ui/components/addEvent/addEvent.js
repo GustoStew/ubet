@@ -24,7 +24,9 @@ class AddEvent {
 
         this.subscribe('themesEvent');
 
-        this.newEvent = {};
+        this.newEvent = {
+            date: new Date()
+        };
 
         this.helpers({
             themes() {

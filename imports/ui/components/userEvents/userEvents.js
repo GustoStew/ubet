@@ -16,7 +16,7 @@ class UserEvents {
         $reactive(this).attach($scope);
 
         this.subscribe('events');
-
+        
         this.helpers({
             events() {
                 return Events.find({

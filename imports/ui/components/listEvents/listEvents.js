@@ -53,6 +53,11 @@ class ListEvents {
             }
         });
     }
+    clear() {
+        this.themeID = '';
+        this.searchText = '';
+        this.subtheme = '';
+    }
 }
 
 const name = 'listEvents';

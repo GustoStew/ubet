@@ -12,7 +12,6 @@
                    required>
         </div>
     </div>
-    <!-- Ajouter l'input pour la date de l'évènement -->
     <div class="form-group">
         <label class="col-md-1 control-label">Adresse</label>
         <div class="col-md-2">
@@ -20,6 +19,9 @@
                    ng-model="addEvent.newEvent.address" required>
         </div>
     </div>
+    <md-content>
+        <md-datepicker ng-model="addEvent.newEvent.date"></md-datepicker>
+    </md-content>
     <div class="form-group">
         <label class="col-md-1 control-label">Code Postal</label>
         <div class="col-md-2">

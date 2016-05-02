@@ -1,9 +1,23 @@
 <div class="container">
-    <button class="btn" ui-sref="addEvent.theme">Ajouter un évènement</button>
-    <ul>
-        <li ng-repeat="event in userEvents.events">
-            <p>{{event.title}}</p>
-            <p>{{event.description}}</p>
-        </li>
-    </ul>
+    <md-button class="md-fab md-primary" aria-label="Ajouter un évènement" ui-sref="addEvent.theme" style="position: fixed; right: 15px; bottom: 15px;">
+        <md-icon  class="material-icons">add</md-icon>
+    </md-button>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="event in userEvents.events">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{event.title}}</span>
+                        <span class="md-subhead">{{event.description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Détails</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
 </div>
