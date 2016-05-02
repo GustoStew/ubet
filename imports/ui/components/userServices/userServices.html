@@ -1,28 +1,23 @@
-<button class="btn" ui-sref="addService.theme" >Nouveau service</button>
-<div class="form-vertical">
-    <div class="row">
-        <div class="form-group">
-            <label class="col-md-1 control-label">Service</label>
-            <div class="col-md-2">
-                <select class="form-control" ng-required="true">
-                    <option ng-repeat="service in userServices.services">{{service.subtheme}}</option>
-                </select>
-            </div>
+<div class="container">
+    <md-button class="md-fab md-primary" aria-label="Ajouter un service" ui-sref="addService.theme" style="position: fixed; right: 15px; bottom: 15px;">
+        <md-icon  class="material-icons">add</md-icon>
+    </md-button>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="service in userServices.services">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{service.title}}</span>
+                        <span class="md-subhead">{{service.description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Détails</md-button>
+                </md-card-actions>
+            </md-card>
         </div>
-        <!--div class="form-group">
-            <label class="col-md-1 control-label">ZIP Code</label>
-            <div class="col-md-2">
-                <input class="form-control" type="text" placeholder="ZIP Code" ng-model="" required>
-            </div>
-        </div-->
-    </div>
-    <div class="form-vertical">
-        <ul>
-            <li ng-repeat="service in userServices.services">
-                {{service.title}}
-                <p>{{service.description}}</p>
-            </li>
-        </ul>
-    </div>
+    </md-content>
 </div>
-

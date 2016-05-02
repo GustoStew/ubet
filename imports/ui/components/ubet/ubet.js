@@ -13,6 +13,7 @@ import { name as Home} from '../home/home';
 import { name as UserServices } from '../userServices/userServices';
 import { name as AddService } from '../addService/addService';
 import { name as ListEvents} from '../listEvents/listEvents';
+import { name as ListServices} from '../listServices/listServices';
 
 
 class Ubet {}
@@ -32,6 +33,7 @@ export default angular.module(name, [
     UserServices,
     AddService,
     ListEvents,
+    ListServices,
     ngMaterial,
     'accounts.ui'
 ]).component(name, {
