@@ -1,25 +1,12 @@
 <label>Choisissez le thème de votre service</label>
-<div class="form-group">
-    <div class="radio">
-        <label>
-            <input type="radio" ng-model="addService.newService.theme" value="home">
-            Maison
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" ng-model="addService.newService.theme" value="university">
-            Université
-        </label>
-    </div>
-    <div class="radio">
-        <label>
-            <input type="radio" ng-model="addService.newService.theme" value="other">
-            Plus...
-        </label>
-    </div>
+<div layout="row" style="margin-top: 10px;">
+    <md-input-container style="margin-right: 10px;">
+        <label>Thème</label>
+        <md-select ng-model="addService.newService.theme">
+            <md-option ng-repeat="theme in addService.themes" ng-value="theme._id">{{theme.description}}</md-option>
+        </md-select>
+    </md-input-container>
 </div>
-
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
         <a ui-sref="addService.form" class="btn btn-block btn-info" ng-disabled="!addService.newService.theme">
