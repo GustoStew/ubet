@@ -1,0 +1,46 @@
+<div class="container">
+    <h3>Tous les services</h3>
+    <md-content layout="row">
+        <md-input-container style="margin-right: 10px;">
+            <label>Thème</label>
+            <md-select ng-model="listServices.themeID">
+                <md-option ng-repeat="theme in listServices.themes" ng-value="theme._id">{{theme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Type du service</label>
+            <md-select ng-model="listServices.subtheme" ng-disabled="!listServices.themeID">
+                <md-option ng-repeat="subtheme in listServices.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+    <md-content layout="row">
+        <md-input-container>
+            <label>Recherche</label>
+            <input type="text" ng-model="listServices.searchText"/>
+        </md-input-container>
+    </md-content>
+    <md-content layout="row">
+        <md-input-container>
+            <md-button ng-click="listServices.clear()" class="md-raised">Réinitialiser recherche</md-button>
+        </md-input-container>
+    </md-content>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="service in listServices.services | filter:{theme: listServices.themeID, subtheme:listServices.subtheme}">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{service.title}}</span>
+                        <span class="md-subhead">{{service.description}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Détails</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>

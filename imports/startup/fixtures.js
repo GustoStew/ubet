@@ -4,7 +4,7 @@ import { ThemesService } from '../api/themesService';
 
 Meteor.startup(() => {
   if (ThemesEvent.find().count() === 0) {
-    const themes = [{
+    const themesEvent = [{
       'description': 'Festifs',
       'subthemes': [
         {
@@ -59,14 +59,14 @@ Meteor.startup(() => {
     }
     ];
 
-    themes.forEach((theme) => {
+    themesEvent.forEach((theme) => {
       ThemesEvent.insert(theme)
     });
   }
 
 
   if (ThemesService.find().count() === 0) {
-    const themes = [{
+    const themesService = [{
       'description': 'Maison',
       'subthemes': [
         {
@@ -193,7 +193,7 @@ Meteor.startup(() => {
     }
     ];
 
-    themes.forEach((theme) => {
+    themesService.forEach((theme) => {
       ThemesService.insert(theme)
     });
   }
