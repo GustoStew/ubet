@@ -5,6 +5,7 @@ import ngAnimate from 'angular-animate';
 
 import { Meteor } from 'meteor/meteor';
 import { ThemesEvent} from '../../../api/themesEvent';
+import { SubThemesEvent} from '../../../api/subThemesEvent';
 
 import './addEvent.html';
 import './addEventTheme.html';
@@ -23,6 +24,8 @@ class AddEvent {
         this.$state = $state;
 
         this.subscribe('themesEvent');
+        this.subscribe('subThemesEvent');
+
 
         this.newEvent = {
             date: new Date()
@@ -32,11 +35,23 @@ class AddEvent {
             themes() {
                 return ThemesEvent.find();
             },
+            subThemes() {
+                return SubThemesEvent.find({
+                    theme: this.getReactively('newEvent.theme')
+                });
+            },
             themeSelected() {
                 return ThemesEvent.findOne({
-                        _id: this.getReactively('newEvent.theme')
+                    key: this.getReactively('newEvent.theme')
+                });
+            },
+            subThemeSelected() {
+                return SubThemesEvent.findOne({
+                    key: this.getReactively('newEvent.subtheme'),
+                    theme: this.getReactively('newEvent.theme')
                 });
             }
+
         });
 
     }

@@ -3,14 +3,14 @@
     <md-content layout="row">
         <md-input-container style="margin-right: 10px;">
             <label>Thème</label>
-            <md-select ng-model="listEvents.themeID">
-                <md-option ng-repeat="theme in listEvents.themes" ng-value="theme._id">{{theme.description}}</md-option>
+            <md-select ng-model="listEvents.theme">
+                <md-option ng-repeat="theme in listEvents.themes" ng-value="theme.key" md-on-close="listEvents.subtheme = ''">{{theme.description}}</md-option>
             </md-select>
         </md-input-container>
         <md-input-container>
             <label>Type d'évènement</label>
-            <md-select ng-model="listEvents.subtheme" ng-disabled="!listEvents.themeID">
-                <md-option ng-repeat="subtheme in listEvents.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            <md-select ng-model="listEvents.subtheme" ng-disabled="!listEvents.theme">
+                <md-option ng-repeat="subtheme in listEvents.subThemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
             </md-select>
         </md-input-container>
     </md-content>
@@ -27,7 +27,7 @@
     </md-content>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.themeID, subtheme:listEvents.subtheme}">
+            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{event.title}}</span>
@@ -38,7 +38,7 @@
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button>Détails</md-button>
+                    <md-button ui-sref="detailsEvent({ eventId: event._id })">Détails</md-button>
                 </md-card-actions>
             </md-card>
         </div>

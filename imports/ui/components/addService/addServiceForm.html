@@ -6,7 +6,7 @@
                 <md-input-container flex>
                     <label>Type d'évènement:</label>
                     <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
-                        <md-option ng-repeat="subtheme in addService.themeSelected.subthemes"
+                        <md-option ng-repeat="subtheme in addService.subThemes"
                                    ng-value="subtheme.key">{{subtheme.description}}</md-option>
                     </md-select>
                 </md-input-container>

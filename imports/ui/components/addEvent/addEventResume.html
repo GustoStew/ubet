@@ -1,6 +1,8 @@
 <div class="text-left">
     <h2>{{addEvent.newEvent.title}}</h2>
     <h3>Thème : {{addEvent.themeSelected.description}}</h3>
+    <h4>Type d'évènement :</h4>
+    <p>{{addEvent.subThemeSelected.description}}</p>
     <h4>Description :</h4>
     <p>{{addEvent.newEvent.description}}</p>
     <h4>Adresse :</h4>
@@ -12,7 +14,7 @@
 
 
 <div layout="row" layout-align="center">
-    <md-button class="md-raised" type="submit" ui-sref="userEvents">Publier</md-button>
+    <md-button class="md-raised" type="submit" ng-click="addEvent.submit()">Publier</md-button>
 </div>
 
 <div layout="row" layout-align="center">
