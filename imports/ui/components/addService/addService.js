@@ -5,6 +5,8 @@ import ngAnimate from 'angular-animate';
 
 import { Meteor } from 'meteor/meteor';
 import { ThemesService} from '../../../api/themesService';
+import { SubThemesService} from '../../../api/subThemesService';
+
 
 import './addService.html';
 import './addServiceForm.html';
@@ -22,16 +24,30 @@ class AddService {
         this.$state = $state;
 
         this.subscribe('themesService');
+        this.subscribe('subThemesService');
 
-        this.newService = {};
+        this.newService = {
+            date: new Date()
+        };
 
         this.helpers({
             themes() {
                 return ThemesService.find();
             },
+            subThemes() {
+                return SubThemesService.find({
+                    theme: this.getReactively('newService.theme')
+                });
+            },
             themeSelected() {
                 return ThemesService.findOne({
-                    _id: this.getReactively('newService.theme')
+                    key: this.getReactively('newService.theme')
+                });
+            },
+            subThemeSelected() {
+                return SubThemesService.findOne({
+                    key: this.getReactively('newService.subtheme'),
+                    theme: this.getReactively('newService.theme')
                 });
             }
         });

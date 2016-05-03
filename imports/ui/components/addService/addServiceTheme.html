@@ -1,40 +1,45 @@
 <label>Choisissez le thème de votre service</label>
 <div layout="column" layout-align="center center">
-<md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row" layout-align="center center">
-<md-card ng-repeat="theme in addService.themes | limitTo : 4" ng-value="theme._id" layout-align="center center" style=" height: 250px; width: 500px">
-          <md-card-title-media>
-                    <div class="md-media-sm card-media">
-                        <img ng-src="{{theme.icon}}" class="md-card-image" alt="thumb" style=" height: 100px; width: 100px">
-                    </div>
-                </md-card-title-media>
-              <md-card-title style=" height: 10px; width: 170px">
+    <md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row"
+                    layout-align="center center">
+        <md-card ng-repeat="theme in addService.themes | limitTo : 4" ng-value="theme._id" layout-align="center center"
+                 style=" height: 250px; width: 500px">
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img ng-src="{{theme.icon}}" class="md-card-image" alt="thumb" style=" height: 100px; width: 100px">
+                </div>
+            </md-card-title-media>
+            <md-card-title style=" height: 10px; width: 170px">
                 <md-card-title-text layout-align="center center">
-                  <span class="md-headline">{{theme.description}}</span>
+                    <span class="md-headline">{{theme.description}}</span>
                 </md-card-title-text>
-              </md-card-title>
-          <md-card-actions>
-              <md-radio-button ng-value="theme._id"></md-radio-button>     
-          </md-card-actions>
-</md-card>
-</md-radio-group>
-<md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row" layout-align="center center">
-<md-card ng-repeat="theme in addService.themes | limitTo : 4 : 4" ng-value="theme._id" layout-align="center center" style=" height: 250px; width: 500px">
-          <md-card-title-media>
-                    <div class="md-media-sm card-media">
-                        <img ng-src="{{theme.icon}}" class="md-card-image" alt="thumb" style=" height: 100px; width: 100px">
-                    </div>
-                </md-card-title-media>
-              <md-card-title style=" height: 10px; width: 170px">
+            </md-card-title>
+            <md-card-actions>
+                <md-radio-button ng-value="theme.key"></md-radio-button>
+            </md-card-actions>
+        </md-card>
+    </md-radio-group>
+    <md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row"
+                    layout-align="center center">
+        <md-card ng-repeat="theme in addService.themes | limitTo : 4 : 4" ng-value="theme._id"
+                 layout-align="center center" style=" height: 250px; width: 500px">
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img ng-src="{{theme.icon}}" class="md-card-image" alt="thumb" style=" height: 100px; width: 100px">
+                </div>
+            </md-card-title-media>
+            <md-card-title style=" height: 10px; width: 170px">
                 <md-card-title-text layout-align="center center">
-                  <span class="md-headline">{{theme.description}}</span>
+                    <span class="md-headline">{{theme.description}}</span>
                 </md-card-title-text>
-              </md-card-title>
-          <md-card-actions>
-              <md-radio-button ng-value="theme._id"></md-radio-button>     
-          </md-card-actions>
-</md-card>
-</md-radio-group>
-<md-button ui-sref="addService.form" class="btn btn-primary" ng-disabled="!addService.newService.theme" flex="33" layout-align="center center">
-    Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
-</md-button>
+            </md-card-title>
+            <md-card-actions>
+                <md-radio-button ng-value="theme._id"></md-radio-button>
+            </md-card-actions>
+        </md-card>
+    </md-radio-group>
+    <md-button ui-sref="addService.form" class="btn btn-primary" ng-disabled="!addService.newService.theme" flex="33"
+               layout-align="center center">
+        Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </md-button>
 </div>

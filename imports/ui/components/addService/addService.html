@@ -1,27 +1,30 @@
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-
-        <div id="form-container">
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center" >
+    <div flex-xs flex-gt-xs="80" layout="column">
+        <md-card>
 
             <div class="page-header text-center">
-                <h2>Nouveau service</h2>
+                <h2>Nouvel évènement</h2>
 
                 <div id="status-buttons" class="text-center">
                     <label ui-sref-active="label-success" ui-sref=".theme"><span>1</span> Choix du Thème</label>
                     <label ui-sref-active="label-success" ui-sref=".form"><span>2</span> Saisie de la description</label>
                     <label ui-sref-active="label-success" ui-sref=".resume"><span>3</span> Terminer !</label>
                 </div>
+
             </div>
 
-            <form id="signup-form" ng-submit="addService.submit()">
+            <md-divider class="divider"></md-divider>
 
+            <form id="signup-form">
                 <div id="form-views" ui-view></div>
             </form>
 
-        </div>
-
-
+        </md-card>
     </div>
-</div>
+</md-content>
+
+
+
+
 
 

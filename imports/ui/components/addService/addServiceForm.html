@@ -2,7 +2,7 @@
     <md-input-container>
         <label>Type de service</label>
         <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
-            <md-option ng-repeat="subtheme in addService.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            <md-option ng-repeat="subtheme in addService.subThemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
         </md-select>
     </md-input-container>
     <div class="form-group">
