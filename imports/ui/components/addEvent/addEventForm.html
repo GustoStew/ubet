@@ -1,45 +1,44 @@
 
     <div flex  layout="row" layout-align="space-between start">
-        <md-content class="md-padding">
-            <div flex="100"  layout="column">
-                <form name="addEventForm"  layout="column" layout-align="start start">
-                    <md-input-container flex>
-                        <label>Type d'évènement:</label>
-                        <md-select ng-model="addEvent.newEvent.subtheme" ng-disabled="!addEvent.newEvent.theme">
-                            <md-option ng-repeat="subtheme in addEvent.themeSelected.subthemes"
-                                       ng-value="subtheme.key">{{subtheme.description}}</md-option>
-                        </md-select>
-                    </md-input-container>
-                    <md-input-container flex>
-                        <label>Titre:</label>
-                        <input type="text"  ng-model="addEvent.newEvent.title" required>
-                    </md-input-container>
-                    <md-content flex>
+        <md-content class="md-padding" flex="40"  layout="column">
+            <form name="addEventForm"  layout="column" layout-align="start start">
+                <md-input-container flex>
+                    <label>Type d'évènement:</label>
+                    <md-select ng-model="addEvent.newEvent.subtheme" ng-disabled="!addEvent.newEvent.theme">
+                        <md-option ng-repeat="subtheme in addEvent.themeSelected.subthemes"
+                                   ng-value="subtheme.key">{{subtheme.description}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Titre:</label>
+                    <input type="text"  ng-model="addEvent.newEvent.title" required>
+                </md-input-container>
+                <md-content flex>
 
-                        <md-datepicker ng-model="addEvent.newEvent.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
-                    </md-content>
-                    <md-input-container class="md-block">
-                        <label>Adresse:</label>
-                        <input  type="text" ng-model="addEvent.newEvent.address" required>
-                    </md-input-container>
-                    <md-input-container flex>
-                        <label>ZipCode:</label>
-                        <input name="zipCode" type="number"  ng-model="addEvent.newEvent.zipCode"   required>
+                    <md-datepicker ng-model="addEvent.newEvent.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+                </md-content>
+                <md-input-container class="md-block">
+                    <label>Adresse:</label>
+                    <input  type="text" ng-model="addEvent.newEvent.address" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>ZipCode:</label>
+                    <input name="zipCode" type="number"  ng-model="addEvent.newEvent.zipCode"   required>
 
-                    </md-input-container>
-                    <md-input-container flex>
-                        <label>Ville:</label>
-                        <input  type="text" ng-model="addEvent.newEvent.city" required>
-                    </md-input-container>
-                </form>
-            </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Ville:</label>
+                    <input  type="text" ng-model="addEvent.newEvent.city" required>
+                </md-input-container>
+            </form>
         </md-content>
-        <md-input-container class="md-block" flex>
-            <label>Description</label>
-            <textarea ng-model="addEvent.newEvent.description" md-maxlength="2000"  md-select-on-focus required></textarea>
-            <span flex></span>
-        </md-input-container>
-
+        <md-content class="md-padding" flex="60"  layout="column">
+            <md-input-container class="md-block" flex>
+                <label>Description</label>
+                <textarea ng-model="addEvent.newEvent.description" md-maxlength="2000"  md-select-on-focus required></textarea>
+                <span flex></span>
+            </md-input-container>
+        </md-content>
     </div>
     <div layout="row" layout-align="space-between center">
         <md-button ui-sref="addEvent.theme" class="btn btn-block btn-info" flex="33" layout-align="center center">
