@@ -6,6 +6,7 @@ Meteor.startup(() => {
   if (ThemesEvent.find().count() === 0) {
     const themesEvent = [{
       'description': 'Festifs',
+      'icon': '/img/festifs_themes_icon.png',
       'subthemes': [
         {
           'key':'gala',
@@ -22,6 +23,7 @@ Meteor.startup(() => {
       ]
     }, {
       'description': 'Sportifs',
+      'icon': '/img/sportifs_themes_icon.png',
       'subthemes': [
         {
           'key':'match',
@@ -34,6 +36,7 @@ Meteor.startup(() => {
       ]
     }, {
         'description': 'Culturels',
+        'icon': '/img/culturels_themes_icon.png',
         'subthemes': [
             {
                 'key':'fair',
@@ -46,6 +49,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Professionels',
+        'icon': '/img/professionnels_themes_icon.png',
         'subthemes': [
             {
                 'key':'seminar',
@@ -68,6 +72,7 @@ Meteor.startup(() => {
   if (ThemesService.find().count() === 0) {
     const themesService = [{
       'description': 'Maison',
+      'icon': '/img/maison_themes_icon.png',
       'subthemes': [
         {
           'key':'chore',
@@ -96,6 +101,7 @@ Meteor.startup(() => {
       ]
     }, {
       'description': 'Université',
+      'icon': '/img/universite_themes_icon.png',
       'subthemes': [
         {
           'key':'tutoring',
@@ -112,6 +118,7 @@ Meteor.startup(() => {
       ]
     }, {
         'description': 'Véhicule',
+        'icon': '/img/vehicule_themes_icon.png',
         'subthemes': [
             {
                 'key':'carpooling',
@@ -128,6 +135,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Animaux',
+        'icon': '/img/animaux_themes_icon.png',
         'subthemes': [
             {
                 'key':'keeping',
@@ -144,6 +152,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Enfant',
+        'icon': '/img/enfant_themes_icon.png',
         'subthemes': [
             {
                 'key':'keeping',
@@ -156,6 +165,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Soins',
+        'icon': '/img/soins_themes_icon.png',
         'subthemes': [
             {
                 'key':'coaching',
@@ -168,6 +178,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Festivités',
+        'icon': '/img/festivites_themes_icon.png',
         'subthemes': [
             {
                 'key':'Assistance',
@@ -180,6 +191,7 @@ Meteor.startup(() => {
         ]
     }, {
         'description': 'Informatique',
+        'icon': '/img/informatique_themes_icon.png',
         'subthemes': [
             {
                 'key':'problemResolution',
