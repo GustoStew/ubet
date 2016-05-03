@@ -1,56 +1,53 @@
-<div class="form-horizontal">
-    <md-input-container>
-        <label>Type de service</label>
-        <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
-            <md-option ng-repeat="subtheme in addService.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
-        </md-select>
+
+<div flex  layout="row" layout-align="space-between start">
+    <md-content class="md-padding">
+        <div flex="100"  layout="column">
+            <form name="addServiceForm"  layout="column" layout-align="start start">
+                <md-input-container flex>
+                    <label>Type d'évènement:</label>
+                    <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
+                        <md-option ng-repeat="subtheme in addService.themeSelected.subthemes"
+                                   ng-value="subtheme.key">{{subtheme.description}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Titre:</label>
+                    <input type="text"  ng-model="addService.newService.title" required>
+                </md-input-container>
+                <md-content flex>
+
+                    <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+                </md-content>
+                <md-input-container class="md-block">
+                    <label>Adresse:</label>
+                    <input  type="text" ng-model="addService.newService.address" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>ZipCode:</label>
+                    <input name="zipCode" type="number"  ng-model="addService.newService.zipCode"   required>
+
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Ville:</label>
+                    <input  type="text" ng-model="addService.newService.city" required>
+                </md-input-container>
+            </form>
+        </div>
+    </md-content>
+    <md-input-container class="md-block" flex>
+        <label>Description</label>
+        <textarea ng-model="addService.newService.description" md-maxlength="2000"  md-select-on-focus required></textarea>
+        <span flex></span>
     </md-input-container>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Titre* </label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Titre" ng-model="addService.newService.title" required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Adresse* </label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="4 rue Peydavant" ng-model="addService.newService.address">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Code postal* </label>
-        <div class="col-md-2">
-            <input class="form-control" type="number" placeholder="33400" ng-model="addService.newService.zipCode">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Ville* </label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="TALENCE" ng-model="addService.newService.city">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Description* </label>
-        <div class="col-md-2">
-            <textarea class="form-control" rows="5" placeholder="Description de votre service..." ng-model="addService.newService.description"></textarea>
-            <p>* En soignant votre annonce vous augmentez vos chances d'être compris</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="checkbox">
-            <label><input type="checkbox" value="" ng-model="addService.newService.private">Je ne voudrai pas que mon numéro de téléphone soit affiché dans l'annonce</label>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-xs-5 col-xs-offset-0">
-            <a ui-sref="addService.theme" class="btn btn-block btn-info">
-                <span class="glyphicon glyphicon-circle-arrow-left"></span> Etape précédente
-            </a>
-        </div>
-        <div class="col-xs-5 col-xs-offset-2">
-            <a ui-sref="addService.resume" class="btn btn-block btn-info" ng-disabled="!addService.newService.title ||!addService.newService.subtheme || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description">
-                Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
-            </a>
-        </div>
-    </div>
+
 </div>
+<div layout="row" layout-align="space-between center">
+    <md-button ui-sref="addService.theme" class="btn btn-block btn-info" flex="33" layout-align="center center">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> Étape précédente
+    </md-button>
+
+    <md-button ui-sref="addService.resume" class="btn btn-block btn-info" ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.date || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description" flex="33" layout-align="center center">
+        Étape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </md-button>
+</div>
+
