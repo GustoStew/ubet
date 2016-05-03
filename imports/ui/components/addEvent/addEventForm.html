@@ -1,59 +1,53 @@
-<div class="form-horizontal">
-    <md-input-container>
-        <label>Type d'évènement</label>
-        <md-select ng-model="addEvent.newEvent.subtheme" ng-disabled="!addEvent.newEvent.theme">
-            <md-option ng-repeat="subtheme in addEvent.themeSelected.subthemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
-        </md-select>
-    </md-input-container>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Titre</label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Titre" ng-model="addEvent.newEvent.title" required>
-        </div>
+
+    <div flex  layout="row" layout-align="space-between start">
+        <md-content class="md-padding">
+            <div flex="100"  layout="column">
+                <form name="addEventForm"  layout="column" layout-align="start start">
+                    <md-input-container flex>
+                        <label>Type d'évènement:</label>
+                        <md-select ng-model="addEvent.newEvent.subtheme" ng-disabled="!addEvent.newEvent.theme">
+                            <md-option ng-repeat="subtheme in addEvent.themeSelected.subthemes"
+                                       ng-value="subtheme.key">{{subtheme.description}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Titre:</label>
+                        <input type="text"  ng-model="addEvent.newEvent.title" required>
+                    </md-input-container>
+                    <md-content flex>
+
+                        <md-datepicker ng-model="addEvent.newEvent.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+                    </md-content>
+                    <md-input-container class="md-block">
+                        <label>Adresse:</label>
+                        <input  type="text" ng-model="addEvent.newEvent.address" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>ZipCode:</label>
+                        <input name="zipCode" type="number"  ng-model="addEvent.newEvent.zipCode"   required>
+
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Ville:</label>
+                        <input  type="text" ng-model="addEvent.newEvent.city" required>
+                    </md-input-container>
+                </form>
+            </div>
+        </md-content>
+        <md-input-container class="md-block" flex>
+            <label>Description</label>
+            <textarea ng-model="addEvent.newEvent.description" md-maxlength="2000"  md-select-on-focus required></textarea>
+            <span flex></span>
+        </md-input-container>
+
     </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Adresse</label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="4 rue peydavant"
-                   ng-model="addEvent.newEvent.address" required>
-        </div>
-    </div>
-    <md-content>
-        <md-datepicker ng-model="addEvent.newEvent.date"></md-datepicker>
-    </md-content>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Code Postal</label>
-        <div class="col-md-2">
-            <input class="form-control" type="number" placeholder="33000" ng-model="addEvent.newEvent.zipCode"
-                   required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-1 control-label">Ville</label>
-        <div class="col-md-2">
-            <input class="form-control" type="text" placeholder="Bordeaux" ng-model="addEvent.newEvent.city"
-                   required>
-        </div>
-    </div>
-</div>
-<div class="form-horizontal">
-    <div class="form-group">
-        <label class="col-md-1 control-label">Description</label>
-        <div class="col-md-6">
-                <textarea class="form-control" type="text" placeholder="Description"
-                          ng-model="addEvent.newEvent.description" required></textarea>
-        </div>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-xs-5 col-xs-offset-0">
-        <a ui-sref="addEvent.theme" class="btn btn-block btn-info">
+    <div layout="row" layout-align="space-between center">
+        <md-button ui-sref="addEvent.theme" class="btn btn-block btn-info" flex="33" layout-align="center center">
             <span class="glyphicon glyphicon-circle-arrow-left"></span> Etape précédente
-        </a>
-    </div>
-    <div class="col-xs-5 col-xs-offset-2">
-        <a ui-sref="addEvent.resume" class="btn btn-block btn-info" ng-disabled="!addEvent.newEvent.subtheme || !addEvent.newEvent.title ||!addEvent.newEvent.address || !addEvent.newEvent.zipCode || !addEvent.newEvent.city || !addEvent.newEvent.description">
+        </md-button>
+
+        <md-button ui-sref="addEvent.resume" class="btn btn-block btn-info" ng-disabled="!addEvent.newEvent.subtheme || !addEvent.newEvent.title || !addEvent.newEvent.date || !addEvent.newEvent.address || !addEvent.newEvent.zipCode || !addEvent.newEvent.city || !addEvent.newEvent.description" flex="33" layout-align="center center">
             Etape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
-        </a>
+        </md-button>
     </div>
-</div>
+
