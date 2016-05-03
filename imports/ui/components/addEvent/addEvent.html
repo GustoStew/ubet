@@ -1,28 +1,28 @@
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center" >
+    <div flex-xs flex-gt-xs="80" layout="column">
+        <md-card>
 
-        <div id="form-container">
+        <div class="page-header text-center">
+            <h2>Nouvel évènement</h2>
 
-            <div class="page-header text-center">
-                <h2>Nouvel évènement</h2>
-
-                <div id="status-buttons" class="text-center">
-                    <label ui-sref-active="label-success" ui-sref=".theme"><span>1</span> Choix du Thème</label>
-                    <label ui-sref-active="label-success" ui-sref=".form"><span>2</span> Saisie de la description</label>
-                    <label ui-sref-active="label-success" ui-sref=".resume"><span>3</span> Terminer !</label>
-                </div>
-
+            <div id="status-buttons" class="text-center">
+                <label ui-sref-active="label-success" ui-sref=".theme"><span>1</span> Choix du Thème</label>
+                <label ui-sref-active="label-success" ui-sref=".form"><span>2</span> Saisie de la description</label>
+                <label ui-sref-active="label-success" ui-sref=".resume"><span>3</span> Terminer !</label>
             </div>
-
-            <form id="signup-form" ng-submit="addEvent.submit()">
-
-                <div id="form-views" ui-view></div>
-            </form>
 
         </div>
 
+        <md-divider class="divider"></md-divider>
 
+        <form id="signup-form" ng-submit="addEvent.submit()">
+
+            <div id="form-views" ui-view></div>
+        </form>
+
+        </md-card>
     </div>
-</div>
+</md-content>
+
 
 

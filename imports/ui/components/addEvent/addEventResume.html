@@ -6,12 +6,15 @@
     <h4>Adresse :</h4>
     <p>{{addEvent.newEvent.address}}</p>
     <h4>Contact :</h4>
-    <button type="submit" class="btn btn-success">Publier</button>
 </div>
-<div class="form-group row">
-    <div class="col-xs-5 col-xs-offset-3">
-        <a ui-sref="addEvent.form" class="btn btn-block btn-info">
-            <span class="glyphicon glyphicon-circle-arrow-left"></span> Etape précédente
-        </a>
-    </div>
+
+
+
+
+<div layout="row" layout-align="center">
+    <md-button class="md-raised" type="submit" ui-sref="userEvents">Publier</md-button>
+</div>
+
+<div layout="row" layout-align="center">
+    <md-button class="md-raised" ui-sref="addEvent.form" >Etape précédente</md-button>
 </div>

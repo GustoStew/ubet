@@ -42,8 +42,8 @@
         <md-content>
             <md-list>
                 <md-list-item>
-                    <md-icon  class="material-icons">home</md-icon>
-                    <md-button ui-sref="home">Accueil</md-button>
+                    <md-icon  class="material-icons nav">home</md-icon>
+                    <md-button ui-sref="home" ng-click="navigation.closeSideNavPanel()">Accueil</md-button>
                 </md-list-item>
             </md-list>
             <md-divider></md-divider>
@@ -51,26 +51,26 @@
         <md-list>
             <md-subheader class="md-no-sticky">Services</md-subheader>
             <md-list-item>
-                <md-icon  class="material-icons">publish</md-icon>
-                <md-button ui-sref="userServices">Mes services</md-button>
+                <md-icon  class="material-icons nav">publish</md-icon>
+                <md-button ui-sref="userServices" ng-click="navigation.closeSideNavPanel()">Mes services</md-button>
                 <div class="md-secondary">2</div>
             </md-list-item>
             <md-list-item>
-                <md-icon  class="material-icons">supervisor_account</md-icon>
-                <md-button ui-sref="listServices">Tous les services</md-button>
+                <md-icon  class="material-icons nav">supervisor_account</md-icon>
+                <md-button ui-sref="listServices" ng-click="navigation.closeSideNavPanel()">Tous les services</md-button>
                 <div class="md-secondary">20+</div>
             </md-list-item>
 
             <md-divider></md-divider>
             <md-subheader class="md-no-sticky">Événements</md-subheader>
             <md-list-item>
-                <md-icon  class="material-icons">&#xE878;</md-icon>
-                <md-button ui-sref="userEvents">Mes événements</md-button>
+                <md-icon  class="material-icons nav">&#xE878;</md-icon>
+                <md-button ui-sref="userEvents" ng-click="navigation.closeSideNavPanel()">Mes événements</md-button>
                 <div class="md-secondary">2</div>
             </md-list-item>
             <md-list-item>
-                <md-icon  class="material-icons">view_list</md-icon>
-                <md-button ui-sref="listEvents">Tous les évenements</md-button>
+                <md-icon  class="material-icons nav">view_list</md-icon>
+                <md-button ui-sref="listEvents" ng-click="navigation.closeSideNavPanel()">Tous les évenements</md-button>
                 <div class="md-secondary">20+</div>
             </md-list-item>
         </md-list>
