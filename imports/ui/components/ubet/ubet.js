@@ -14,7 +14,7 @@ import { name as UserServices } from '../userServices/userServices';
 import { name as AddService } from '../addService/addService';
 import { name as ListEvents} from '../listEvents/listEvents';
 import { name as ListServices} from '../listServices/listServices';
-
+import { name as DetailsService} from '../detailsService/detailsService';
 import { name as DetailsEvent} from '../detailsEvent/detailsEvent';
 
 class Ubet {}
@@ -37,6 +37,7 @@ export default angular.module(name, [
     ListServices,
     ngMaterial,
     DetailsEvent,
+    DetailsService,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,

@@ -45,7 +45,7 @@
                             <i class="material-icons md-light md-36 md-margin">email</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
-                                <input id="email" class="form-control" type="email" ng-model="register.credentials.email" required>
+                                <input id="email" class="form-control" name = "email" type="email" ng-model="register.credentials.email" required>
                             </md-input-container>
                         </div>
 
@@ -74,7 +74,7 @@
                             <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="password">Password</label>
-                                <input class="form-control" id="password" type="password" ng-model="register.credentials.password" required>
+                                <input class="form-control" id="password" name="password" type="password" ng-model="register.credentials.password" required>
                             </md-input-container>
                         </div>
 
