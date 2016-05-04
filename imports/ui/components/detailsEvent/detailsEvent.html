@@ -1,0 +1,18 @@
+<div layout="column" flex id="content" role="main">
+    <md-content layout="vertical" flex id="content">
+        <div layout="row" layout-align="center center" layout-fill>
+            <md-whiteframe class="md-whiteframe-z1" layout="column" flex="50" layout-padding>
+                <md-content>
+                    <h2>{{detailsEvent.event.title}}</h2>
+                    <label>Thème : {{detailsEvent.getTheme().description}}</label>
+                    <label>Type d'évènement : {{detailsEvent.getSubTheme().description}}</label>
+                    <label>Date : {{detailsEvent.event.date | date:'dd-MM-yyyy'}}</label>
+                    <label>Description : {{detailsEvent.event.description}}</label>
+                    <label>Créateur : {{detailsEvent.getOwner().profile.lastName}}</label>
+                    <md-button ng-show="detailsEvent.isOwner()">Modifier</md-button>
+                </md-content>
+                <img src="http://img8.weemove.com/ressources/images/evenement/evenement_869223/flyer_869223.jpg" class="md-card-image">
+            </md-whiteframe>
+        </div>
+    </md-content>
+</div>

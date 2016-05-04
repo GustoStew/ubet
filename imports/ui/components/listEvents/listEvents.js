@@ -5,6 +5,8 @@ import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
 import { ThemesEvent} from '../../../api/themesEvent';
+import { SubThemesEvent} from '../../../api/subThemesEvent';
+
 
 import './listEvents.html';
 
@@ -18,11 +20,15 @@ class ListEvents {
 
         this.searchText = '';
 
-        this.themeID = '';
+        this.theme = '';
 
-        this.subscribe('events', this.getReactively('themeID'));
+        this.subtheme = '';
+
+        this.subscribe('events');
 
         this.subscribe('themesEvent');
+
+        this.subscribe('subThemesEvent');
 
         this.helpers({
             events() {
@@ -46,15 +52,15 @@ class ListEvents {
             themes() {
                 return ThemesEvent.find();
             },
-            themeSelected() {
-                return ThemesEvent.findOne({
-                    _id: this.getReactively('themeID')
+            subThemes() {
+                return SubThemesEvent.find({
+                    theme: this.getReactively('theme')
                 });
             }
         });
     }
     clear() {
-        this.themeID = '';
+        this.theme = '';
         this.searchText = '';
         this.subtheme = '';
     }

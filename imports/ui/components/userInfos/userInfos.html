@@ -18,9 +18,9 @@
                         <div layout-gt-sm="row">
                             <md-input-container>
                                 <label>Civilité</label>
-                                <md-select ng-model="register.credentials.civility" required>
-                                    <md-option type="radio" ng-model="userInfos.currentUser.profile.civility" value="Monsieur" ng-disabled="!userInfos.enableModification">Mme.</md-option>
-                                    <md-option type="radio" ng-model="userInfos.currentUser.profile.civility" value="Madame" ng-disabled="!userInfos.enableModification">M.</md-option>
+                                <md-select ng-model="userInfos.currentUser.profile.civility" ng-disabled="!userInfos.enableModification">
+                                    <md-option value="Monsieur">Mme.</md-option>
+                                    <md-option value="Madame">M.</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
