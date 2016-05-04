@@ -7,67 +7,24 @@ import {SubThemesService} from '../api/subThemesService';
 
 Meteor.startup(() => {
     if (ThemesEvent.find().count() === 0) {
-        const themesEvent = [{
-            'key': 'party',
-            'description': 'Festifs',
-            'icon': '/img/festifs_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'gala',
-                    'description': 'Gala / bal'
-                },
-                {
-                    'key': 'bar',
-                    'description': 'Bar / pub'
-                },
-                {
-                    'key': 'concert',
-                    'description': 'Concerts / Spectacles'
-                }
-            ]
-        }, {
-            'key': 'sport',
-            'description': 'Sportifs',
-            'icon': '/img/sportifs_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'match',
-                    'description': 'Matchs'
-                },
-                {
-                    'key': 'training',
-                    'description': 'Entrainement'
-                }
-            ]
-        }, {
-            'key': 'culture',
-            'description': 'Culturels',
-            'icon': '/img/culturels_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'fair',
-                    'description': 'Salons / Expositions / Foires...'
-                },
-                {
-                    'key': 'art',
-                    'description': 'Théatre / Cinéma / Danse...'
-                }
-            ]
-        }, {
-            'key': 'pro',
-            'description': 'Professionels',
-            'icon': '/img/professionnels_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'seminar',
-                    'description': 'Journée entreprise / Séminaires / Conférences '
-                },
-                {
-                    'key': 'debate',
-                    'description': 'Débats / Tables rondes...'
-                }
-            ]
-        }
+        const themesEvent = [
+            {
+                'key': 'party',
+                'description': 'Festifs',
+                'icon': '/img/festifs_themes_icon.png'
+            }, {
+                'key': 'sport',
+                'description': 'Sportifs',
+                'icon': '/img/sportifs_themes_icon.png'
+            }, {
+                'key': 'culture',
+                'description': 'Culturels',
+                'icon': '/img/culturels_themes_icon.png'
+            }, {
+                'key': 'pro',
+                'description': 'Professionels',
+                'icon': '/img/professionnels_themes_icon.png'
+            }
         ];
 
         themesEvent.forEach((theme) => {
@@ -126,143 +83,35 @@ Meteor.startup(() => {
         const themesService = [{
             'key': 'home',
             'description': 'Maison',
-            'icon': '/img/maison_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'chore',
-                    'description': 'Aide-ménagère (Repassage, Nettoyage...)'
-                },
-                {
-                    'key': 'dyi',
-                    'description': 'Bricolage (Réparations, Monter un meuble en kit…)'
-                },
-                {
-                    'key': 'shopping',
-                    'description': 'Courses'
-                },
-                {
-                    'key': 'decoration',
-                    'description': 'Décoration'
-                },
-                {
-                    'key': 'move',
-                    'description': 'Déménagement'
-                },
-                {
-                    'key': 'maintenance',
-                    'description': 'Travaux et entretien (Peinture, plomberie, jardinage….)'
-                }
-            ]
+            'icon': '/img/maison_themes_icon.png'
         }, {
             'key': 'school',
             'description': 'Université',
-            'icon': '/img/universite_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'tutoring',
-                    'description': 'Tutorat'
-                },
-                {
-                    'key': 'privateLessons',
-                    'description': 'Cours particuliers (Musique, langues...)'
-                },
-                {
-                    'key': 'coaching',
-                    'description': 'Coaching (Rédiger CV, conseils entretien...)'
-                }
-            ]
+            'icon': '/img/universite_themes_icon.png'
         }, {
             'key': 'car',
             'description': 'Véhicule',
-            'icon': '/img/vehicule_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'carpooling',
-                    'description': 'covoiturage'
-                },
-                {
-                    'key': 'cleaning',
-                    'description': 'Nettoyage'
-                },
-                {
-                    'key': 'repairing',
-                    'description': 'Réparations (Changement de pièces, Vidange …)'
-                }
-            ]
+            'icon': '/img/vehicule_themes_icon.png'
         }, {
             'key': 'pet',
             'description': 'Animaux',
-            'icon': '/img/animaux_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'keeping',
-                    'description': 'Garde d’animaux'
-                },
-                {
-                    'key': 'walking',
-                    'description': 'Promenade d’animaux'
-                },
-                {
-                    'key': 'grooming',
-                    'description': 'Toilettage (Lavage, Soins, Coiffure…)'
-                }
-            ]
+            'icon': '/img/animaux_themes_icon.png'
         }, {
             'key': 'children',
             'description': 'Enfant',
-            'icon': '/img/enfant_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'keeping',
-                    'description': 'Garde d’enfants'
-                },
-                {
-                    'key': 'school',
-                    'description': 'Accompagnements école'
-                }
-            ]
+            'icon': '/img/enfant_themes_icon.png'
         }, {
             'key': 'healthcare',
             'description': 'Soins',
-            'icon': '/img/soins_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'coaching',
-                    'description': 'Coaching (Cuisine, Sport..)'
-                },
-                {
-                    'key': 'beauty',
-                    'description': 'Soins beauté (Massage, coiffure, maquillage…)'
-                }
-            ]
+            'icon': '/img/soins_themes_icon.png'
         }, {
             'key': 'party',
             'description': 'Festivités',
             'icon': '/img/festivites_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'Assistance',
-                    'description': 'Aide à la préparation'
-                },
-                {
-                    'key': 'musicalEntertainmenet',
-                    'description': 'Animation musicale'
-                }
-            ]
         }, {
             'key': 'it',
             'description': 'Informatique',
-            'icon': '/img/informatique_themes_icon.png',
-            'subthemes': [
-                {
-                    'key': 'problemResolution',
-                    'description': 'Résolution de problèmes (formatage…)'
-                },
-                {
-                    'key': 'office',
-                    'description': 'Bureautique (Rédaction mémoire…)'
-                }
-            ]
+            'icon': '/img/informatique_themes_icon.png'
         }
         ];
 
@@ -273,105 +122,105 @@ Meteor.startup(() => {
 
     if (SubThemesService.find().count() === 0) {
         const subThemesService = [
-                {
-                    'theme': 'home',
-                    'key': 'chore',
-                    'description': 'Aide-ménagère (Repassage, Nettoyage...)'
-                },
-                {
-                    'theme': 'home',
-                    'key': 'dyi',
-                    'description': 'Bricolage (Réparations, Monter un meuble en kit…)'
-                },
-                {
-                    'theme': 'home',
-                    'key': 'shopping',
-                    'description': 'Courses'
-                },
-                {
-                    'theme': 'home',
-                    'key': 'decoration',
-                    'description': 'Décoration'
-                },
-                {
-                    'theme': 'home',
-                    'key': 'move',
-                    'description': 'Déménagement'
-                },
-                {
-                    'theme': 'home',
-                    'key': 'maintenance',
-                    'description': 'Travaux et entretien (Peinture, plomberie, jardinage….)'
-                }, {
-                    'theme': 'school',
-                    'key': 'tutoring',
-                    'description': 'Tutorat'
-                },
-                {
-                    'theme': 'school',
-                    'key': 'privateLessons',
-                    'description': 'Cours particuliers (Musique, langues...)'
-                }, {
-                    'theme': 'school',
-                    'key': 'coaching',
-                    'description': 'Coaching (Rédiger CV, conseils entretien...)'
-                }, {
-                    'theme': 'car',
-                    'key': 'carpooling',
-                    'description': 'covoiturage'
-                }, {
-                    'theme': 'car',
-                    'key': 'cleaning',
-                    'description': 'Nettoyage'
-                }, {
-                    'theme': 'car',
-                    'key': 'repairing',
-                    'description': 'Réparations (Changement de pièces, Vidange …)'
-                }, {
-                    'theme': 'pet',
-                    'key': 'keeping',
-                    'description': 'Garde d’animaux'
-                }, {
-                    'theme': 'pet',
-                    'key': 'walking',
-                    'description': 'Promenade d’animaux'
-                }, {
-                    'theme': 'pet',
-                    'key': 'grooming',
-                    'description': 'Toilettage (Lavage, Soins, Coiffure…)'
-                }, {
-                    'theme': 'children',
-                    'key': 'keeping',
-                    'description': 'Garde d’enfants'
-                }, {
-                    'theme': 'children',
-                    'key': 'school',
-                    'description': 'Accompagnements école'
-                }, {
-                    'theme': 'healthcare',
-                    'key': 'coaching',
-                    'description': 'Coaching (Cuisine, Sport..)'
-                }, {
-                    'theme': 'healthcare',
-                    'key': 'beauty',
-                    'description': 'Soins beauté (Massage, coiffure, maquillage…)'
-                }, {
-                    'theme': 'party',
-                    'key': 'Assistance',
-                    'description': 'Aide à la préparation'
-                }, {
-                    'theme': 'party',
-                    'key': 'musicalEntertainmenet',
-                    'description': 'Animation musicale'
-                }, {
-                    'theme': 'it',
-                    'key': 'problemResolution',
-                    'description': 'Résolution de problèmes (formatage…)'
-                }, {
-                    'theme': 'it',
-                    'key': 'office',
-                    'description': 'Bureautique (Rédaction mémoire…)'
-                }
+            {
+                'theme': 'home',
+                'key': 'chore',
+                'description': 'Aide-ménagère (Repassage, Nettoyage...)'
+            },
+            {
+                'theme': 'home',
+                'key': 'dyi',
+                'description': 'Bricolage (Réparations, Monter un meuble en kit…)'
+            },
+            {
+                'theme': 'home',
+                'key': 'shopping',
+                'description': 'Courses'
+            },
+            {
+                'theme': 'home',
+                'key': 'decoration',
+                'description': 'Décoration'
+            },
+            {
+                'theme': 'home',
+                'key': 'move',
+                'description': 'Déménagement'
+            },
+            {
+                'theme': 'home',
+                'key': 'maintenance',
+                'description': 'Travaux et entretien (Peinture, plomberie, jardinage….)'
+            }, {
+                'theme': 'school',
+                'key': 'tutoring',
+                'description': 'Tutorat'
+            },
+            {
+                'theme': 'school',
+                'key': 'privateLessons',
+                'description': 'Cours particuliers (Musique, langues...)'
+            }, {
+                'theme': 'school',
+                'key': 'coaching',
+                'description': 'Coaching (Rédiger CV, conseils entretien...)'
+            }, {
+                'theme': 'car',
+                'key': 'carpooling',
+                'description': 'covoiturage'
+            }, {
+                'theme': 'car',
+                'key': 'cleaning',
+                'description': 'Nettoyage'
+            }, {
+                'theme': 'car',
+                'key': 'repairing',
+                'description': 'Réparations (Changement de pièces, Vidange …)'
+            }, {
+                'theme': 'pet',
+                'key': 'keeping',
+                'description': 'Garde d’animaux'
+            }, {
+                'theme': 'pet',
+                'key': 'walking',
+                'description': 'Promenade d’animaux'
+            }, {
+                'theme': 'pet',
+                'key': 'grooming',
+                'description': 'Toilettage (Lavage, Soins, Coiffure…)'
+            }, {
+                'theme': 'children',
+                'key': 'keeping',
+                'description': 'Garde d’enfants'
+            }, {
+                'theme': 'children',
+                'key': 'school',
+                'description': 'Accompagnements école'
+            }, {
+                'theme': 'healthcare',
+                'key': 'coaching',
+                'description': 'Coaching (Cuisine, Sport..)'
+            }, {
+                'theme': 'healthcare',
+                'key': 'beauty',
+                'description': 'Soins beauté (Massage, coiffure, maquillage…)'
+            }, {
+                'theme': 'party',
+                'key': 'Assistance',
+                'description': 'Aide à la préparation'
+            }, {
+                'theme': 'party',
+                'key': 'musicalEntertainmenet',
+                'description': 'Animation musicale'
+            }, {
+                'theme': 'it',
+                'key': 'problemResolution',
+                'description': 'Résolution de problèmes (formatage…)'
+            }, {
+                'theme': 'it',
+                'key': 'office',
+                'description': 'Bureautique (Rédaction mémoire…)'
+            }
 
         ];
 
