@@ -60,14 +60,8 @@
                             </md-input-container>
                         </div>
 
-                        <div layout="row" layout-align="center" ng-if="userInfos.modifSuccess" class=" space-top text-center center">
-                            <md-button ng-click="userInfos.resetSuccess()" type="button" class="md-raise" data-dismiss="alert" aria-label="Close">
-                                Modification effectuée !
-                            </md-button>
-                        </div>
-
                         <div layout="row" layout-align="center" class="space-top text-center center" ng-show="userInfos.enableModification">
-                            <md-button ng-click="userInfos.modify()" class="md-raised done">
+                            <md-button ng-click="userInfos.modify(); userInfos.show()" class="md-raised done">
                                 <i class="material-icons left">done</i> Valider
                             </md-button>
                         </div>
