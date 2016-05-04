@@ -32,7 +32,6 @@
             <input  type="text" ng-model="addService.newService.city" required>
         </md-input-container>
     </md-content>
-    <md-checkbox ng-model="addService.newService.showPhone" ng-true-value="false" ng-false-value="true">Je ne voudrais pas que mon téléphone soit affiché dans l'annonce</md-checkbox>
 </div>
 
 <md-content class="md-padding description" flex="100"  layout="column">
@@ -41,6 +40,7 @@
         <textarea ng-model="addService.newService.description" md-maxlength="2000"  md-select-on-focus required></textarea>
         <span flex></span>
     </md-input-container>
+    <md-checkbox ng-model="addService.newService.showPhone" ng-true-value="false" ng-false-value="true">Je ne voudrais pas que mon téléphone soit affiché dans l'annonce</md-checkbox>
 </md-content>
 
 <div layout="row" layout-align="center">
