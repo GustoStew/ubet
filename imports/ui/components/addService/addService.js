@@ -27,7 +27,7 @@ class AddService {
         this.subscribe('subThemesService');
 
         this.newService = {
-            date: new Date()
+            showPhone : 'true'
         };
 
         this.helpers({
