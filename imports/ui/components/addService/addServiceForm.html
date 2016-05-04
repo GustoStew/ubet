@@ -4,7 +4,7 @@
         <div flex="100"  layout="column">
             <form name="addServiceForm"  layout="column" layout-align="start start">
                 <md-input-container flex>
-                    <label>Type d'évènement:</label>
+                    <label>Type du service:</label>
                     <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
                         <md-option ng-repeat="subtheme in addService.subThemes"
                                    ng-value="subtheme.key">{{subtheme.description}}</md-option>
