@@ -16,7 +16,6 @@ import { name as ListEvents} from '../listEvents/listEvents';
 import { name as ListServices} from '../listServices/listServices';
 import { name as DetailsService} from '../detailsService/detailsService';
 import { name as DetailsEvent} from '../detailsEvent/detailsEvent';
-import { name as ConsultEvent} from '../consultEvent/consultEvent';
 
 class Ubet {}
 
@@ -39,7 +38,6 @@ export default angular.module(name, [
     ngMaterial,
     DetailsEvent,
     DetailsService,
-    ConsultEvent,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
