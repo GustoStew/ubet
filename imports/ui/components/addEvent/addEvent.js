@@ -24,12 +24,10 @@ class AddEvent {
         this.$state = $state;
 
         this.subscribe('themesEvent');
+
         this.subscribe('subThemesEvent');
 
-
-        this.newEvent = {
-            date: new Date()
-        };
+        this.newEvent = {};
 
         this.helpers({
             themes() {

@@ -38,7 +38,14 @@
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button ui-sref="detailsEvent({ eventId: event._id })">Détails</md-button>
+                    <md-button class="md-icon-button" aria-label="Details" ui-sref="consultEvent({ eventId: event._id })">
+                        <md-icon class="material-icons">menu</md-icon>
+                        <md-tooltip>Détails</md-tooltip>
+                    </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon class="material-icons">favorite</md-icon>
+                    <md-tooltip>Liker</md-tooltip>
+                </md-button>
                 </md-card-actions>
             </md-card>
         </div>
