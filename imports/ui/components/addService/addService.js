@@ -26,9 +26,7 @@ class AddService {
         this.subscribe('themesService');
         this.subscribe('subThemesService');
 
-        this.newService = {
-            date: new Date()
-        };
+        this.newService = {};
 
         this.helpers({
 
