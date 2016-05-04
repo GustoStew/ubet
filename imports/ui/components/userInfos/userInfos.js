@@ -5,12 +5,13 @@ import uiRouter from 'angular-ui-router';
 import './userInfos.html';
 
 class UserInfos {
-    constructor($scope, $reactive) {
+    constructor($scope, $reactive, $mdDialog) {
         'ngInject';
 
         $reactive(this).attach($scope);
 
         // this.subscribe('userData');
+        this.mdDialog = $mdDialog;
 
         this.helpers({
             currentUser(){
@@ -24,8 +25,18 @@ class UserInfos {
             modifSuccess(){
                 return false;
             }
+
+
         });
     }
+
+    show(){
+
+        this.mdDialog.show(
+            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Modification Enregistré.').ariaLabel('Alert Dialog Demo').ok('Ok!')
+        );
+    }
+
 
     modify() {
         Meteor.users.update(Meteor.userId(), {
