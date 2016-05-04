@@ -14,19 +14,16 @@ class DetailsEvent {
     constructor($stateParams, $scope, $reactive) {
         'ngInject';
 
-        $reactive(this).attach($scope);
-
-        this.eventId = $stateParams.eventId;
+        $scope.viewModel(this);
 
         this.subscribe('events');
-        this.subscribe('users');
         this.subscribe('themesEvent');
         this.subscribe('subThemesEvent');
 
         this.helpers({
             event() {
                 return Events.findOne({
-                    _id: $stateParams.eventId
+                    _id: this.eventId
                 });
             }
         });
@@ -75,30 +72,16 @@ class DetailsEvent {
 const name = 'detailsEvent';
 
 // create a module
+
 export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-        templateUrl: `imports/ui/components/${name}/${name}.html`,
-        controllerAs: name,
-        controller: DetailsEvent
-    })
-    .config(config);
+    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    controllerAs: name,
+    bindings: {
+        event: '<'
+    },
+    controller: DetailsEvent
+});
 
-function config($stateProvider) {
-    'ngInject';
-
-    $stateProvider.state('detailsEvent', {
-        url: '/events/:eventId',
-        template: '<details-event></details-event>',
-        resolve: {
-            currentUser($q) {
-                if (Meteor.userId() === null) {
-                    return $q.reject('AUTH_REQUIRED');
-                } else {
-                    return $q.resolve();
-                }
-            }
-        }
-    });
-}
