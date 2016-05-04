@@ -31,6 +31,11 @@ class AddService {
         };
 
         this.helpers({
+
+            currentUser(){
+                return Meteor.user();
+            },
+
             themes() {
                 return ThemesService.find();
             },

@@ -53,25 +53,24 @@
             <md-list-item>
                 <md-icon  class="material-icons nav">publish</md-icon>
                 <md-button ui-sref="userServices" ng-click="navigation.closeSideNavPanel()">Mes services</md-button>
-                <div class="md-secondary">2</div>
+                <div class="md-secondary">{{navigation.nbMyServices}}</div>
             </md-list-item>
             <md-list-item>
                 <md-icon  class="material-icons nav">supervisor_account</md-icon>
                 <md-button ui-sref="listServices" ng-click="navigation.closeSideNavPanel()">Tous les services</md-button>
-                <div class="md-secondary">20+</div>
+                <div class="md-secondary">{{navigation.nbServices}}</div>
             </md-list-item>
-
             <md-divider></md-divider>
             <md-subheader class="md-no-sticky">Événements</md-subheader>
             <md-list-item>
                 <md-icon  class="material-icons nav">&#xE878;</md-icon>
                 <md-button ui-sref="userEvents" ng-click="navigation.closeSideNavPanel()">Mes événements</md-button>
-                <div class="md-secondary">2</div>
+                <div class="md-secondary">{{navigation.nbMyEvents}}</div>
             </md-list-item>
             <md-list-item>
                 <md-icon  class="material-icons nav">view_list</md-icon>
                 <md-button ui-sref="listEvents" ng-click="navigation.closeSideNavPanel()">Tous les évenements</md-button>
-                <div class="md-secondary">20+</div>
+                <div class="md-secondary">{{navigation.nbEvents}}</div>
             </md-list-item>
         </md-list>
     </md-sidenav>
