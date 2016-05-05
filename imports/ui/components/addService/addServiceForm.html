@@ -12,7 +12,7 @@
             <label>Titre:</label>
             <input type="text"  ng-model="addService.newService.title" required>
         </md-input-container>
-        <label class="date">Date de l'événement</label>
+        <label class="date">Date de l'événement (facultatif) :</label>
         <md-content flex>
             <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
         </md-content>
@@ -48,7 +48,7 @@
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Étape précédente
     </md-button>
 
-    <md-button ui-sref="addService.resume" class="md-raised precedent" ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.date || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description" layout-align="center center">
+    <md-button ui-sref="addService.resume" class="md-raised precedent" ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description" layout-align="center center">
         Étape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </md-button>
 </div>
