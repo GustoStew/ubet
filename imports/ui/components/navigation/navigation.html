@@ -60,6 +60,11 @@
                 <md-button ui-sref="listServices" ng-click="navigation.closeSideNavPanel()">Tous les services</md-button>
                 <div class="md-secondary">{{navigation.nbServices}}</div>
             </md-list-item>
+            <md-list-item>
+                <md-icon  class="material-icons nav">hourglass_empty</md-icon>
+                <md-button ui-sref="userRequests" ng-click="navigation.closeSideNavPanel()">Mes demandes</md-button>
+                <div class="md-secondary">{{navigation.nbServices}}</div>
+            </md-list-item>
             <md-divider></md-divider>
             <md-subheader class="md-no-sticky">Événements</md-subheader>
             <md-list-item>

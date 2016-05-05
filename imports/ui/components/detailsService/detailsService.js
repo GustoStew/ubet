@@ -8,6 +8,8 @@ import './detailsService.html';
 import { Services } from '../../../api/services';
 import { ThemesService} from '../../../api/themesService';
 import { SubThemesService} from '../../../api/subThemesService';
+import { name as RequestForm} from '../requestForm/requestForm';
+import { name as RequestResponse} from '../requestResponse/requestResponse';
 
 
 class DetailsService {
@@ -77,7 +79,9 @@ const name = 'detailsService';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    uiRouter
+    uiRouter,
+    RequestForm,
+    RequestResponse
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,

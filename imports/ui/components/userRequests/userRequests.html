@@ -1,0 +1,97 @@
+<div flex>
+    <md-content>
+        <h3>Mes demandes</h3>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="En attente">
+                <md-content>
+                    <md-card ng-repeat="request in userRequests.requests | filter:{onWait: true}">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">
+                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                                </span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <p>En échange du service <b>{{userRequests.getService(request.serviceId).title}}</b>
+                                (<a ui-sref="detailsService({ serviceId: request.serviceId })">
+                                    Voir détails
+                                </a>)
+                            </p>
+                            <p>Vous avez proposé ceci :</p>
+                            <p><b>Titre : </b>{{request.title}}</p>
+                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                            <p><b>Commentaires : </b>{{request.description}}</p>
+                        </md-card-content>
+                    </md-card>
+                </md-content>
+                <p ng-if="(userRequests.requests | filter:{onWait: true}).length <= 0">
+                    Vous n'avez pas de demandes en attente
+                </p>
+            </md-tab>
+            <md-tab label="Confirmées">
+                <md-content>
+                    <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:true}">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">
+                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                                </span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <h4>L'échange :</h4>
+                            <p><b>Titre : </b>{{request.title}}</p>
+                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                            <p><b>Commentaires : </b>{{request.description}}</p>
+                            <h4>contre</h4>
+                            <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                            <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                            </p>
+                            <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                            </p>
+                            <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                            <h4>a été accepté</h4>
+                        </md-card-content>
+                    </md-card>
+                </md-content>
+                <p ng-if="(userRequests.requests | filter:{onWait: false, confirm:true}).length <= 0">
+                    Vous n'avez pas de demandes confirmées
+                </p>
+            </md-tab>
+            <md-tab label="Refusées">
+                <md-content>
+                    <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:false}">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">
+                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                                </span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <h4>L'échange :</h4>
+                            <p><b>Titre : </b>{{request.title}}</p>
+                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                            <p><b>Commentaires : </b>{{request.description}}</p>
+                            <h4>contre</h4>
+                            <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                            <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                            </p>
+                            <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                            </p>
+                            <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                            <h4>a été refusé</h4>
+                        </md-card-content>
+                    </md-card>
+                </md-content>
+                <p ng-if="(userRequests.requests | filter:{onWait: false, confirm:false}).length <= 0">
+                    Vous n'avez pas de demandes refusées
+                </p>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

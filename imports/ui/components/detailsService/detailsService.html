@@ -16,3 +16,5 @@
         </div>
     </md-content>
 </div>
+<request-form service="detailsService.service" ng-hide="detailsService.isOwner()"></request-form>
+<request-response service="detailsService.service" ng-show="detailsService.isOwner()"></request-response>

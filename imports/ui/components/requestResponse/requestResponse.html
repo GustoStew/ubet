@@ -1,0 +1,27 @@
+<div flex>
+    <md-content>
+        <h3>Propositions de troc : </h3>
+        <md-card ng-repeat="request in requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}">
+            <md-card-content>
+                <p>{{requestResponse.getRequestOwner(request.owner) | displayNameFilter}} vous propose ceci :</p>
+                <p><b>Titre : </b>{{request.title}}</p>
+                <p ng-show="request.theme"><b>Thème : </b>{{requestResponse.getTheme(request.theme).description}}</p>
+                <p ng-show="request.subtheme"><b>Type de service : </b>{{requestResponse.getSubTheme(request.subtheme, request.theme).description}}</p>
+                <p><b>Commentaires : </b>{{request.description}}</p>
+            </md-card-content>
+            <md-card-actions>
+                <md-button class="md-icon-button" aria-label="Accept" ng-click="requestResponse.accept(requestResponse.service._id, request._id, request.owner)">
+                    <md-icon class="material-icons">done</md-icon>
+                    <md-tooltip>Accepter</md-tooltip>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Decline" ng-click="requestResponse.decline(request._id)">
+                    <md-icon class="material-icons">block</md-icon>
+                    <md-tooltip>Refuser</md-tooltip>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <p ng-if="(requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}).length <= 0">
+            Vous n'avez pas de propositions pour ce service
+        </p>
+    </md-content>
+</div>

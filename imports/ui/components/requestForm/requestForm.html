@@ -1,0 +1,37 @@
+<div flex layout="row" layout-align="center">
+    <md-content class="md-padding" flex="50" layout="column">
+        <h3>Faire une proposition : </h3>
+        <md-input-container flex>
+            <label>Titre:</label>
+            <input type="text"  ng-model="requestForm.newRequest.title" required>
+        </md-input-container>
+        <div layout="row">
+            <md-input-container flex>
+                <label>Thème:</label>
+                <md-select ng-model="requestForm.newRequest.theme">
+                    <md-option ng-repeat="theme in requestForm.themes"
+                               ng-value="theme.key">{{theme.description}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container flex>
+                <label>Type de service:</label>
+                <md-select ng-model="requestForm.newRequest.subtheme" ng-disabled="!requestForm.newRequest.theme">
+                    <md-option ng-repeat="subtheme in requestForm.subThemes"
+                               ng-value="subtheme.key">{{subtheme.description}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <md-input-container class="md-block" flex>
+            <label>Commentaires:</label>
+            <textarea ng-model="requestForm.newRequest.description" md-maxlength="2000" md-select-on-focus
+                      required></textarea>
+            <span flex></span>
+        </md-input-container>
+        <md-button ng-click="requestForm.submit()" class="md-raised" layout-align="center center"
+                   ng-disabled="!requestForm.newRequest.description || !requestForm.newRequest.title">
+            Envoyer la proposition
+        </md-button>
+    </md-content>
+</div>
+
+
