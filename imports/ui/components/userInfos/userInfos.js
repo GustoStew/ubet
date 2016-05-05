@@ -10,30 +10,26 @@ class UserInfos {
 
         $reactive(this).attach($scope);
 
-        // this.subscribe('userData');
         this.mdDialog = $mdDialog;
+
+        this.enableModification = false;
 
         this.helpers({
             currentUser(){
                 return Meteor.user();
-            },
-
-            enableModification (){
-                return false;
-            },
-
-            modifSuccess(){
-                return false;
             }
-
-
         });
     }
 
-    show(){
-
+    showSuccess(){
         this.mdDialog.show(
-            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Modification Enregistré.').ariaLabel('Alert Dialog Demo').ok('Ok!')
+            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Modification Enregistrée.').ariaLabel('Alert Dialog Demo').ok('Ok!')
+        );
+    }
+
+    showFailure(){
+        this.mdDialog.show(
+            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Une erreur est survenue lors de la modification.').ariaLabel('Alert Dialog Demo').ok('Ok!')
         );
     }
 
@@ -50,21 +46,17 @@ class UserInfos {
         }, (error) => {
             if (error) {
                 console.log('Oops, unable to update infos...');
+                this.showFailure();
             } else {
                 console.log('Done!');
+                this.showSuccess();
                 this.enableModification = false;
-                this.modifSuccess = true;
             }
         });
     }
 
     enableModif(){
         this.enableModification = true;
-        this.modifSuccess = false;
-    }
-
-    resetSuccess(){
-        this.modifSuccess = false;
     }
 
 }

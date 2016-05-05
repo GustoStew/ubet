@@ -2,7 +2,6 @@
 
 <div layout="column" flex id="content" role="main">
     <md-content layout="vertical" flex id="content">
-
         <div layout="row" layout-align="center center" layout-fill>
 
             <md-whiteframe class="md-whiteframe-z1" layout="column" flex="50" layout-padding>
@@ -19,8 +18,8 @@
                             <md-input-container>
                                 <label>Civilité</label>
                                 <md-select ng-model="userInfos.currentUser.profile.civility" ng-disabled="!userInfos.enableModification">
-                                    <md-option value="Monsieur">Mme.</md-option>
-                                    <md-option value="Madame">M.</md-option>
+                                    <md-option value="Monsieur">M.</md-option>
+                                    <md-option value="Madame">Mme.</md-option>
                                 </md-select>
                             </md-input-container>
                         </div>
@@ -61,7 +60,7 @@
                         </div>
 
                         <div layout="row" layout-align="center" class="space-top text-center center" ng-show="userInfos.enableModification">
-                            <md-button ng-click="userInfos.modify(); userInfos.show()" class="md-raised done">
+                            <md-button ng-click="userInfos.modify()" class="md-raised done">
                                 <i class="material-icons left">done</i> Valider
                             </md-button>
                         </div>
