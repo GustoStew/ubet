@@ -27,7 +27,9 @@ class AddService {
         this.subscribe('subThemesService');
 
         this.newService = {
-            showPhone : 'true'
+            showPhone : true,
+            active : true,
+            creationDate: new Date()
         };
 
         this.helpers({
@@ -62,13 +64,9 @@ class AddService {
     submit() {
         this.newService.owner = Meteor.user()._id;
         Services.insert(this.newService);
-        this.reset();
         this.$state.go('userServices');
     }
 
-    reset() {
-        this.service = {};
-    }
 }
 
 const name = 'addService';
