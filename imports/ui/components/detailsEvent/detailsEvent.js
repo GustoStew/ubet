@@ -18,6 +18,7 @@ class DetailsEvent {
 
         this.eventId = $stateParams.eventId;
 
+        this.subscribe('users');
         this.subscribe('events');
         this.subscribe('themesEvent');
         this.subscribe('subThemesEvent');
@@ -53,9 +54,7 @@ class DetailsEvent {
         if (!this.event) {
             return '';
         }
-        return Meteor.users.findOne({
-            _id : this.event.owner
-        });
+        return Meteor.users.findOne(this.event.owner);
     }
 
     isLoggedIn() {
