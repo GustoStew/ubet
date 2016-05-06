@@ -1,7 +1,12 @@
+
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-//import ngMaterial from 'angular-material';
+import ngMaterial from 'angular-material';
+
+import { Meteor } from 'meteor/meteor';
+import { Services } from '../../../api/services';
+import { Events } from '../../../api/events';
 
 import './home.html';
 
@@ -13,16 +18,27 @@ class Home {
 
         this.$state = $state;
 
+        this.subscribe('services');
+        this.subscribe('events');
+
+        this.helpers({
+            events() {
+                return Events.find();
+            },
+            services() {
+                return Services.find();
+            }
+        });
     }
 }
 
 const name = 'home';
 
-
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    uiRouter
+    uiRouter,
+    ngMaterial
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,
@@ -32,8 +48,7 @@ export default angular.module(name, [
 
 function config($stateProvider) {
     'ngInject';
-    $stateProvider
-        .state('home', {
+    $stateProvider.state('home', {
             url: '/home',
             template: '<home></home>',
             resolve: {
