@@ -8,14 +8,14 @@ import './detailsEvent.html';
 import { Events } from '../../../api/events';
 import { ThemesEvent} from '../../../api/themesEvent';
 import { SubThemesEvent} from '../../../api/subThemesEvent';
-
+import { name as DisplayNameFilter} from '../../filters/displayNameFilter';
 
 class DetailsEvent {
     constructor($scope, $reactive) {
         'ngInject';
 
         $reactive(this).attach($scope);
-        
+
         this.subscribe('users');
         this.subscribe('events');
         this.subscribe('themesEvent');
@@ -69,7 +69,8 @@ const name = 'detailsEvent';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    uiRouter
+    uiRouter,
+    DisplayNameFilter
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,
