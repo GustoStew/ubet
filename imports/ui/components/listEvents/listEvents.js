@@ -1,6 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+import _ from 'underscore';
 
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
@@ -19,7 +20,7 @@ class ListEvents {
         $reactive(this).attach($scope);
 
         this.searchText = '';
-        
+
         this.theme = '';
 
         this.subtheme = '';
@@ -33,17 +34,26 @@ class ListEvents {
         this.helpers({
             events() {
                 return Events.find({
-                    $or: [
+                    $and: [
                         {
-                            title: {
-                                $regex: `.*${this.getReactively('searchText')}.*`,
-                                $options: 'i'
-                            }
+                            $or: [
+                                {
+                                    title: {
+                                        $regex: `.*${this.getReactively('searchText')}.*`,
+                                        $options: 'i'
+                                    }
+                                },
+                                {
+                                    description: {
+                                        $regex: `.*${this.getReactively('searchText')}.*`,
+                                        $options: 'i'
+                                    }
+                                }
+                            ]
                         },
                         {
-                            description: {
-                                $regex: `.*${this.getReactively('searchText')}.*`,
-                                $options: 'i'
+                            date: {
+                                $gte: new Date()
                             }
                         }
                     ]
@@ -63,6 +73,46 @@ class ListEvents {
         this.theme = '';
         this.searchText = '';
         this.subtheme = '';
+    }
+    
+    isLiked(event){
+        if(!event)
+            return false;
+        return _.contains(Meteor.user().profile.likes, event._id);
+    }
+
+    like(event){
+        if(!event)
+            return false;
+        Meteor.users.update(Meteor.userId(),
+            {
+            $push:{
+                "profile.likes": event._id
+            }
+        }, (error) => {
+                if (error) {
+                    console.log('Oops, error on like...');
+                } else {
+                    console.log('Done!');
+                }
+            })
+    }
+
+    dislike(event){
+        if(!event)
+            return false;
+        Meteor.users.update(Meteor.userId(),
+            {
+                $pull:{
+                    "profile.likes": event._id
+                }
+            }, (error) => {
+                if (error) {
+                    console.log('Oops, error on dislike...');
+                } else {
+                    console.log('Done!');
+                }
+            })
     }
 }
 
