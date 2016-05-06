@@ -24,9 +24,7 @@ export function accept(serviceId, requestId, ownerRequestId) {
     });
     Requests.update({
         serviceId: serviceId,
-        owner:{
-            $ne: ownerRequestId
-        }
+        onWait: true
     }, {
         $set: {
             confirm: false,
