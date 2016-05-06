@@ -4,6 +4,7 @@ import uiRouter from 'angular-ui-router';
 
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
+import { name as DetailsEventButton} from '../detailsEventButton/detailsEventButton';
 
 import './userEvents.html';
 
@@ -16,7 +17,7 @@ class UserEvents {
         $reactive(this).attach($scope);
 
         this.subscribe('events');
-        
+
         this.helpers({
             events() {
                 return Events.find({
@@ -32,7 +33,8 @@ const name = 'userEvents';
 // create a module
 export default angular.module(name, [
         angularMeteor,
-        uiRouter
+        uiRouter,
+        DetailsEventButton
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,

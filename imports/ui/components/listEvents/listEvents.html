@@ -4,13 +4,15 @@
         <md-input-container style="margin-right: 10px;">
             <label>Thème</label>
             <md-select ng-model="listEvents.theme">
-                <md-option ng-repeat="theme in listEvents.themes" ng-value="theme.key" md-on-close="listEvents.subtheme = ''">{{theme.description}}</md-option>
+                <md-option ng-repeat="theme in listEvents.themes" ng-value="theme.key"
+                           md-on-close="listEvents.subtheme = ''">{{theme.description}}</md-option>
             </md-select>
         </md-input-container>
         <md-input-container>
             <label>Type d'évènement</label>
             <md-select ng-model="listEvents.subtheme" ng-disabled="!listEvents.theme">
-                <md-option ng-repeat="subtheme in listEvents.subThemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
+                <md-option ng-repeat="subtheme in listEvents.subThemes"
+                           ng-value="subtheme.key">{{subtheme.description}}</md-option>
             </md-select>
         </md-input-container>
     </md-content>
@@ -27,7 +29,8 @@
     </md-content>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}">
+            <md-card
+                    ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{event.title}}</span>
@@ -38,14 +41,11 @@
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsEvent({ eventId: event._id })">
-                        <md-icon class="material-icons">menu</md-icon>
-                        <md-tooltip>Détails</md-tooltip>
+                    <details-event-button identifiant="event._id"></details-event-button>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon class="material-icons">favorite</md-icon>
+                        <md-tooltip>Liker</md-tooltip>
                     </md-button>
-                <md-button class="md-icon-button" aria-label="Favorite">
-                    <md-icon class="material-icons">favorite</md-icon>
-                    <md-tooltip>Liker</md-tooltip>
-                </md-button>
                 </md-card-actions>
             </md-card>
         </div>

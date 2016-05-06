@@ -6,7 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
 import { ThemesEvent} from '../../../api/themesEvent';
 import { SubThemesEvent} from '../../../api/subThemesEvent';
-
+import { name as DetailsEventButton } from '../detailsEventButton/detailsEventButton';
 
 import './listEvents.html';
 
@@ -19,7 +19,7 @@ class ListEvents {
         $reactive(this).attach($scope);
 
         this.searchText = '';
-
+        
         this.theme = '';
 
         this.subtheme = '';
@@ -71,7 +71,8 @@ const name = 'listEvents';
 // create a module
 export default angular.module(name, [
         angularMeteor,
-        uiRouter
+        uiRouter,
+        DetailsEventButton
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,

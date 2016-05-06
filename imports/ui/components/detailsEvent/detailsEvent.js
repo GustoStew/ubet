@@ -11,13 +11,11 @@ import { SubThemesEvent} from '../../../api/subThemesEvent';
 
 
 class DetailsEvent {
-    constructor($stateParams, $scope, $reactive) {
+    constructor($scope, $reactive) {
         'ngInject';
 
         $reactive(this).attach($scope);
-
-        this.eventId = $stateParams.eventId;
-
+        
         this.subscribe('users');
         this.subscribe('events');
         this.subscribe('themesEvent');
@@ -26,7 +24,7 @@ class DetailsEvent {
         this.helpers({
             event() {
                 return Events.findOne({
-                    _id: $stateParams.eventId
+                    _id: this.identifiant
                 });
             }
         });
@@ -57,10 +55,6 @@ class DetailsEvent {
         return Meteor.users.findOne(this.event.owner);
     }
 
-    isLoggedIn() {
-        return !!Meteor.userId();
-    }
-
     isOwner() {
         if (!this.event) {
             return false;
@@ -73,32 +67,14 @@ class DetailsEvent {
 const name = 'detailsEvent';
 
 // create a module
-
 export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-            templateUrl: `imports/ui/components/${name}/${name}.html`,
-            controllerAs: name,
-            controller: DetailsEvent
-    })
-    .config(config);
-
-function config($stateProvider) {
-    'ngInject';
-
-    $stateProvider.state('detailsEvent', {
-        url: '/events/:eventId',
-        template: '<details-event></details-event>',
-        resolve: {
-            currentUser($q) {
-                if (Meteor.userId() === null) {
-                    return $q.reject('AUTH_REQUIRED');
-                } else {
-                    return $q.resolve();
-                }
-            }
-        }
-    });
-}
-
+    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    controllerAs: name,
+    bindings: {
+        identifiant: '<'
+    },
+    controller: DetailsEvent
+});
