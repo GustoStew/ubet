@@ -27,7 +27,10 @@ class AddEvent {
 
         this.subscribe('subThemesEvent');
 
-        this.newEvent = {};
+        this.newEvent = {
+            active : true,
+            creationDate: new Date()
+        };
 
         this.helpers({
             themes() {
