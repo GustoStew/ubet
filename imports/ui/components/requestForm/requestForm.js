@@ -5,7 +5,6 @@ import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 import { ThemesService} from '../../../api/themesService';
 import { SubThemesService} from '../../../api/subThemesService';
-import { Services } from '../../../api/services';
 import { Requests } from '../../../api/requests';
 
 
@@ -19,6 +18,7 @@ class RequestForm {
 
 
         this.$state = $state;
+
 
         this.subscribe('themesService');
         this.subscribe('subThemesService');
@@ -34,17 +34,6 @@ class RequestForm {
             },
             subThemes() {
                 return SubThemesService.find({
-                    theme: this.getReactively('newRequest.theme')
-                });
-            },
-            themeSelected() {
-                return ThemesService.findOne({
-                    key: this.getReactively('newRequest.theme')
-                });
-            },
-            subThemeSelected() {
-                return SubThemesService.findOne({
-                    key: this.getReactively('newRequest.subtheme'),
                     theme: this.getReactively('newRequest.theme')
                 });
             }
