@@ -1,20 +1,48 @@
-<div layout="column" flex id="content" role="main">
-    <md-content layout="vertical" flex id="content">
-        <div layout="row" layout-align="center center" layout-fill>
-            <md-whiteframe class="md-whiteframe-z1" layout="column" flex="50" layout-padding>
+<div flex>
+    <md-content>
+        <h3>Détails du service</h3>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Détails">
                 <md-content>
-                    <h2>{{detailsService.service.title}}</h2>
-                    <label>Thème : {{detailsService.getTheme().description}}</label>
-                    <label>Type de service : {{detailsService.getSubTheme().description}}</label>
-                    <label>Date : {{detailsSercice.service.date | date:'dd-MM-yyyy'}}</label>
-                    <label>Description : {{detailsService.service.description}}</label>
-                    <label>Créateur : {{detailsService.getOwner().profile.lastName}}</label>
-                    <md-button ng-show="detailsService.isOwner()">Modifier</md-button>
+                    <md-card>
+                        <md-card-header>
+                            <md-card-avatar>
+                                <img class="md-user-avatar"
+                                     src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png"/>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <span class="md-title">{{detailsService.getOwner() | displayNameFilter}}</span>
+                                <span class="md-subhead">Date-Creation</span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-divider></md-divider>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Titre: {{detailsService.service.title}}</span>
+                                <span class="md-subhead"><b>Thème:</b>{{detailsService.getTheme().description}}</span>
+                                <span class="md-subhead"><b>Type d'événement:</b>{{detailsService.getSubTheme().description}}</span>
+                                <span class="md-subhead"><b>Date:</b>{{detailsService.service.date | date:'dd-MM-yyyy'}}</span>
+                                <span class="md-subhead"><b>Adresse:</b> {{detailsService.service.address}}
+                                    , {{detailsService.service.zipCode}} {{detailsService.service.city}}.</span>
+                                <br>
+                                <p>
+                                    "{{detailsService.service.description}}"
+                                </p>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <img class="md-media-lg card-media"
+                                     src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg">
+                            </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
                 </md-content>
-                <img src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg" class="md-card-image">
-            </md-whiteframe>
-        </div>
+            </md-tab>
+            <md-tab label="Faire une proposition" ng-if="!detailsService.isOwner()">
+                <request-form service="detailsService.service"></request-form>
+            </md-tab>
+            <md-tab label="Consulter les demandes" ng-if="detailsService.isOwner()">
+                <request-response service="detailsService.service"></request-response>
+            </md-tab>
+        </md-tabs>
     </md-content>
 </div>
-<request-form service="detailsService.service" ng-hide="detailsService.isOwner()"></request-form>
-<request-response service="detailsService.service" ng-show="detailsService.isOwner()"></request-response>

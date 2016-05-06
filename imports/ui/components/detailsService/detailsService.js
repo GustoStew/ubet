@@ -10,6 +10,7 @@ import { ThemesService} from '../../../api/themesService';
 import { SubThemesService} from '../../../api/subThemesService';
 import { name as RequestForm} from '../requestForm/requestForm';
 import { name as RequestResponse} from '../requestResponse/requestResponse';
+import { name as DisplayNameFilter} from '../../filters/displayNameFilter';
 
 
 class DetailsService {
@@ -81,7 +82,8 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter,
     RequestForm,
-    RequestResponse
+    RequestResponse,
+    DisplayNameFilter
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,
