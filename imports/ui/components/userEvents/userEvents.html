@@ -2,21 +2,21 @@
     <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addEvent.theme">
         <md-icon  class="material-icons">add</md-icon>
     </md-button>
-    <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+        <div flex="80" layout="column">
             <md-card ng-repeat="event in userEvents.events">
                 <md-card-title>
+                    <md-card-title-media>
+                        <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>
+                    </md-card-title-media>
                     <md-card-title-text>
                         <span class="md-headline">{{event.title}}</span>
                         <span class="md-subhead">{{event.description}}</span>
                     </md-card-title-text>
-                    <md-card-title-media>
-                        <div class="md-media-lg card-media"></div>
-                    </md-card-title-media>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <details-event-button identifiant="event._id"></details-event-button>
+                    </md-card-actions>
                 </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                    <details-event-button identifiant="event._id"></details-event-button>
-                </md-card-actions>
             </md-card>
         </div>
     </md-content>
