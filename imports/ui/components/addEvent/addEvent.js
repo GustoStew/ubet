@@ -59,6 +59,22 @@ class AddEvent {
 
     submit() {
         this.newEvent.owner = Meteor.user()._id;
+        switch (this.newEvent.theme){
+            case 'party':
+                this.newEvent.icon = '/img/festifs_themes_icon.png';
+                break;
+            case 'sport':
+                this.newEvent.icon = '/img/sportifs_themes_icon.png';
+                break;
+            case 'culture':
+                this.newEvent.icon = '/img/culturels_themes_icon.png';
+                break;
+            case 'pro':
+                this.newEvent.icon = '/img/professionnels_themes_icon.png';
+                break;
+            default:
+                break;
+        }
         Events.insert(this.newEvent);
         this.$state.go('userEvents');
     }
