@@ -63,7 +63,9 @@
                         <div class="md-list-item-text">
                             <h3>{{event.title}}</h3>
                             <h4>{{event.theme}}</h4>
-                            <p>{{event.description | limitTo : 100}} {{service.description.length > 100 ? '...' : ''}}</p>
+                            <p>{{event.description | limitTo : 100}} {{event.description.length > 100 ? '...' : ''}}</p>
+                            <details-event-button identifiant="event._id"></details-event-button>
+                            <like-button identifiant="event._id"></like-button>
                         </div>
                         <md-divider ng-if="!$last"></md-divider>
                     </md-list-item>

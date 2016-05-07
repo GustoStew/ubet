@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
@@ -7,6 +6,8 @@ import ngMaterial from 'angular-material';
 import { Meteor } from 'meteor/meteor';
 import { Services } from '../../../api/services';
 import { Events } from '../../../api/events';
+import { name as DetailsEventButton} from '../detailsEventButton/detailsEventButton';
+import { name as LikeButton} from '../likeButton/likeButton';
 
 import './home.html';
 
@@ -38,7 +39,9 @@ const name = 'home';
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
-    ngMaterial
+    ngMaterial,
+    DetailsEventButton,
+    LikeButton
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,
