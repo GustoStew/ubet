@@ -1,0 +1,8 @@
+<md-button class="md-icon-button" aria-label="Favorite" ng-click="likeButton.like(likeButton.identifiant)" ng-if="!likeButton.isLiked(likeButton.identifiant)">
+    <md-icon class="material-icons">favorite</md-icon>
+    <md-tooltip>J'aime</md-tooltip>
+</md-button>
+<md-button class="md-icon-button md-accent" aria-label="Favorite" ng-click="likeButton.dislike(likeButton.identifiant)" ng-if="likeButton.isLiked(likeButton.identifiant)">
+    <md-icon class="material-icons">favorite</md-icon>
+    <md-tooltip>Je n'aime plus</md-tooltip>
+</md-button>

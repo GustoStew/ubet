@@ -1,13 +1,13 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-import _ from 'underscore';
 
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
 import { ThemesEvent} from '../../../api/themesEvent';
 import { SubThemesEvent} from '../../../api/subThemesEvent';
 import { name as DetailsEventButton } from '../detailsEventButton/detailsEventButton';
+import { name as LikeButton } from '../likeButton/likeButton';
 
 import './listEvents.html';
 
@@ -74,46 +74,6 @@ class ListEvents {
         this.searchText = '';
         this.subtheme = '';
     }
-    
-    isLiked(event){
-        if(!event)
-            return false;
-        return _.contains(Meteor.user().profile.likes, event._id);
-    }
-
-    like(event){
-        if(!event)
-            return false;
-        Meteor.users.update(Meteor.userId(),
-            {
-            $push:{
-                "profile.likes": event._id
-            }
-        }, (error) => {
-                if (error) {
-                    console.log('Oops, error on like...');
-                } else {
-                    console.log('Done!');
-                }
-            })
-    }
-
-    dislike(event){
-        if(!event)
-            return false;
-        Meteor.users.update(Meteor.userId(),
-            {
-                $pull:{
-                    "profile.likes": event._id
-                }
-            }, (error) => {
-                if (error) {
-                    console.log('Oops, error on dislike...');
-                } else {
-                    console.log('Done!');
-                }
-            })
-    }
 }
 
 const name = 'listEvents';
@@ -122,7 +82,8 @@ const name = 'listEvents';
 export default angular.module(name, [
         angularMeteor,
         uiRouter,
-        DetailsEventButton
+        DetailsEventButton,
+        LikeButton
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
