@@ -3,39 +3,7 @@
         <h3>Détails du service</h3>
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="Détails">
-                <md-content>
-                    <md-card>
-                        <md-card-header>
-                            <md-card-avatar>
-                                <img class="md-user-avatar"
-                                     src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png"/>
-                            </md-card-avatar>
-                            <md-card-header-text>
-                                <span class="md-title">{{detailsService.getOwner() | displayNameFilter}}</span>
-                                <span class="md-subhead">Date-Creation</span>
-                            </md-card-header-text>
-                        </md-card-header>
-                        <md-divider></md-divider>
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">Titre: {{detailsService.service.title}}</span>
-                                <span class="md-subhead"><b>Thème:</b>{{detailsService.getTheme().description}}</span>
-                                <span class="md-subhead"><b>Type de service:</b>{{detailsService.getSubTheme().description}}</span>
-                                <span class="md-subhead"><b>Date:</b>{{detailsService.service.date | date:'dd-MM-yyyy'}}</span>
-                                <span class="md-subhead"><b>Adresse:</b> {{detailsService.service.address}}
-                                    , {{detailsService.service.zipCode}} {{detailsService.service.city}}.</span>
-                                <br>
-                                <p>
-                                    "{{detailsService.service.description}}"
-                                </p>
-                            </md-card-title-text>
-                            <md-card-title-media>
-                                <img class="md-media-lg card-media"
-                                     src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg">
-                            </md-card-title-media>
-                        </md-card-title>
-                    </md-card>
-                </md-content>
+                <consult-service service="detailsService.service"></consult-service>
             </md-tab>
             <md-tab label="Faire une proposition" ng-if="!detailsService.isOwner()">
                 <request-form service="detailsService.service"></request-form>

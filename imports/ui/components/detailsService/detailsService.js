@@ -6,18 +6,17 @@ import { Meteor } from 'meteor/meteor';
 
 import './detailsService.html';
 import { Services } from '../../../api/services';
-import { ThemesService} from '../../../api/themesService';
-import { SubThemesService} from '../../../api/subThemesService';
 import { name as RequestForm} from '../requestForm/requestForm';
 import { name as RequestResponse} from '../requestResponse/requestResponse';
-import { name as DisplayNameFilter} from '../../filters/displayNameFilter';
-
+import { name as ConsultService} from '../consultService/consultService';
 
 class DetailsService {
-    constructor($stateParams, $scope, $reactive) {
+    constructor($stateParams, $scope, $reactive, $state) {
         'ngInject';
 
         $reactive(this).attach($scope);
+
+        this.$state = $state;
 
         this.serviceId = $stateParams.serviceId;
 
@@ -33,37 +32,6 @@ class DetailsService {
                 });
             }
         });
-    }
-
-    getTheme() {
-        if (!this.service) {
-            return '';
-        }
-        return ThemesService.findOne({
-            key: this.service.theme
-        });
-    }
-
-    getSubTheme() {
-        if (!this.service) {
-            return '';
-        }
-        return SubThemesService.findOne({
-            key : this.service.subtheme
-        });
-    }
-
-    getOwner() {
-        if (!this.service) {
-            return '';
-        }
-        return Meteor.users.findOne({
-            _id : this.service.owner
-        });
-    }
-
-    isLoggedIn() {
-        return !!Meteor.userId();
     }
 
     isOwner() {
@@ -83,7 +51,7 @@ export default angular.module(name, [
     uiRouter,
     RequestForm,
     RequestResponse,
-    DisplayNameFilter
+    ConsultService
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,
