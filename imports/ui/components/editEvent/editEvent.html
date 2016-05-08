@@ -1,0 +1,48 @@
+<div flex  layout="row" layout-align="space-between start">
+    <md-content class="md-padding" flex="50"  layout="column">
+        <md-input-container flex>
+            <label>Type d'évènement:</label>
+            <md-select ng-model="editEvent.event.subtheme" ng-disabled="!editEvent.event.theme">
+                <md-option ng-repeat="subtheme in editEvent.subThemes"
+                           ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Titre:</label>
+            <input type="text"  ng-model="editEvent.event.title" required>
+        </md-input-container>
+        <label class="date">Date de l'événement (obligatoire) :</label>
+        <md-content flex>
+            <md-datepicker ng-model="editEvent.event.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+        </md-content>
+    </md-content>
+    <md-content class="md-padding" flex="50"  layout="column">
+        <md-input-container class="md-block">
+            <label>Adresse:</label>
+            <input  type="text" ng-model="editEvent.event.address" required>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Code postal:</label>
+            <input name="zipCode" type="number"  ng-model="editEvent.event.zipCode"   required>
+        </md-input-container>
+        <md-input-container flex class="ville">
+            <label>Ville:</label>
+            <input  type="text" ng-model="editEvent.event.city" required>
+        </md-input-container>
+
+    </md-content>
+</div>
+<md-content class="md-padding description" flex="100"  layout="column">
+    <md-input-container class="md-block" flex>
+        <label>Description</label>
+        <textarea ng-model="editEvent.event.description" md-maxlength="2000"  md-select-on-focus required></textarea>
+        <span flex></span>
+    </md-input-container>
+</md-content>
+
+<div layout="row" layout-align=" center">
+    <md-button ng-click="editEvent.modify()" class="md-raised"  ng-disabled="!editEvent.event.subtheme || !editEvent.event.title || !editEvent.event.date || !editEvent.event.address || !editEvent.event.zipCode || !editEvent.event.city || !editEvent.event.description" layout-align="center center">
+        Valider <span class="glyphicon glyphicon-ok-sign"></span>
+    </md-button>
+</div>
+

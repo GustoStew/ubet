@@ -5,6 +5,7 @@ import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
 import { name as DetailsEventButton} from '../detailsEventButton/detailsEventButton';
+import { name as EditEventButton} from '../editEventButton/editEventButton';
 
 import './userEvents.html';
 
@@ -34,7 +35,8 @@ const name = 'userEvents';
 export default angular.module(name, [
         angularMeteor,
         uiRouter,
-        DetailsEventButton
+        DetailsEventButton,
+        EditEventButton
     ])
     .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
