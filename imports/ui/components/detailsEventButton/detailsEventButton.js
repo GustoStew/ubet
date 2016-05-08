@@ -14,12 +14,12 @@ class DetailsEventButton {
 
   }
 
-  open(event, identifiant) {
+  open(event, eventToDisplay) {
     this.$mdDialog.show({
       controller($mdDialog) {
         'ngInject';
 
-        this.identifiant = identifiant;
+        this.event = eventToDisplay;
 
         this.close = () => {
           $mdDialog.hide();
@@ -46,6 +46,6 @@ export default angular.module(name, [
   controllerAs: name,
   controller: DetailsEventButton,
   bindings: {
-      identifiant: '<'
+      event: '<'
   }
 });

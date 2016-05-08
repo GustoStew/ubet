@@ -5,7 +5,6 @@ import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 
 import './detailsEvent.html';
-import { Events } from '../../../api/events';
 import { ThemesEvent} from '../../../api/themesEvent';
 import { SubThemesEvent} from '../../../api/subThemesEvent';
 import { name as DisplayNameFilter} from '../../filters/displayNameFilter';
@@ -16,45 +15,28 @@ class DetailsEvent {
 
         $reactive(this).attach($scope);
 
-        this.subscribe('users');
-        this.subscribe('events');
         this.subscribe('themesEvent');
         this.subscribe('subThemesEvent');
 
         this.helpers({
-            event() {
-                return Events.findOne({
-                    _id: this.identifiant
-                });
+           theme(){
+               return ThemesEvent.findOne({
+                   key: this.event.theme
+               });
+           },
+            subtheme(){
+                return SubThemesEvent.findOne({
+                    key: this.event.subtheme,
+                    theme: this.event.theme
+                })
+            },
+            owner(){
+                return Meteor.users.findOne(this.event.owner);
             }
+
         });
-    }
 
-    getTheme() {
-        if (!this.event) {
-            return '';
-        }
-        return ThemesEvent.findOne({
-            key: this.event.theme
-        });
     }
-
-    getSubTheme() {
-        if (!this.event) {
-            return '';
-        }
-        return SubThemesEvent.findOne({
-           key : this.event.subtheme
-        });
-    }
-
-    getOwner() {
-        if (!this.event) {
-            return '';
-        }
-        return Meteor.users.findOne(this.event.owner);
-    }
-
     isOwner() {
         if (!this.event) {
             return false;
@@ -75,7 +57,7 @@ export default angular.module(name, [
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,
     bindings: {
-        identifiant: '<'
+        event: '<'
     },
     controller: DetailsEvent
 });
