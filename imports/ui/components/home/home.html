@@ -64,7 +64,7 @@
                             <h3>{{event.title}}</h3>
                             <h4>{{event.theme}}</h4>
                             <p>{{event.description | limitTo : 100}} {{event.description.length > 100 ? '...' : ''}}</p>
-                            <details-event-button identifiant="event._id"></details-event-button>
+                            <details-event-button event="event"></details-event-button>
                             <like-button identifiant="event._id"></like-button>
                         </div>
                         <md-divider ng-if="!$last"></md-divider>

@@ -1,4 +1,4 @@
-<!--
+
 <md-card>
     <md-card-header>
         <md-card-avatar>
@@ -14,11 +14,11 @@
     <md-divider></md-divider>
     <md-card-title>
         <md-card-title-text>
-            <span class="md-headline">Titre: {{detailsEvent.event.title}}</span>
-            <span class="md-subhead"><b>Thème:</b>{{detailsEvent.theme.description}}</span>
-            <span class="md-subhead"><b>Type d'événement:</b>{{detailsEvent.subtheme.description}}</span>
-            <span class="md-subhead"><b>Date:</b>{{detailsEvent.event.date | date:'dd-MM-yyyy'}}</span>
-            <span class="md-subhead"><b>Adresse:</b> {{detailsEvent.event.address}}
+            <span class="md-headline">{{detailsEvent.event.title}}</span>
+            <span class="md-subhead"><b>Thème: </b>{{detailsEvent.theme.description}}</span>
+            <span class="md-subhead"><b>Type d'événement: </b>{{detailsEvent.subtheme.description}}</span>
+            <span class="md-subhead"><b>Date: </b>{{detailsEvent.event.date | date:'dd-MM-yyyy'}}</span>
+            <span class="md-subhead"><b>Adresse: </b> {{detailsEvent.event.address}}
                 , {{detailsEvent.event.zipCode}} {{detailsEvent.event.city}}.</span>
             <br>
             <p>
@@ -31,7 +31,8 @@
         </md-card-title-media>
     </md-card-title>
 </md-card>
--->
+
+<!--
 <md-card>
     <md-card-header>
         <md-card-avatar>
@@ -64,3 +65,4 @@
         <p>"{{detailsEvent.event.description}}"</p>
     </md-card-content>
 </md-card>
+-->
