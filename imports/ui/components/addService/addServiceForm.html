@@ -2,7 +2,7 @@
 <div flex  layout="row" layout-align="space-between start">
     <md-content class="md-padding" flex="50"  layout="column">
         <md-input-container flex>
-            <label>Type d'évènement:</label>
+            <label>Type de service:</label>
             <md-select ng-model="addService.newService.subtheme" ng-disabled="!addService.newService.theme">
                 <md-option ng-repeat="subtheme in addService.subThemes"
                            ng-value="subtheme.key">{{subtheme.description}}</md-option>

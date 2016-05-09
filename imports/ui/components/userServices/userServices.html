@@ -1,22 +1,25 @@
 <div class="container">
-    <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un service" ui-sref="addService.theme">
+    <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addService.theme">
         <md-icon  class="material-icons">add</md-icon>
     </md-button>
-    <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+        <div flex="80" layout="column">
             <md-card ng-repeat="service in userServices.services">
                 <md-card-title>
+                    <md-card-title-media>
+                        <img class="md-media-sm card-media" ng-src="{{service.icon}}"/>
+                    </md-card-title-media>
                     <md-card-title-text>
                         <span class="md-headline">{{service.title}}</span>
                         <span class="md-subhead">{{service.description}}</span>
                     </md-card-title-text>
-                    <md-card-title-media>
-                        <div class="md-media-lg card-media"></div>
-                    </md-card-title-media>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
+                            <md-icon class="material-icons">menu</md-icon>
+                            <md-tooltip>Détails</md-tooltip>
+                        </md-button>
+                    </md-card-actions>
                 </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button ui-sref="detailsService({ serviceId: service._id })">Détails</md-button>
-                </md-card-actions>
             </md-card>
         </div>
     </md-content>

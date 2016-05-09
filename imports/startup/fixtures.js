@@ -167,7 +167,7 @@ Meteor.startup(() => {
             }, {
                 'theme': 'car',
                 'key': 'carpooling',
-                'description': 'covoiturage'
+                'description': 'Covoiturage'
             }, {
                 'theme': 'car',
                 'key': 'cleaning',

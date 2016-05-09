@@ -63,6 +63,34 @@ class AddService {
 
     submit() {
         this.newService.owner = Meteor.user()._id;
+        switch (this.newService.theme){
+            case 'home':
+                this.newService.icon = '/img/maison_themes_icon.png';
+                break;
+            case 'school':
+                this.newService.icon = '/img/universite_themes_icon.png';
+                break;
+            case 'car':
+                this.newService.icon = '/img/vehicule_themes_icon.png';
+                break;
+            case 'pet':
+                this.newService.icon = '/img/animaux_themes_icon.png';
+                break;
+            case 'children':
+                this.newService.icon = '/img/enfant_themes_icon.png';
+                break;
+            case 'healthcare':
+                this.newService.icon = '/img/soins_themes_icon.png';
+                break;
+            case 'party':
+                this.newService.icon = '/img/festivites_themes_icon.png';
+                break;
+            case 'it':
+                this.newService.icon = '/img/informatique_themes_icon.png';
+                break;
+            default:
+                break;
+        }
         Services.insert(this.newService);
         this.$state.go('userServices');
     }
