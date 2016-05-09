@@ -34,7 +34,7 @@
                 </h2>
                 <span flex></span>
                 <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="navigation.closeSideNavPanel()">
-                    <md-tooltip>Close Menu</md-tooltip>
+                    <md-tooltip>Fermer</md-tooltip>
                     <md-icon  class="material-icons">&#xE5CD;</md-icon>
                 </md-button>
             </div>
@@ -51,30 +51,35 @@
         <md-list>
             <md-subheader class="md-no-sticky">Services</md-subheader>
             <md-list-item>
-                <md-icon  class="material-icons nav">publish</md-icon>
-                <md-button ui-sref="userServices" ng-click="navigation.closeSideNavPanel()">Mes services</md-button>
-                <div class="md-secondary">{{navigation.nbMyServices}}</div>
-            </md-list-item>
-            <md-list-item>
                 <md-icon  class="material-icons nav">supervisor_account</md-icon>
                 <md-button ui-sref="listServices" ng-click="navigation.closeSideNavPanel()">Tous les services</md-button>
                 <div class="md-secondary">{{navigation.nbServices}}</div>
             </md-list-item>
             <md-list-item>
+                <md-icon  class="material-icons nav">publish</md-icon>
+                <md-button ui-sref="userServices" ng-click="navigation.closeSideNavPanel()">Mes services</md-button>
+                <div class="md-secondary">{{navigation.nbMyServices}}</div>
+            </md-list-item>
+            <md-list-item>
                 <md-icon  class="material-icons nav">hourglass_empty</md-icon>
                 <md-button ui-sref="userRequests" ng-click="navigation.closeSideNavPanel()">Mes demandes</md-button>
-                <div class="md-secondary">{{navigation.nbServices}}</div>
+                <div class="md-secondary">{{navigation.nbRequests}}</div>
             </md-list-item>
             <md-divider></md-divider>
             <md-subheader class="md-no-sticky">Événements</md-subheader>
+            <md-list-item>
+                <md-icon  class="material-icons nav">view_list</md-icon>
+                <md-button ui-sref="listEvents" ng-click="navigation.closeSideNavPanel()">Tous les évenements</md-button>
+                <div class="md-secondary">{{navigation.nbEvents}}</div>
+            </md-list-item>
             <md-list-item>
                 <md-icon  class="material-icons nav">&#xE878;</md-icon>
                 <md-button ui-sref="userEvents" ng-click="navigation.closeSideNavPanel()">Mes événements</md-button>
                 <div class="md-secondary">{{navigation.nbMyEvents}}</div>
             </md-list-item>
             <md-list-item>
-                <md-icon  class="material-icons nav">view_list</md-icon>
-                <md-button ui-sref="listEvents" ng-click="navigation.closeSideNavPanel()">Tous les évenements</md-button>
+                <md-icon  class="material-icons nav">favorite</md-icon>
+                <md-button ui-sref="userLikes" ng-click="navigation.closeSideNavPanel()">Mes likes</md-button>
                 <div class="md-secondary">{{navigation.nbEvents}}</div>
             </md-list-item>
         </md-list>

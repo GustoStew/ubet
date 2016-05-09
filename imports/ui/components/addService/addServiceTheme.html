@@ -2,7 +2,7 @@
 <div layout="column" layout-align="center center">
     <md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row"
                     layout-align="center center">
-        <md-card ng-repeat="theme in addService.themes | limitTo : 4" ng-value="theme._id" layout-align="center center"
+        <md-card ng-repeat="theme in addService.themes | limitTo : 4" layout-align="center center"
                  class="service">
             <md-card-title-media>
                 <div class="md-media-sm card-media">
@@ -21,7 +21,7 @@
     </md-radio-group>
     <md-radio-group ng-model="addService.newService.theme " class="md-primary" layout="row"
                     layout-align="center center">
-        <md-card ng-repeat="theme in addService.themes | limitTo : 4 : 4" ng-value="theme._id"
+        <md-card ng-repeat="theme in addService.themes | limitTo : 4 : 4"
                  layout-align="center center" class="service">
             <md-card-title-media>
                 <div class="md-media-sm card-media">
@@ -34,7 +34,7 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-actions>
-                <md-radio-button ng-value="theme._id"></md-radio-button>
+                <md-radio-button ng-value="theme.key"></md-radio-button>
             </md-card-actions>
         </md-card>
     </md-radio-group>

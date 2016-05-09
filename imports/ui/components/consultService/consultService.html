@@ -6,19 +6,19 @@
                      src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png"/>
             </md-card-avatar>
             <md-card-header-text>
-                <span class="md-title">{{consultService.owner | displayNameFilter}}</span>
-                <span class="md-subhead">Date-Creation</span>
+                <span class="md-title">{{consultService.getOwner() | displayNameFilter}}</span>
+                <span class="md-subhead">{{consultService.service.creationDate | date:'dd/MM/yyyy'}}</span>
             </md-card-header-text>
         </md-card-header>
         <md-divider></md-divider>
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Titre: {{consultService.service.title}}</span>
-                <span class="md-subhead"><b>Thème:</b>{{consultService.theme.description}}</span>
-                <span class="md-subhead"><b>Type de service:</b>{{consultService.subtheme.description}}</span>
-                <span class="md-subhead"><b>Date:</b>{{consultService.service.date | date:'dd-MM-yyyy'}}</span>
-                                <span class="md-subhead"><b>Adresse:</b> {{consultService.service.address}}
-                                    , {{consultService.service.zipCode}} {{consultService.service.city}}.</span>
+                <span class="md-headline">{{consultService.service.title}}</span>
+                <span class="md-subhead"><b>Thème: </b>{{consultService.getTheme().description}}</span>
+                <span class="md-subhead"><b>Type de service: </b>{{consultService.getSubTheme().description}}</span>
+                <span class="md-subhead" ng-show="consultService.service.date"><b>Date: </b>{{consultService.service.date | date:'dd-MM-yyyy'}}</span>
+                <span class="md-subhead"><b>Email: </b>{{consultService.getOwner().emails[0].address}}</span>
+                <span class="md-subhead"><b>Adresse: </b> {{consultService.service.address}}, {{consultService.service.zipCode}} {{consultService.service.city}}.</span>
                 <br>
                 <p>
                     "{{consultService.service.description}}"

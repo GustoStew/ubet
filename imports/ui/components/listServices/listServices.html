@@ -1,46 +1,47 @@
 <div class="container">
     <h3>Tous les services</h3>
-    <md-content layout="row">
-        <md-input-container style="margin-right: 10px;">
+    <md-content class="md-padding" layout="row" layout-align="space-around " flex>
+        <md-input-container class="md-block">
             <label>Thème</label>
             <md-select ng-model="listServices.theme" md-on-close="listServices.subtheme = ''">
                 <md-option ng-repeat="theme in listServices.themes" ng-value="theme.key">{{theme.description}}</md-option>
             </md-select>
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-block">
             <label>Type du service</label>
             <md-select ng-model="listServices.subtheme" ng-disabled="!listServices.theme">
                 <md-option ng-repeat="subtheme in listServices.subThemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
             </md-select>
         </md-input-container>
-    </md-content>
-    <md-content layout="row">
-        <md-input-container>
+        <md-input-container class="md-block">
             <label>Recherche</label>
             <input type="text" ng-model="listServices.searchText"/>
         </md-input-container>
-    </md-content>
-    <md-content layout="row">
-        <md-input-container>
+        <div>
             <md-button ng-click="listServices.clear()" class="md-raised">Réinitialiser recherche</md-button>
-        </md-input-container>
+        </div>
     </md-content>
-    <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
+
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+        <div flex="80" layout="column">
             <md-card ng-repeat="service in listServices.services | filter:{theme: listServices.theme, subtheme:listServices.subtheme}">
-                <md-card-title>
+            <md-card-title>
+                    <md-card-title-media>
+                        <img class="md-media-sm card-media" ng-src="{{service.icon}}"/>
+                    </md-card-title-media>
                     <md-card-title-text>
                         <span class="md-headline">{{service.title}}</span>
                         <span class="md-subhead">{{service.description}}</span>
                     </md-card-title-text>
-                    <md-card-title-media>
-                        <div class="md-media-lg card-media"></div>
-                    </md-card-title-media>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
+                            <md-icon class="material-icons">menu</md-icon>
+                            <md-tooltip>Détails</md-tooltip>
+                        </md-button>
+                    </md-card-actions>
                 </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button ui-sref="detailsService({ serviceId: service._id })">Détails</md-button>
-                </md-card-actions>
             </md-card>
         </div>
     </md-content>
+
 </div>
