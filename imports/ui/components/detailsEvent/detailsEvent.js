@@ -15,6 +15,7 @@ class DetailsEvent {
 
         $reactive(this).attach($scope);
 
+        this.subscribe('users');
         this.subscribe('themesEvent');
         this.subscribe('subThemesEvent');
 
