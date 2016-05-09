@@ -1,33 +1,30 @@
 <div class="container">
     <h3>Tout les évènements</h3>
-    <md-content layout="row">
-        <md-input-container style="margin-right: 10px;">
+    <md-content class="md-padding" layout="row" layout-align="space-around " flex >
+        <md-input-container class="md-block" >
             <label>Thème</label>
             <md-select ng-model="listEvents.theme">
                 <md-option ng-repeat="theme in listEvents.themes" ng-value="theme.key"
                            md-on-close="listEvents.subtheme = ''">{{theme.description}}</md-option>
             </md-select>
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-block">
             <label>Type d'évènement</label>
             <md-select ng-model="listEvents.subtheme" ng-disabled="!listEvents.theme">
                 <md-option ng-repeat="subtheme in listEvents.subThemes"
                            ng-value="subtheme.key">{{subtheme.description}}</md-option>
             </md-select>
         </md-input-container>
-    </md-content>
-    <md-content layout="row">
-        <md-input-container>
+        <md-input-container class="md-block" >
             <label>Recherche</label>
             <input type="text" ng-model="listEvents.searchText"/>
         </md-input-container>
-    </md-content>
-    <md-content layout="row">
-        <md-input-container>
+        <div>
             <md-button ng-click="listEvents.clear()" class="md-raised">Réinitialiser recherche</md-button>
-        </md-input-container>
+        </div>
     </md-content>
-    <md-content class="md-padding" layout-xs="column" layout="row">
+
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
         <div flex="80" layout="column">
             <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}">
                 <md-card-title>

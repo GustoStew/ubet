@@ -7,7 +7,7 @@
             </md-card-avatar>
             <md-card-header-text>
                 <span class="md-title">{{consultService.owner | displayNameFilter}}</span>
-                <span class="md-subhead">Date-Creation</span>
+                <span class="md-subhead">{{consultService.service.creationDate | date:'dd/MM/yyyy'}}</span>
             </md-card-header-text>
         </md-card-header>
         <md-divider></md-divider>
