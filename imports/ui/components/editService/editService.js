@@ -30,12 +30,12 @@ class EditService {
     modify() {
         Services.update(this.service._id, {
             $set: {
-                subtheme: this.event.subtheme,
-                date: this.event.date,
-                description: this.event.description,
-                zipCode: this.event.zipCode,
-                city: this.event.city,
-                title: this.event.title
+                subtheme: this.service.subtheme,
+                date: this.service.date,
+                description: this.service.description,
+                zipCode: this.service.zipCode,
+                city: this.service.city,
+                title: this.service.title
             }
         }, (error) => {
             if (error) {
