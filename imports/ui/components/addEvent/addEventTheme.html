@@ -1,7 +1,7 @@
 <label class="choice">Choisissez le thème de votre évènement</label>
 <div layout="column" layout-align="center center">
     <md-radio-group ng-model="addEvent.newEvent.theme " class="md-primary" layout="row" layout-align="center center">
-        <md-card class="theme" ng-repeat="theme in addEvent.themes " ng-value="theme._id" layout-align="center center">
+        <md-card class="theme" ng-repeat="theme in addEvent.themes" layout-align="center center">
             <md-card-title-media>
                 <div class="md-media-sm card-media">
                     <img ng-src="{{theme.icon}}" class="md-card-image img-card" alt="thumb">

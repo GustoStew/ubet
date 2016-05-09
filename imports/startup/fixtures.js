@@ -107,7 +107,7 @@ Meteor.startup(() => {
         }, {
             'key': 'party',
             'description': 'Festivités',
-            'icon': '/img/festivites_themes_icon.png',
+            'icon': '/img/festivites_themes_icon.png'
         }, {
             'key': 'it',
             'description': 'Informatique',
