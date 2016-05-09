@@ -1,0 +1,48 @@
+<div flex  layout="row" layout-align="space-between start">
+    <md-content class="md-padding" flex="50"  layout="column">
+        <md-input-container flex>
+            <label>Type d'évènement:</label>
+            <md-select ng-model="editService.service.subtheme" ng-disabled="!editService.service.theme">
+                <md-option ng-repeat="subtheme in editService.subThemes"
+                           ng-value="subtheme.key">{{subtheme.description}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Titre:</label>
+            <input type="text"  ng-model="editService.service.title" required>
+        </md-input-container>
+        <label class="date">Date de l'événement (facultatif) :</label>
+        <md-content flex>
+            <md-datepicker ng-model="editService.service.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+        </md-content>
+    </md-content>
+    <md-content class="md-padding" flex="50"  layout="column">
+        <md-input-container class="md-block">
+            <label>Adresse:</label>
+            <input  type="text" ng-model="editService.service.address" required>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Code postal:</label>
+            <input name="zipCode" type="number"  ng-model="editService.service.zipCode"   required>
+        </md-input-container>
+        <md-input-container flex class="ville">
+            <label>Ville:</label>
+            <input  type="text" ng-model="editService.service.city" required>
+        </md-input-container>
+
+    </md-content>
+</div>
+<md-content class="md-padding description" flex="100"  layout="column">
+    <md-input-container class="md-block" flex>
+        <label>Description</label>
+        <textarea ng-model="editService.service.description" md-maxlength="2000"  md-select-on-focus required></textarea>
+        <span flex></span>
+    </md-input-container>
+</md-content>
+
+<div layout="row" layout-align=" center">
+    <md-button ng-click="editService.modify()" class="md-raised"  ng-disabled="!editService.service.subtheme || !editService.service.title || !editService.service.address || !editService.service.zipCode || !editService.service.city || !editService.service.description" layout-align="center center">
+        Valider <span class="glyphicon glyphicon-ok-sign"></span>
+    </md-button>
+</div>
+
