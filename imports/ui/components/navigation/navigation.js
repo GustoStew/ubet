@@ -5,6 +5,7 @@ import uiRouter from 'angular-ui-router';
 import './navigation.html';
 import {Events} from '../../../api/events';
 import {Services} from '../../../api/services';
+import {Requests} from '../../../api/requests';
 
 import {name as Login} from '../login/login';
 
@@ -24,6 +25,8 @@ class Navigation {
         this.subscribe('events');
 
         this.subscribe('services');
+
+        this.subscribe('requests');
 
         this.helpers({
             isLoggedIn() {
@@ -53,6 +56,14 @@ class Navigation {
             },
             nbEvents() {
                 var nb  = Events.find().count();
+                if(nb > 100)
+                    return "+100";
+                return nb;
+            },
+            nbRequests(){
+                var nb = Requests.find({
+                    owner:Meteor.userId()
+                }).count();
                 if(nb > 100)
                     return "+100";
                 return nb;

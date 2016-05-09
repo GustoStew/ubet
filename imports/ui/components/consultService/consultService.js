@@ -18,22 +18,25 @@ class ConsultService {
         this.subscribe('themesService');
         this.subscribe('subThemesService');
 
-        this.helpers({
-            theme(){
-                return ThemesService.findOne({
-                    key: this.service.theme
-                });
-            },
-            subtheme(){
-                return SubThemesService.findOne({
-                    key: this.service.subtheme,
-                    theme: this.service.theme
-                })
-            },
-            owner(){
-                return Meteor.users.findOne(this.service.owner);
-            }
-        });
+    }
+    getOwner() {
+        if(!this.service){
+            return  '';
+        }
+        return Meteor.users.findOne(this.service.owner) || 'Inconnu';
+    }
+
+    getTheme(){
+        return ThemesService.findOne({
+            key:this.getReactively('service.theme')
+        })
+    }
+
+    getSubTheme(){
+        return SubThemesService.findOne({
+            theme: this.getReactively('service.theme'),
+            key:this.getReactively('service.subtheme')
+        })
     }
 }
 
