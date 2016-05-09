@@ -1,27 +1,33 @@
-<div flex  layout="row" layout-align="space-between start">
+<div flex="80" flex-offset="10" layout="row" layout-align="space-between start">
 
     <md-content class="md-padding" flex="60"  layout="column">
 
+        <h2 class="resume" layout="row" layout-align="center center">{{addEvent.newEvent.title}}</h2>
+        <div layout-gt-sm="row" layout-align="center center">
+            <i class="material-icons md-light md-36 md-margin" >insert_invitation</i>
+            <h3>{{addEvent.newEvent.date | date:'dd/MM/yyyy'}}</h3>
+        </div>
+        <h3 class="themeResume" layout="row"  layout-align="center center">Thème : {{addEvent.themeSelected.description}}</h3>
+        <md-divider></md-divider>
+        <h3 class="themeResume h3Resume" layout-gt-sm="row" layout-align="center center">Description </h3>
+        <p>{{addEvent.newEvent.description}}</p>
+
+        <md-divider></md-divider>
+        <h3 class="h3Resume" layout-gt-sm="row" layout-align="center center">Informations pratiques</h3>
+
+        <h4 layout="row"  layout-align="start center">Adresse : {{addEvent.newEvent.address}}  {{addEvent.newEvent.city}}</h4>
+
+        <h4 layout="row"  layout-align="start center">Contact : {{addEvent.currentUser.emails[0].address}}</h4>
 
 
     </md-content>
-    <md-content class="md-padding" flex="40"  layout="column">
+    <md-content class="md-padding vertical" flex="40"  layout="column" layout-align="center center">
 
-        <p>test</p>
+        <img class="imgResume" src="http://img8.weemove.com/ressources/images/evenement/evenement_869223/flyer_869223.jpg">
 
     </md-content>
 
 </div>
-
-<!--<div class="text-left">-->
-    <!--<h2>{{addEvent.newEvent.title}}</h2>-->
-    <!--<h3>Thème : {{addEvent.themeSelected.description}}</h3>-->
-    <!--<h4>Description :</h4>-->
-    <!--<p>{{addEvent.newEvent.description}}</p>-->
-    <!--<h4>Adresse :</h4>-->
-    <!--<p>{{addEvent.newEvent.address}}</p>-->
-    <!--<h4>Contact :</h4>-->
-<!--</div>-->
 
 
 
