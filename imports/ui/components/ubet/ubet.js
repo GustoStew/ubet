@@ -17,6 +17,7 @@ import { name as ListServices} from '../listServices/listServices';
 import { name as DetailsService} from '../detailsService/detailsService';
 import { name as DetailsEvent} from '../detailsEvent/detailsEvent';
 import { name as UserRequests} from '../userRequests/userRequests';
+import { name as UserLikes} from '../userLikes/userLikes';
 
 class Ubet {}
 
@@ -40,6 +41,7 @@ export default angular.module(name, [
     DetailsEvent,
     DetailsService,
     UserRequests,
+    UserLikes,
     'accounts.ui'
 ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
