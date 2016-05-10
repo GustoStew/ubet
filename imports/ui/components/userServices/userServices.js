@@ -27,6 +27,13 @@ class UserServices {
                 });
             }
         });
+        this.topDirections = ['left', 'up'];
+        this.bottomDirections = ['down', 'right'];
+        this.isOpen = false;
+        this.availableModes = ['md-fling', 'md-scale'];
+        this.selectedMode = 'md-scale';
+        this.availableDirections = ['up', 'down', 'left', 'right'];
+        this.selectedDirection = 'left';
     }
 
     showConfirm(ev,serviceId){
@@ -51,26 +58,7 @@ class UserServices {
             );},function(){});
     }
 
-    remove(serviceId){
-        Services.remove({
-            _id: serviceId
-        }, (error) => {
-            if (error) {
-                console.log('Oops, echec suppression..');
-            } else {
-                console.log('Supprimé!');
-            }
-        });
-        Meteor.call('removeByServiceId',serviceId,
-            (error) => {
-                if (error) {
-                    console.log('Oops, echec suppression requete!');
-                } else {
-                    console.log('Requete supprimée!');
-                }
-            }
-        );
-    }
+
 }
 
 const name = 'userServices';

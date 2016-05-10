@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
     <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addService.theme">
         <md-icon  class="material-icons">add</md-icon>
     </md-button>
@@ -14,18 +14,33 @@
                         <span class="md-subhead">{{service.description}}</span>
                     </md-card-title-text>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
-                            <md-icon class="material-icons">menu</md-icon>
-                            <md-tooltip>Détails</md-tooltip>
-                        </md-button>
-                        <edit-service-button service="service"></edit-service-button>
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="userServices.showConfirm($event,service._id)">
-                            <md-icon class="material-icons">delete</md-icon>
-                            <md-tooltip>Supprimer</md-tooltip>
-                        </md-button>
+                        <md-fab-speed-dial md-open="service.isOpen" md-direction="{{userServices.selectedDirection}}" ng-class="userServices.selectedMode">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-primary md-hue-2">
+                                    <md-icon class="material-icons">menu</md-icon>
+                                    <md-tooltip>Menu</md-tooltip>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+
+                                <edit-service-button service="service"></edit-service-button>
+                                <md-button class="md-icon-button" aria-label="delete" ng-click="userServices.showConfirm($event,service._id)">
+                                    <md-icon class="material-icons">delete</md-icon>
+                                    <md-tooltip>Supprimer</md-tooltip>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
+                                    <md-icon class="material-icons">menu</md-icon>
+                                    <md-tooltip>Détails</md-tooltip>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
                     </md-card-actions>
                 </md-card-title>
             </md-card>
         </div>
     </md-content>
+
+
+
 </div>
