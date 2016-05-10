@@ -40,16 +40,19 @@
         <textarea ng-model="addService.newService.description" md-maxlength="2000"  md-select-on-focus required></textarea>
         <span flex></span>
     </md-input-container>
-    <md-checkbox ng-model="addService.newService.showPhone" ng-true-value="false" ng-false-value="true">Je ne voudrais pas que mon téléphone soit affiché dans l'annonce</md-checkbox>
-</md-content>
+    <md-content flex-offset="5" layout="column" >
+        <md-checkbox ng-model="addService.newService.showPhone" ng-true-value="false" ng-false-value="true">Je ne souhaite pas laisser apparaître mon numéro de téléphone sur mon annonce</md-checkbox>
+    </md-content>
+  </md-content>
 
 <div layout="row" layout-align="center">
     <md-button ui-sref="addService.theme" class="md-raised precedent" layout-align="center center">
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Étape précédente
     </md-button>
 
-    <md-button ui-sref="addService.resume" class="md-raised precedent" ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description" layout-align="center center">
+    <md-button ui-sref="addService.resume" class="md-raised precedent"  layout-align="center center">
         Étape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </md-button>
 </div>
 
+<!--ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description"-->
