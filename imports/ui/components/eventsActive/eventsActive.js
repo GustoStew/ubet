@@ -4,28 +4,48 @@ import uiRouter from 'angular-ui-router';
 
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../../../api/events';
-import { name as EventsActive} from '../eventsActive/eventsActive';
-import { name as EventsInactive} from '../eventsInactive/eventsInactive';
+import { name as DetailsEventButton} from '../detailsEventButton/detailsEventButton';
+import { name as EditEventButton} from '../editEventButton/editEventButton';
 
-import './userEvents.html';
+import './eventsActive.html';
 
-class UserEvents {
-    constructor($scope, $reactive, $state, $mdDialog) {
+class EventsActive {
+    constructor($scope, $reactive, $mdDialog) {
         'ngInject';
 
-        this.$state = $state;
-        this.mdDialog = $mdDialog;
         $reactive(this).attach($scope);
+
+        this.mdDialog = $mdDialog;
 
         this.subscribe('events');
 
         this.helpers({
             events() {
                 return Events.find({
-                    owner:Meteor.userId()
+                    owner:Meteor.userId(),
+                    active: true,
+                    date : {
+                        $gte: new Date()
+                    }
                 });
             }
         });
+    }
+
+    store(eventId){
+        Events.update({
+            _id:eventId
+        },{
+            $set: {
+                active: false
+            }
+        }, (error) => {
+            if (error) {
+                console.log('Oops, echec archivage..');
+            } else {
+                console.log('Archivé!');
+            }
+        })
     }
 
     showConfirm(ev,eventId){
@@ -35,7 +55,7 @@ class UserEvents {
             .ariaLabel('Remove Event').targetEvent(ev)
             .ok('Yes please !')
             .cancel('God no !');
-        this.mdDialog.show(confirm).then(function(){ 
+        this.mdDialog.show(confirm).then(function(){
             Events.remove({
                 _id: eventId
             }, (error) => {
@@ -49,28 +69,16 @@ class UserEvents {
     }
 }
 
-const name = 'userEvents';
+const name = 'eventsActive';
 
 // create a module
 export default angular.module(name, [
-        angularMeteor,
-        uiRouter,
-        EventsActive,
-        EventsInactive
-    ])
-    .component(name, {
-        templateUrl: `imports/ui/components/${name}/${name}.html`,
-        controllerAs: name,
-        controller:UserEvents
-    })
-    .config(config);
-
-
-function config($stateProvider) {
-    'ngInject';
-
-    $stateProvider.state('userEvents', {
-        url: '/userEvents',
-        template: '<user-events></user-events>'
-    });
-}
+    angularMeteor,
+    uiRouter,
+    DetailsEventButton,
+    EditEventButton
+]).component(name, {
+    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    controllerAs: name,
+    controller: EventsActive
+});
