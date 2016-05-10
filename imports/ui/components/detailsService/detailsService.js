@@ -41,6 +41,9 @@ class DetailsService {
 
         return this.service.owner === Meteor.userId();
     }
+    back(){
+        history.back(-1);
+    }
 }
 
 const name = 'detailsService';
