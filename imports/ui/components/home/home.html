@@ -11,7 +11,9 @@
            </md-card-title-media>
        </md-card-title>
        <md-card-content>
+           <br/>
            <h3 align="center">UBET</h3>
+           <br/>
            <p> L'échange de services devient enfin facile grâce à UBET : Le site d'entraide entre les membres de l'université de Bordeaux 1 (étudiants, corps professoral et équipe administrative).</p>
            <md-divider></md-divider>
        </md-card-content>
@@ -25,14 +27,14 @@
 </div>
 
 <div layout="row" layout-align="center" layout-wrap>
-        <div flex = "45">
+        <div flex = "50">
             <md-card>
                 <md-toolbar>
                     <h3 class="md-toolbar-tools">
                         <span>Services les plus récents </span>
                         <span flex></span>
                         <md-card-actions>
-                            <md-button ui-sref="addService.theme">
+                            <md-button class="md-icon-button" ui-sref="addService.theme">
                                 <md-icon class="material-icons">add_circle</md-icon>
                                 <md-tooltip>Nouveau Service</md-tooltip>
                             </md-button>
@@ -44,17 +46,23 @@
                         <md-list-item class="md-3-line list-home" ng-repeat="service in home.services" ng-if="$index < 5">
                             <div class="md-list-item-text container" layout="row">
                                 <img ng-src="{{ service.icon }}" class="md-avatar" alt="{{service.title}}"/>
-                                <md-content class="home" layout="row">
-                                        <md-content layout="column">
-                                            <h3>{{service.title}}</h3>
-                                            <p>{{service.description | limitTo : 100}} {{service.description.length > 100 ? '...' : ''}}</p>
-                                        </md-content>
-                                        <md-card-actions>
-                                            <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
-                                                <md-icon class="material-icons">open_in_new</md-icon>
-                                                <md-tooltip>Lire la suite</md-tooltip>
-                                            </md-button>
-                                        </md-card-actions>
+                                <md-content class="home" layout="row" style="width: 100%">
+                                    <div layout="row" layout-align="space-between center" style="width: 100%">
+                                        <div>
+                                            <md-content layout="column">
+                                                <h3>{{service.title}}</h3>
+                                                <p>{{service.description | limitTo : 100}} {{service.description.length > 100 ? '...' : ''}}</p>
+                                            </md-content>
+                                        </div>
+                                        <div>
+                                            <md-card-actions>
+                                                <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
+                                                    <md-icon class="material-icons">open_in_new</md-icon>
+                                                    <md-tooltip>Lire la suite</md-tooltip>
+                                                </md-button>
+                                            </md-card-actions>
+                                        </div>
+                                    </div>
                                 </md-content>
                             </div>
                             <md-divider ng-if="!$last"></md-divider>
@@ -69,16 +77,16 @@
             </md-card>
         </div>
 
-        <div flex = "45">
+        <div flex = "50">
                 <md-card>
                     <md-toolbar>
                         <h3 class="md-toolbar-tools">
                             <span>Evènements les plus récents </span>
                             <span flex></span>
                             <md-card-actions layout="row" layout-align="end center">
-                                <md-button ui-sref="addEvent.theme">
+                                <md-button class="md-icon-button" ui-sref="addEvent.theme">
                                     <md-icon class="material-icons">add_circle</md-icon>
-                                    <md-tooltip>Nouvel évènement</md-tooltip>
+                                    <md-tooltip>Nouvel événement</md-tooltip>
                                 </md-button>
                             </md-card-actions>
                         </h3>
@@ -88,13 +96,19 @@
                             <md-list-item class="md-3-line list-home" ng-repeat="event in home.events" ng-if="$index < 5">
                                 <div class="md-list-item-text container" layout="row">
                                     <img ng-src="{{ event.icon }}" class="md-avatar" alt="{{event.title}}"/>
-                                    <md-content class="home" layout="row">
-                                        <md-content layout="column">
-                                            <h3>{{event.title}}</h3>
-                                            <p>{{event.description | limitTo : 100}} {{event.description.length > 100 ? '...' : ''}} </p>
-                                        </md-content>
+                                    <md-content class="home" layout="row" style="width: 100%">
+                                        <div layout="row" layout-align="space-between center" style="width: 100%">
+                                            <div>
+                                                <md-content layout="column">
+                                                    <h3>{{event.title}}</h3>
+                                                    <p>{{event.description | limitTo : 90}} {{event.description.length > 90 ? '...' : ''}} </p>
+                                                </md-content>
+                                            </div>
+                                            <span flex></span>
                                             <details-event-button event="event"></details-event-button>
                                             <like-button identifiant="event._id"></like-button>
+
+                                        </div>
                                     </md-content>
                                 </div>
                                 <md-divider ng-if="!$last"></md-divider>
