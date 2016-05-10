@@ -3,26 +3,26 @@
     <md-content class="md-padding vertical" flex="35" fmex-offset="10"  layout="column">
 
         <div layout="row" layout-align="center">
-            <img class="avatar" src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png" alt="blabla" height="128" width="128">
+            <img class="avatar" src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg" alt="blabla">
         </div>
 
         <div class="contact" layout-gt-sm="row" layout-align="center center">
             <p> {{addService.currentUser.profile.firstName}}</p>  <p>{{addService.currentUser.profile.lastName}}</p>
         </div>
 
-        <div class="contact" layout-gt-sm="row" layout-align="center center">
+        <div class="contact" layout-gt-sm="row" flex-offset="20">
             <i class="material-icons md-light md-24 md-margin" >email</i>
             <p>{{addService.currentUser.emails[0].address}}</p>
         </div>
 
-        <div class="contact" layout-gt-sm="row" layout-align="center center">
+        <div class="contact" layout-gt-sm="row" flex-offset="20">
             <i class="material-icons md-light md-24 md-margin" >home</i>
             <p>{{addService.newService.city}} - {{addService.newService.zipCode}}</p>
         </div>
 
-        <div ng-show="addService.newService.showPhone" class="contact" layout-gt-sm="row" layout-align="center center">
+        <div ng-show="addService.newService.showPhone" class="contact" layout-gt-sm="row" flex-offset="20">
             <i class="material-icons md-light md-24 md-margin" >phone</i>
-            <p ng-show="addService.newService.showPhone">{{addService.currentUser.profile.phone}}</p>
+            <p>{{addService.currentUser.profile.phone}}</p>
         </div>
 
     </md-content>
@@ -30,14 +30,13 @@
     <md-content class="md-padding" flex="60"  layout="column" layout-align="center center">
 
         <h2 class="resume" layout="row" layout-align="center center">{{addService.newService.title}}</h2>
-        <div layout-gt-sm="row" layout-align="center center">
+        <div ng-show="addService.newService.date"> layout-gt-sm="row" layout-align="center center">
             <i class="material-icons md-light md-36 md-margin" >insert_invitation</i>
             <h3>{{addService.newService.date | date:'dd/MM/yyyy'}}</h3>
         </div>
         <h3 class="themeResume" layout="row"  layout-align="center center">Thème : {{addService.themeSelected.description}}</h3>
-        <md-divider></md-divider>
 
-        <h3 class="themeResume h3Resume" layout-gt-sm="row" layout-align="center center">Description </h3>
+        <h3 class="themeResume" layout-gt-sm="row" layout-align="center center">Description </h3>
         <p>{{addService.newService.description}}</p>
 
     </md-content>
