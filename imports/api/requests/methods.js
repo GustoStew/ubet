@@ -30,6 +30,8 @@ export function accept(serviceId, requestId, ownerRequestId) {
             confirm: false,
             onWait: false
         }
+    },{
+        multi:true
     }, (error) => {
         if (error) {
             console.log('Oops, pas d annulation...');
@@ -40,6 +42,22 @@ export function accept(serviceId, requestId, ownerRequestId) {
 
 }
 
+export function removeByServiceId(serviceId){
+    check(serviceId, String);
+
+    Requests.remove({
+        serviceId:serviceId
+    }, (error) => {
+        if (error) {
+            console.log('Oops, echec suppression requete...');
+        } else {
+            console.log('Requete supprimé!');
+        }
+    })
+
+}
+
 Meteor.methods({
-    accept
+    accept,
+    removeByServiceId
 });

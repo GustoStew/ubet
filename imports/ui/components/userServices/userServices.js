@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
@@ -26,6 +25,27 @@ class UserServices {
                 });
             }
         });
+    }
+
+    remove(serviceId){
+        Services.remove({
+            _id: serviceId
+        }, (error) => {
+            if (error) {
+                console.log('Oops, echec suppression..');
+            } else {
+                console.log('Supprimé!');
+            }
+        });
+        Meteor.call('removeByServiceId',serviceId,
+            (error) => {
+                if (error) {
+                    console.log('Oops, echec suppression requete!');
+                } else {
+                    console.log('Requete supprimée!');
+                }
+            }
+        );
     }
 }
 
