@@ -27,6 +27,18 @@ class UserEvents {
             }
         });
     }
+
+    remove(eventId){
+        Events.remove({
+            _id: eventId
+        }, (error) => {
+            if (error) {
+                console.log('Oops, echec suppression..');
+            } else {
+                console.log('Supprimé!');
+            }
+        })
+    }
 }
 
 const name = 'userEvents';
