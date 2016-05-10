@@ -28,6 +28,9 @@ class Home {
             },
             services() {
                 return Services.find();
+            },
+            currentUser(){
+                return Meteor.user();
             }
         });
     }
