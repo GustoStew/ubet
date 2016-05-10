@@ -27,18 +27,15 @@ class UserServices {
                 });
             }
         });
-        this.topDirections = ['left', 'up'];
-        this.bottomDirections = ['down', 'right'];
-        this.isOpen = false;
-        this.availableModes = ['md-fling', 'md-scale'];
-        this.selectedMode = 'md-scale';
-        this.availableDirections = ['up', 'down', 'left', 'right'];
-        this.selectedDirection = 'left';
-        this.hover = false;
     }
 
     showConfirm(ev,serviceId){
-        var confirm = this.mdDialog.confirm().title('Êtes-vous sûr de vouloir supprimer votre service?').textContent('Une fois supprimé, votre action est irréversible.').ariaLabel('Remove Service').targetEvent(ev).ok('Yup !').cancel('My bad ');
+        var confirm = this.mdDialog.confirm().
+        title('Êtes-vous sûr de vouloir supprimer votre service?').
+        textContent('Une fois supprimé, votre action est irréversible.').
+        ariaLabel('Remove Service').
+        targetEvent(ev).ok('Yup !').
+        cancel('My bad ');
         this.mdDialog.show(confirm).then(function(){ Services.remove({
             _id: serviceId
         }, (error) => {
