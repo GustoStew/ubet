@@ -10,10 +10,12 @@ import './login.html';
 import {name as Register} from '../register/register';
 
 class Login {
-    constructor($scope, $reactive, $state) {
+    constructor($scope, $reactive, $state, $mdDialog) {
         'ngInject';
 
         this.$state = $state;
+        
+        this.mdDialog = $mdDialog;
 
         $reactive(this).attach($scope);
 
@@ -24,12 +26,19 @@ class Login {
 
         this.error = '';
     }
-
+    
+    showFailure(){
+        this.mdDialog.show(
+            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Connexion impossible, email ou mot de passe incorrect').ariaLabel('Alert Dialog Demo').ok('Ok!')
+        );
+    }
+    
     login() {
         Meteor.loginWithPassword(this.credentials.email, this.credentials.password,
             this.$bindToContext((err) => {
                 if (err) {
-                    this.error = err;
+                    console.log('Oops, unable to log in...');
+                    this.showFailure();
                 } else {
                     this.$state.go('home');
                 }
