@@ -33,6 +33,10 @@ class AddEvent {
         };
 
         this.helpers({
+            currentUser(){
+                return Meteor.user();
+            },
+
             themes() {
                 return ThemesEvent.find();
             },
