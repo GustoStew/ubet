@@ -50,9 +50,7 @@
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Étape précédente
     </md-button>
 
-    <md-button ui-sref="addService.resume" class="md-raised precedent"  layout-align="center center">
+    <md-button ui-sref="addService.resume" class="md-raised precedent" ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description" layout-align="center center">
         Étape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </md-button>
 </div>
-
-<!--ng-disabled="!addService.newService.subtheme || !addService.newService.title || !addService.newService.address || !addService.newService.zipCode || !addService.newService.city || !addService.newService.description"-->
