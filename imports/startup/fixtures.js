@@ -102,8 +102,8 @@ Meteor.startup(() => {
             'icon': '/img/enfant_themes_icon.png'
         }, {
             'key': 'healthcare',
-            'description': 'Soins',
-            'icon': '/img/soins_themes_icon.png'
+            'description': 'Bien-être',
+            'icon': '/img/bien-etre_themes_icon.png'
         }, {
             'key': 'party',
             'description': 'Festivités',
