@@ -16,7 +16,7 @@
                     <md-card-actions layout="row" layout-align="end center">
                         <details-event-button event="event"></details-event-button>
                         <edit-event-button event="event"></edit-event-button>
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="userEvents.remove(event._id)">
+                        <md-button class="md-icon-button" aria-label="delete" ng-click="userEvents.showConfirm($event,event._id)">
                             <md-icon class="material-icons">delete</md-icon>
                             <md-tooltip>Supprimer</md-tooltip>
                         </md-button>
