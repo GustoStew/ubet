@@ -46,9 +46,7 @@
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Étape précédente
     </md-button>
 
-    <md-button ui-sref="addEvent.resume" class="md-raised precedent"   layout-align="center center">
+    <md-button ui-sref="addEvent.resume" class="md-raised precedent" g-disabled="!addEvent.newEvent.subtheme || !addEvent.newEvent.title || !addEvent.newEvent.date || !addEvent.newEvent.address || !addEvent.newEvent.zipCode || !addEvent.newEvent.city || !addEvent.newEvent.description" layout-align="center center">
         Étape suivante <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </md-button>
 </div>
-
-<!--ng-disabled="!addEvent.newEvent.subtheme || !addEvent.newEvent.title || !addEvent.newEvent.date || !addEvent.newEvent.address || !addEvent.newEvent.zipCode || !addEvent.newEvent.city || !addEvent.newEvent.description"-->

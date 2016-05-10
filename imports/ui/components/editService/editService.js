@@ -35,7 +35,8 @@ class EditService {
                 description: this.service.description,
                 zipCode: this.service.zipCode,
                 city: this.service.city,
-                title: this.service.title
+                title: this.service.title,
+                showPhone: this.service.showPhone
             }
         }, (error) => {
             if (error) {
