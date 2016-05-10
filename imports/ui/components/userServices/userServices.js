@@ -34,6 +34,7 @@ class UserServices {
         this.selectedMode = 'md-scale';
         this.availableDirections = ['up', 'down', 'left', 'right'];
         this.selectedDirection = 'left';
+        this.hover = false;
     }
 
     showConfirm(ev,serviceId){

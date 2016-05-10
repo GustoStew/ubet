@@ -14,7 +14,7 @@
                         <span class="md-subhead">{{service.description}}</span>
                     </md-card-title-text>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-fab-speed-dial md-open="service.isOpen" md-direction="{{userServices.selectedDirection}}" ng-class="userServices.selectedMode">
+                        <md-fab-speed-dial ng-class="{ 'md-hover-full': service.hover }"  md-open="service.isOpen" md-direction="{{userServices.selectedDirection}}" class="md-scale" ng-mouseenter="service.isOpen=true" ng-mouseleave="service.isOpen=false">
                             <md-fab-trigger>
                                 <md-button aria-label="menu" class="md-fab md-primary md-hue-2">
                                     <md-icon class="material-icons">menu</md-icon>
@@ -23,13 +23,14 @@
                             </md-fab-trigger>
                             <md-fab-actions>
 
-                                <edit-service-button service="service"></edit-service-button>
+
                                 <md-button class="md-icon-button" aria-label="delete" ng-click="userServices.showConfirm($event,service._id)">
                                     <md-icon class="material-icons">delete</md-icon>
                                     <md-tooltip>Supprimer</md-tooltip>
                                 </md-button>
+                                <edit-service-button service="service"></edit-service-button>
                                 <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
-                                    <md-icon class="material-icons">menu</md-icon>
+                                    <md-icon class="material-icons">description</md-icon>
                                     <md-tooltip>Détails</md-tooltip>
                                 </md-button>
                             </md-fab-actions>
