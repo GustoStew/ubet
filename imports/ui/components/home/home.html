@@ -47,7 +47,7 @@
                             <div class="md-list-item-text container" layout="row">
                                 <img ng-src="{{ service.icon }}" class="md-avatar" alt="{{service.title}}"/>
                                 <md-content class="home" layout="row" style="width: 100%">
-                                    <div layout="row" layout-align="space-between center center" style="width: 100%">
+                                    <div layout="row" layout-align="space-between center" style="width: 100%">
                                         <div>
                                             <md-content layout="column">
                                                 <h3>{{service.title}}</h3>
@@ -86,7 +86,7 @@
                             <md-card-actions layout="row" layout-align="end center">
                                 <md-button class="md-icon-button" ui-sref="addEvent.theme">
                                     <md-icon class="material-icons">add_circle</md-icon>
-                                    <md-tooltip>Nouvel évènement</md-tooltip>
+                                    <md-tooltip>Nouvel événement</md-tooltip>
                                 </md-button>
                             </md-card-actions>
                         </h3>
@@ -97,17 +97,17 @@
                                 <div class="md-list-item-text container" layout="row">
                                     <img ng-src="{{ event.icon }}" class="md-avatar" alt="{{event.title}}"/>
                                     <md-content class="home" layout="row" style="width: 100%">
-                                        <div layout="row" layout-align="space-between center center" style="width: 100%">
+                                        <div layout="row" layout-align="space-between center" style="width: 100%">
                                             <div>
                                                 <md-content layout="column">
                                                     <h3>{{event.title}}</h3>
                                                     <p>{{event.description | limitTo : 90}} {{event.description.length > 90 ? '...' : ''}} </p>
                                                 </md-content>
                                             </div>
-                                            <div>
-                                                <details-event-button event="event"></details-event-button>
-                                                <like-button identifiant="event._id"></like-button>
-                                            </div>
+                                            <span flex></span>
+                                            <details-event-button event="event"></details-event-button>
+                                            <like-button identifiant="event._id"></like-button>
+
                                         </div>
                                     </md-content>
                                 </div>
