@@ -19,7 +19,7 @@
                             <md-tooltip>Détails</md-tooltip>
                         </md-button>
                         <edit-service-button service="service"></edit-service-button>
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="userServices.remove(service._id)">
+                        <md-button class="md-icon-button" aria-label="delete" ng-click="userServices.showConfirm($event,service._id)">
                             <md-icon class="material-icons">delete</md-icon>
                             <md-tooltip>Supprimer</md-tooltip>
                         </md-button>

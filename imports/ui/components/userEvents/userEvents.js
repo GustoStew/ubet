@@ -10,11 +10,11 @@ import { name as EditEventButton} from '../editEventButton/editEventButton';
 import './userEvents.html';
 
 class UserEvents {
-    constructor($scope, $reactive, $state) {
+    constructor($scope, $reactive, $state, $mdDialog) {
         'ngInject';
 
         this.$state = $state;
-
+        this.mdDialog = $mdDialog;
         $reactive(this).attach($scope);
 
         this.subscribe('events');
@@ -28,6 +28,19 @@ class UserEvents {
         });
     }
 
+    showConfirm(ev,eventId){
+        var confirm = this.mdDialog.confirm().title('Êtes-vous sûr de vouloir supprimer votre événement?').textContent('Une fois supprimé, votre action est irréversible.').ariaLabel('Remove Event').targetEvent(ev).ok('Yes please !').cancel('God no !');
+        this.mdDialog.show(confirm).then(function(){ Events.remove({
+            _id: eventId
+        }, (error) => {
+            if (error) {
+                console.log('Oops, echec suppression..');
+            } else {
+                console.log('Supprimé!');
+            }
+        })
+        },function(){});
+    }
     remove(eventId){
         Events.remove({
             _id: eventId
