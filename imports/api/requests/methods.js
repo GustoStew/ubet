@@ -30,6 +30,8 @@ export function accept(serviceId, requestId, ownerRequestId) {
             confirm: false,
             onWait: false
         }
+    },{
+        multi:true
     }, (error) => {
         if (error) {
             console.log('Oops, pas d annulation...');
