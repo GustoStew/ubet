@@ -17,6 +17,7 @@
                 <span class="md-subhead"><b>Thème: </b>{{consultService.getTheme().description}}</span>
                 <span class="md-subhead"><b>Type de service: </b>{{consultService.getSubTheme().description}}</span>
                 <span class="md-subhead" ng-show="consultService.service.date"><b>Date: </b>{{consultService.service.date | date:'dd-MM-yyyy'}}</span>
+                <span class="md-subhead" ng-show="consultService.service.showPhone"><b>Tel: </b>{{consultService.getOwner().profile.phone}}</span>
                 <span class="md-subhead"><b>Email: </b>{{consultService.getOwner().emails[0].address}}</span>
                 <span class="md-subhead"><b>Adresse: </b> {{consultService.service.address}}, {{consultService.service.zipCode}} {{consultService.service.city}}.</span>
                 <br>
