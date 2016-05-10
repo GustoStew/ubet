@@ -31,8 +31,9 @@
 
 
                     <div layout="row" layout-align="center">
-                        <md-button class="md-raised" ng-click="login.login()">Se connecter</md-button>
+                        <md-button class="md-raised" ng-click="login.login()" ng-disabled="!login.credentials.email || !login.credentials.password">Se connecter</md-button>
                     </div>
+             
 
                     <div layout="row" class="margin-top" layout-align="center center">
                         <p flex="70" >
