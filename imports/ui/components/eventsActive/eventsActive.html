@@ -1,27 +1,7 @@
-<div flex>
-    <md-content>
-        <h3>Mes événements</h3>
-        <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addEvent.theme">
-            <md-icon  class="material-icons">add</md-icon>
-        </md-button>
-        <md-tabs md-dynamic-height md-border-bottom>
-            <md-tab label="Actifs">
-                <events-active></events-active>
-            </md-tab>
-            <md-tab label="Archivés">
-                <events-inactive></events-inactive>
-            </md-tab>
-        </md-tabs>
-    </md-content>
-</div>
-<!--
 <div class="container">
-    <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addEvent.theme">
-        <md-icon  class="material-icons">add</md-icon>
-    </md-button>
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
-            <md-card ng-repeat="event in userEvents.events">
+            <md-card ng-repeat="event in eventsActive.events">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>
@@ -33,14 +13,20 @@
                     <md-card-actions layout="row" layout-align="end center">
                         <details-event-button event="event"></details-event-button>
                         <edit-event-button event="event"></edit-event-button>
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="userEvents.showConfirm($event,event._id)">
+                        <md-button class="md-icon-button" aria-label="delete" ng-click="eventsActive.showConfirm($event,event._id)">
                             <md-icon class="material-icons">delete</md-icon>
                             <md-tooltip>Supprimer</md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="store" ng-click="eventsActive.store(event._id)">
+                            <md-icon class="material-icons">archive</md-icon>
+                            <md-tooltip>Archiver</md-tooltip>
                         </md-button>
                     </md-card-actions>
                 </md-card-title>
             </md-card>
         </div>
     </md-content>
+    <p ng-if="(eventsActive.events).length <= 0">
+        Vous n'avez pas d'événements actifs
+    </p>
 </div>
--->
