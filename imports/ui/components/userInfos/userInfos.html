@@ -11,7 +11,7 @@
                     <div class="form-horizontal">
 
                         <div layout="row" layout-align="center">
-                            <img src="/img/user_man.png">
+                            <img src="{{userInfos.currentUser.profile.civility == 'Monsieur' && '/img/user_edit_man.png' || '/img/user_edit_woman.png'}}">
                         </div>
 
                         <div layout-gt-sm="row">

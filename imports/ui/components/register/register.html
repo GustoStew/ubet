@@ -10,7 +10,9 @@
                 <md-content >
 
                     <div layout="row" layout-align="center">
-                        <img src="/img/user_add.png">
+                        <!--img src="/img/user_add.png" name="iconUser"-->
+                        <img ng-src="{{register.credentials.civility == 'Monsieur' && '/img/user_register_man.png' || register.credentials.civility == 'Madame' && '/img/user_register_woman.png' || '/img/user_register.png' }} "/>
+
                     </div>
 
                     <div class="form-horizontal">
@@ -20,6 +22,7 @@
                                 <label>Civilité</label>
                                     <md-select ng-model="register.credentials.civility" required>
                                         <md-option value="Madame">Mme.</md-option>
+
                                         <md-option value="Monsieur">M.</md-option>
                                     </md-select>
                             </md-input-container>
