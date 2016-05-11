@@ -32,7 +32,7 @@
                             <i class="material-icons md-light md-36 md-margin">perm_identity</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="firstname" data-error="wrong" data-success="right" class="center-align">Prénom</label>
-                                <input id="firstname" class="form-control" type="text" ng-model="register.credentials.firstName" required>
+                                <input id="firstname" class="form-control" type="text" ng-pattern="/^[a-zA-ZÀ-ÿ\s\’-]{1,29}$/" ng-model="register.credentials.firstName" required>
                             </md-input-container>
                         </div>
 
@@ -40,7 +40,7 @@
                             <i class="material-icons md-light md-36 md-margin">perm_identity</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="lastname" data-error="wrong" data-success="right" class="center-align">Nom</label>
-                                <input id="lastname" class="form-control" type="text" ng-model="register.credentials.lastName" required>
+                                <input id="lastname" class="form-control" type="text" ng-pattern="/^[a-zA-ZÀ-ÿ\s\’-]{1,29}$/" ng-model="register.credentials.lastName" required>
                             </md-input-container>
                         </div>
 
@@ -48,7 +48,7 @@
                             <i class="material-icons md-light md-36 md-margin">email</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
-                                <input id="email" class="form-control" name = "email" type="email" ng-model="register.credentials.email" required>
+                                <input id="email" class="form-control" name="email" type="email" ng-model="register.credentials.email" required>
                             </md-input-container>
                         </div>
 
@@ -56,7 +56,7 @@
                             <i class="material-icons md-light md-36 md-margin">phone</i>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label for="phone" data-error="wrong" data-success="right" class="center-align">Téléphone</label>
-                                <input id="phone" class="form-control" type="tel" ng-model="register.credentials.phone" required>
+                                <input id="phone" class="form-control" type="tel" ng-model="register.credentials.phone"  ng-maxlength="10" ng-minlength="10" required>
                             </md-input-container>
                         </div>
 
@@ -76,18 +76,10 @@
                         <div layout-gt-sm="row">
                             <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label for="password">Password</label>
+                                <label for="password">Mot de passe</label>
                                 <input class="form-control" id="password" name="password" type="password" ng-model="register.credentials.password" required>
                             </md-input-container>
                         </div>
-
-                        <!--<div layout-gt-sm="row">-->
-                            <!--<i class="material-icons md-light md-36 md-margin" >lock_outline</i>-->
-                            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                                <!--<label for="password">Password</label>-->
-                                <!--<input class="form-control" id="password" type="password" ng-model="register.credentials.password" required>-->
-                            <!--</md-input-container>-->
-                        <!--</div>-->
 
                         <div layout="row" layout-align="center">
                             <md-button layout-align="center center" ng-disabled="form-register.$invalid" ng-click="register.register()" class="md-raised done">
@@ -97,7 +89,6 @@
                                 <i class="material-icons left">clear</i>Annuler
                             </md-button>
                         </div>
-
                     </div>
 
                 </md-content>

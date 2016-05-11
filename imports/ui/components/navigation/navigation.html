@@ -3,11 +3,12 @@
 <div class="fluid-container navigation">
     <md-toolbar>
         <div class="md-toolbar-tools" data-ng-show="navigation.showMobileMainHeader">
-            <img class="md-media-sm card-media" ng-src="/img/ubet_sm_white.png">
-            <md-button class="md-icon-button" aria-label="Side Panel" ng-click="navigation.openSideNavPanel()" ng-show="navigation.isLoggedIn">
+
+            <md-button  aria-label="Menu"  ng-show="navigation.isLoggedIn">
+                <img class="md-media-sm card-media" ng-src="/img/ubet_sm_white.png" ng-click="navigation.openSideNavPanel()">
                 <md-tooltip>Menu</md-tooltip>
-                <i class="material-icons">list</i>
             </md-button>
+            <img class="md-media-sm card-media" ng-src="/img/ubet_sm_white.png" ng-hide="navigation.isLoggedIn">
             <span flex></span>
             <md-button class="md-icon-button" aria-label="Home" ui-sref="home" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Accueil</md-tooltip>
@@ -80,8 +81,8 @@
             </md-list-item>
             <md-list-item>
                 <md-icon  class="material-icons nav">favorite</md-icon>
-                <md-button ui-sref="userLikes" ng-click="navigation.closeSideNavPanel()">Mes likes</md-button>
-                <div class="md-secondary">{{navigation.nbEvents}}</div>
+                <md-button ui-sref="userLikes" ng-click="navigation.closeSideNavPanel()">Mes favoris</md-button>
+                <div class="md-secondary">{{(navigation.events | likedEventsFilter:navigation.currentUser).length}}</div>
             </md-list-item>
         </md-list>
     </md-sidenav>

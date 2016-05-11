@@ -10,11 +10,11 @@
         </md-input-container>
         <md-input-container flex>
             <label>Titre:</label>
-            <input type="text"  ng-model="addService.newService.title" required>
+            <input type="text" ng-pattern="/^[a-zA-ZÀ-ÿ\s\’-]{1,29}$/" ng-model="addService.newService.title" required>
         </md-input-container>
         <label class="date">Date de l'événement (facultatif) :</label>
         <md-content flex>
-            <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+            <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy" md-min-date="addService.today"></md-datepicker>
         </md-content>
     </md-content>
     <md-content class="md-padding" flex="50"  layout="column">
@@ -24,12 +24,11 @@
         </md-input-container>
         <md-input-container flex>
             <label>Code postal:</label>
-            <input name="zipCode" type="number"  ng-model="addService.newService.zipCode"   required>
-
+            <input name="zipCode" type="number" ng-maxlength="5" ng-minlength="5" ng-model="addService.newService.zipCode"   required>
         </md-input-container>
         <md-input-container flex>
             <label>Ville:</label>
-            <input  type="text" ng-model="addService.newService.city" required>
+            <input  type="text" ng-pattern="/^[a-zA-ZÀ-ÿ\s\’-]{1,29}$/" ng-model="addService.newService.city" required>
         </md-input-container>
     </md-content>
 </div>
