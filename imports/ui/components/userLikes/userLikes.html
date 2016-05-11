@@ -1,4 +1,15 @@
 <div class="container">
+
+    <md-card>
+        <md-card-title class="md-padding" layout-align="center center" flex>
+            <md-card-title-media layout="column" layout-align="center center">
+                <img class="md-media-md card-media" ng-src="/img/event.png">
+                <br/>
+                <span class="md-headline">MES FAVORIS</span>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
             <md-card ng-repeat="event in userLikes.events | likedEventsFilter:userLikes.currentUser">

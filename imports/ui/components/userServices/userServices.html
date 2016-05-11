@@ -2,6 +2,17 @@
     <md-button class="md-fab md-primary btn-event" aria-label="Ajouter un évènement" ui-sref="addService.theme">
         <md-icon  class="material-icons">add</md-icon>
     </md-button>
+
+    <md-card>
+        <md-card-title class="md-padding" layout-align="center center" flex>
+            <md-card-title-media layout="column" layout-align="center center">
+                <img class="md-media-md card-media" ng-src="/img/service.png">
+                <br/>
+                <span class="md-headline">MES SERVICES</span>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
             <md-card ng-repeat="service in userServices.services">
