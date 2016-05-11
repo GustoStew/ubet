@@ -1,20 +1,19 @@
 <div flex="60" class="container" layout="row" layout-align="center center">
-   <md-card layout-align="center center">
+   <md-card class="mdcardcolor" layout-align="center center">
         <md-toolbar>
             <h3 class="md-toolbar-tools">
                 <span> Bienvenu(e), {{home.currentUser.profile.firstName}} {{home.currentUser.profile.lastName}}</span>
             </h3>
         </md-toolbar>
-       <md-card-title class="grey">
+       <md-card-title>
            <md-card-title-media>
-               <img class="md-media-lg card-media" ng-src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-39025.png">
+               <img class="md-media-lg card-media" ng-src="/img/ubet_lg.png">
            </md-card-title-media>
        </md-card-title>
        <md-card-content>
            <br/>
-           <h3 align="center">UBET</h3>
-           <br/>
-           <p> L'échange de services devient enfin facile grâce à UBET : Le site d'entraide entre les membres de l'université de Bordeaux 1 (étudiants, corps professoral et équipe administrative).</p>
+           <p align="center"> L'échange de services devient enfin facile grâce à UBET : Université de Bordeaux Evenemen et Troc </p>
+           <p align="center">Le site d'entraide entre les membres de l'université de Bordeaux (étudiants, corps professoral et équipe administrative).</p>
            <md-divider></md-divider>
        </md-card-content>
            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
@@ -46,8 +45,8 @@
                         <md-list-item class="md-3-line list-home" ng-repeat="service in home.services" ng-if="$index < 5">
                             <div class="md-list-item-text container" layout="row">
                                 <img ng-src="{{ service.icon }}" class="md-avatar" alt="{{service.title}}"/>
-                                <md-content class="home" layout="row" style="width: 100%">
-                                    <div layout="row" layout-align="space-between center" style="width: 100%">
+                                <md-content class="home width-home" layout="row">
+                                    <div layout="row" layout-align="space-between center" class="width-home">
                                         <div>
                                             <md-content layout="column">
                                                 <h3>{{service.title}}</h3>
@@ -96,8 +95,8 @@
                             <md-list-item class="md-3-line list-home" ng-repeat="event in home.events" ng-if="$index < 5">
                                 <div class="md-list-item-text container" layout="row">
                                     <img ng-src="{{ event.icon }}" class="md-avatar" alt="{{event.title}}"/>
-                                    <md-content class="home" layout="row" style="width: 100%">
-                                        <div layout="row" layout-align="space-between center" style="width: 100%">
+                                    <md-content class="home width-home" layout="row" >
+                                        <div layout="row" layout-align="space-between center" class="width-home">
                                             <div>
                                                 <md-content layout="column">
                                                     <h3>{{event.title}}</h3>
