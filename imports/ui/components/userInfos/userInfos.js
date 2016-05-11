@@ -23,13 +23,23 @@ class UserInfos {
 
     showSuccess(){
         this.mdDialog.show(
-            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Modification Enregistrée.').ariaLabel('Alert Dialog Demo').ok('Ok!')
+            this.mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .textContent('Modification Enregistrée.')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Ok!')
         );
     }
 
     showFailure(){
         this.mdDialog.show(
-            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Une erreur est survenue lors de la modification.').ariaLabel('Alert Dialog Demo').ok('Ok!')
+            this.mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .textContent('Une erreur est survenue lors de la modification.')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Ok!')
         );
     }
 

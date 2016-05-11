@@ -36,20 +36,28 @@ class EventsInactive {
             }
         });
     }
-    restore(eventId){
-        Events.update({
-            _id:eventId
-        },{
-            $set: {
-                active: true
-            }
-        }, (error) => {
-            if (error) {
-                console.log('Oops, echec archivage..');
-            } else {
-                console.log('Archivé!');
-            }
-        })
+    restore(event){
+        if(!event){
+            console.log('Oops, eévénement undefined..');
+        }
+        else if(event.date<new Date()){
+            this.alertDate();
+        }
+        else {
+            Events.update({
+                _id:event._id
+            },{
+                $set: {
+                    active: true
+                }
+            }, (error) => {
+                if (error) {
+                    console.log('Oops, echec archivage..');
+                } else {
+                    console.log('Archivé!');
+                }
+            });
+        }
     }
 
     showConfirm(ev,eventId){
@@ -70,6 +78,17 @@ class EventsInactive {
                 }
             })
         },function(){});
+    }
+
+    alertDate(){
+        this.mdDialog.show(
+            this.mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .textContent('Attention ! Vous ne pouvez pas restaurer un événement ayant une date inférieur à aujourd\'hui !')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Ok!')
+        );
     }
 
     closeInfos(){
