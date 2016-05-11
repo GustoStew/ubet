@@ -1,28 +1,5 @@
 <div class="container">
-<!--<h2 class="h2-padding">Tous les services</h2>
-    <md-content class="md-padding" layout="row" layout-align="space-around " flex>
-        <md-input-container class="md-block">
-            <label>Thème</label>
-            <md-select ng-model="listServices.theme" md-on-close="listServices.subtheme = ''">
-                <md-option ng-repeat="theme in listServices.themes" ng-value="theme.key">{{theme.description}}</md-option>
-            </md-select>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Type du service</label>
-            <md-select ng-model="listServices.subtheme" ng-disabled="!listServices.theme">
-                <md-option ng-repeat="subtheme in listServices.subThemes" ng-value="subtheme.key">{{subtheme.description}}</md-option>
-            </md-select>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Recherche</label>
-            <input type="text" ng-model="listServices.searchText"/>
-        </md-input-container>
-        <div>
-            <md-button ng-click="listServices.clear()" class="md-raised">Réinitialiser recherche</md-button>
-        </div>
-    </md-content>-->
-
-    <md-card class="mdcardcolor">
+    <md-card>
         <md-card-title class="md-padding"  layout-align="center center" flex>
             <md-card-title-media layout="column" layout-align="center center">
                 <img class="md-media-md card-media" ng-src="/img/service.png">
@@ -53,8 +30,6 @@
             </div>
         </md-card-content>
     </md-card>
-
-
 
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">

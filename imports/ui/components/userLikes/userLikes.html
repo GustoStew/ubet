@@ -1,4 +1,15 @@
 <div class="container">
+
+    <md-card>
+        <md-card-title class="md-padding" layout-align="center center" flex>
+            <md-card-title-media layout="column" layout-align="center center">
+                <img class="md-media-md card-media" ng-src="/img/event.png">
+                <br/>
+                <span class="md-headline">MES FAVORIS</span>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
             <md-card ng-repeat="event in userLikes.events | likedEventsFilter:userLikes.currentUser">
@@ -16,9 +27,13 @@
                     </md-card-actions>
                 </md-card-title>
             </md-card>
+            <md-card class="card-info" ng-if="(userLikes.events | likedEventsFilter:userLikes.currentUser).length <= 0">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Vous n'avez pas encore aimé d'évènements</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
         </div>
     </md-content>
-    <p ng-if="(userLikes.events | likedEventsFilter:userLikes.currentUser).length <= 0">
-        Vous n'avez pas encore aimé d'évènements
-    </p>
 </div>

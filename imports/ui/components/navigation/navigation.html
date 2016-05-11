@@ -80,8 +80,8 @@
             </md-list-item>
             <md-list-item>
                 <md-icon  class="material-icons nav">favorite</md-icon>
-                <md-button ui-sref="userLikes" ng-click="navigation.closeSideNavPanel()">Mes likes</md-button>
-                <div class="md-secondary">{{navigation.nbEvents}}</div>
+                <md-button ui-sref="userLikes" ng-click="navigation.closeSideNavPanel()">Mes favoris</md-button>
+                <div class="md-secondary">{{(navigation.events | likedEventsFilter:navigation.currentUser).length}}</div>
             </md-list-item>
         </md-list>
     </md-sidenav>

@@ -38,7 +38,7 @@ class EventsInactive {
     }
     restore(event){
         if(!event){
-            console.log('Oops, eévénement undefined..');
+            console.log('Oops, événement undefined..');
         }
         else if(event.date<new Date()){
             this.alertDate();
