@@ -34,8 +34,8 @@ class UserServices {
         title('Êtes-vous sûr de vouloir supprimer votre service?').
         textContent('Une fois supprimé, votre action est irréversible.').
         ariaLabel('Remove Service').
-        targetEvent(ev).ok('Yup !').
-        cancel('My bad ');
+        targetEvent(ev).ok('Oui !').
+        cancel('Non');
         this.mdDialog.show(confirm).then(function(){ Services.remove({
             _id: serviceId
         }, (error) => {

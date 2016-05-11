@@ -53,8 +53,8 @@ class EventsActive {
             .title('Êtes-vous sûr de vouloir supprimer votre événement?')
             .textContent('Une fois supprimé, votre action est irréversible.')
             .ariaLabel('Remove Event').targetEvent(ev)
-            .ok('Yes please !')
-            .cancel('God no !');
+            .ok('Oui !')
+            .cancel('Non');
         this.mdDialog.show(confirm).then(function(){
             Events.remove({
                 _id: eventId
