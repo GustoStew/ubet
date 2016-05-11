@@ -14,7 +14,7 @@
         </md-input-container>
         <label class="date">Date de l'événement (facultatif) :</label>
         <md-content flex>
-            <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+            <md-datepicker ng-model="addService.newService.date" md-placeholder="dd/mm/yyyy" md-min-date="addService.today"></md-datepicker>
         </md-content>
     </md-content>
     <md-content class="md-padding" flex="50"  layout="column">

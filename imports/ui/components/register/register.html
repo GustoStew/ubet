@@ -73,18 +73,10 @@
                         <div layout-gt-sm="row">
                             <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label for="password">Password</label>
+                                <label for="password">Mot de passe</label>
                                 <input class="form-control" id="password" name="password" type="password" ng-model="register.credentials.password" required>
                             </md-input-container>
                         </div>
-
-                        <!--<div layout-gt-sm="row">-->
-                            <!--<i class="material-icons md-light md-36 md-margin" >lock_outline</i>-->
-                            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                                <!--<label for="password">Password</label>-->
-                                <!--<input class="form-control" id="password" type="password" ng-model="register.credentials.password" required>-->
-                            <!--</md-input-container>-->
-                        <!--</div>-->
 
                         <div layout="row" layout-align="center">
                             <md-button layout-align="center center" ng-disabled="form-register.$invalid" ng-click="register.register()" class="md-raised done">

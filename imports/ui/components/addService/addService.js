@@ -33,6 +33,8 @@ class AddService {
             creationDate: new Date()
         };
 
+        this.today = new Date();
+
         this.helpers({
 
             currentUser(){

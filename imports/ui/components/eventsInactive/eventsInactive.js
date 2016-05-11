@@ -48,13 +48,14 @@ class EventsInactive {
                 _id:event._id
             },{
                 $set: {
-                    active: true
+                    active: true,
+                    creationDate: new Date()
                 }
             }, (error) => {
                 if (error) {
                     console.log('Oops, echec archivage..');
                 } else {
-                    console.log('Archivé!');
+                    console.log('Restauré !');
                 }
             });
         }
