@@ -17,6 +17,9 @@
                 <md-tooltip>Mon Compte</md-tooltip>
                 <md-icon class="material-icons">face</md-icon>
             </md-button>
+            <h5>
+                <span><b>{{navigation.currentUser.profile.firstName}}</b></span>
+            </h5>
             <md-button class="md-icon-button" aria-label="Logout" ng-click="navigation.logout()" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Déconnexion</md-tooltip>
                 <md-icon class="material-icons">power_settings_new</md-icon>
