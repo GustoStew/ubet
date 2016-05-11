@@ -18,6 +18,8 @@ class EditService {
 
         this.subscribe('subThemesService');
 
+        this.today = new Date();
+
         this.helpers({
             subThemes() {
                 return SubThemesService.find({
@@ -36,7 +38,8 @@ class EditService {
                 zipCode: this.service.zipCode,
                 city: this.service.city,
                 title: this.service.title,
-                showPhone: this.service.showPhone
+                showPhone: this.service.showPhone,
+                creationDate: new Date()
             }
         }, (error) => {
             if (error) {

@@ -15,7 +15,7 @@
 
         <md-content flex>
             <label class="date">Date de l'événement (facultatif) :</label>
-            <md-datepicker ng-model="editService.service.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+            <md-datepicker ng-model="editService.service.date" md-placeholder="dd/mm/yyyy" md-min-date="editService.today"></md-datepicker>
         </md-content>
     </md-content>
     <md-content class="md-padding" flex="50"  layout="column">
