@@ -18,6 +18,8 @@ class EditEvent {
 
         this.subscribe('subThemesEvent');
 
+        this.today = new Date();
+
         this.helpers({
             subThemes() {
                 return SubThemesEvent.find({
@@ -35,7 +37,8 @@ class EditEvent {
                 description: this.event.description,
                 zipCode: this.event.zipCode,
                 city: this.event.city,
-                title: this.event.title
+                title: this.event.title,
+                creationDate: new Date()
             }
         }, (error) => {
             if (error) {
