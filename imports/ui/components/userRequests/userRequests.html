@@ -5,14 +5,10 @@
             <md-tab label="En attente">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: true}">
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">
-                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
-                                </span>
-                            </md-card-title-text>
-                        </md-card-title>
                         <md-card-content>
+                            <span class="md-headline clear">
+                                <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                            </span>
                             <p>En échange du service <b>{{userRequests.getService(request.serviceId).title}}</b>
                                 (<a ui-sref="detailsService({ serviceId: request.serviceId })">
                                     Voir détails
@@ -33,27 +29,29 @@
             <md-tab label="Confirmées">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:true}">
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">
-                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
-                                </span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-content>
-                            <h4>L'échange :</h4>
-                            <p><b>Titre : </b>{{request.title}}</p>
-                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
-                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
-                            <p><b>Commentaires : </b>{{request.description}}</p>
-                            <h4>contre</h4>
-                            <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
-                            <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
-                            </p>
-                            <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
-                            </p>
-                            <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
-                            <h4>a été accepté</h4>
+                        <md-card-content layout="row">
+
+                            <md-content flex="40" layout="column">
+                                <h4>L'échange :</h4>
+                                <p><b>Titre : </b>{{request.title}}</p>
+                                <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                                <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                                <p><b>Commentaires : </b>{{request.description}}</p>
+                            </md-content>
+                            <md-content flex="50" layout="column">
+                                <h4>contre</h4>
+                                <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                                <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                                </p>
+                                <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                                </p>
+                                <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                            </md-content>
+
+                            <span class="md-headline" flex="10">
+                                <md-icon class="material-icons clear" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                            </span>
+
                         </md-card-content>
                     </md-card>
                 </md-content>
@@ -64,27 +62,27 @@
             <md-tab label="Refusées">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:false}">
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">
-                                    <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
-                                </span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-content>
-                            <h4>L'échange :</h4>
-                            <p><b>Titre : </b>{{request.title}}</p>
-                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
-                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
-                            <p><b>Commentaires : </b>{{request.description}}</p>
-                            <h4>contre</h4>
-                            <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
-                            <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
-                            </p>
-                            <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
-                            </p>
-                            <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
-                            <h4>a été refusé</h4>
+                        <md-card-content layout="row">
+
+                            <md-content flex="40" layout="column">
+                                <h4>L'échange :</h4>
+                                <p><b>Titre : </b>{{request.title}}</p>
+                                <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                                <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                                <p><b>Commentaires : </b>{{request.description}}</p>
+                            </md-content>
+                            <md-content flex="50" layout="column">
+                                <h4>contre</h4>
+                                <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                                <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                                </p>
+                                <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                                </p>
+                                <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                            </md-content>
+                            <span class="md-headline" flex="10">
+                                <md-icon class="material-icons clear" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                            </span>
                         </md-card-content>
                     </md-card>
                 </md-content>
