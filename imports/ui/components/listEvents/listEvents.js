@@ -55,6 +55,9 @@ class ListEvents {
                             date: {
                                 $gte: new Date()
                             }
+                        },
+                        {
+                            active:true
                         }
                     ]
                 });

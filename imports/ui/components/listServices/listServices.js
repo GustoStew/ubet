@@ -33,20 +33,35 @@ class ListServices {
         this.helpers({
             services() {
                 return Services.find({
-                    $or: [
-                        {
-                            title: {
-                                $regex: `.*${this.getReactively('searchText')}.*`,
-                                $options: 'i'
+                    $and:[{
+                        $or: [
+                            {
+                                title: {
+                                    $regex: `.*${this.getReactively('searchText')}.*`,
+                                    $options: 'i'
+                                }
+                            },
+                            {
+                                description: {
+                                    $regex: `.*${this.getReactively('searchText')}.*`,
+                                    $options: 'i'
+                                }
                             }
-                        },
-                        {
-                            description: {
-                                $regex: `.*${this.getReactively('searchText')}.*`,
-                                $options: 'i'
+                        ]
+                    },{
+                        active:true
+                    },{
+                        $or:[{
+                            date: {
+                                $exists:false
                             }
-                        }
-                    ]
+                        },{
+                            date : {
+                                $gte: new Date()
+                            }
+                        }]
+                    }]
+
                 });
             },
             themes() {

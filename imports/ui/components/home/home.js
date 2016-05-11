@@ -24,10 +24,26 @@ class Home {
 
         this.helpers({
             events() {
-                return Events.find();
+                return Events.find({
+                    active:true,
+                    date: {
+                        $gte: new Date()
+                    }
+                });
             },
             services() {
-                return Services.find();
+                return Services.find({
+                    active:true,
+                    $or:[{
+                        date: {
+                            $exists:false
+                        }
+                    },{
+                        date : {
+                            $gte: new Date()
+                        }
+                    }]
+                });
             },
             currentUser(){
                 return Meteor.user();
