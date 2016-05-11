@@ -1,0 +1,44 @@
+<div class="container">
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+        <div flex="80" layout="column">
+            <md-card class="card-info" ng-if="eventsInactive.displayInfos">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Informations : </span>
+                        <span class="md-subhead">Vous pourrez retrouver ici vos événements archivés.</span>
+                        <span class="md-subhead">Les événements sont considérés commme archivés si vous les avez vous même archivés ou si la date de l'événement est dépassée.</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end">
+                    <md-button ng-click="eventsInactive.closeInfos()">J'ai compris !</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card ng-repeat="event in eventsInactive.events">
+                <md-card-title>
+                    <md-card-title-media>
+                        <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>
+                    </md-card-title-media>
+                    <md-card-title-text>
+                        <span class="md-headline">{{event.title}}</span>
+                        <span class="md-subhead">{{event.description}}</span>
+                    </md-card-title-text>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <details-event-button event="event"></details-event-button>
+                        <edit-event-button event="event"></edit-event-button>
+                        <md-button class="md-icon-button" aria-label="delete" ng-click="eventsInactive.showConfirm($event,event._id)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <md-tooltip>Supprimer</md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="restore" ng-click="eventsInactive.restore(event)">
+                            <md-icon class="material-icons">restore_page</md-icon>
+                            <md-tooltip>Restaurer</md-tooltip>
+                        </md-button>
+                    </md-card-actions>
+                </md-card-title>
+            </md-card>
+        </div>
+    </md-content>
+    <p ng-if="(eventsInactive.events).length <= 0">
+        Vous n'avez pas d'événements inactifs
+    </p>
+</div>

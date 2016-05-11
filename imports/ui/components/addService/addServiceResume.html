@@ -7,7 +7,7 @@
         </div>
 
         <div class="contact" layout-gt-sm="row" layout-align="center center">
-            <p> {{addService.currentUser.profile.firstName}}</p>  <p>{{addService.currentUser.profile.lastName}}</p>
+            <p> {{addService.currentUser | displayNameFilter}}</p>
         </div>
 
         <div class="contact" layout-gt-sm="row" flex-offset="20">

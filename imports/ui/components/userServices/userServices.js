@@ -9,10 +9,12 @@ import { name as EditServiceButton} from '../editServiceButton/editServiceButton
 import './userServices.html';
 
 class UserServices {
-    constructor($scope, $reactive, $state) {
+    constructor($scope, $reactive, $state, $mdDialog) {
         'ngInject';
 
         this.$state = $state;
+
+        this.mdDialog = $mdDialog;
 
         $reactive(this).attach($scope);
 
@@ -27,8 +29,14 @@ class UserServices {
         });
     }
 
-    remove(serviceId){
-        Services.remove({
+    showConfirm(ev,serviceId){
+        var confirm = this.mdDialog.confirm().
+        title('Êtes-vous sûr de vouloir supprimer votre service?').
+        textContent('Une fois supprimé, votre action est irréversible.').
+        ariaLabel('Remove Service').
+        targetEvent(ev).ok('Oui !').
+        cancel('Non');
+        this.mdDialog.show(confirm).then(function(){ Services.remove({
             _id: serviceId
         }, (error) => {
             if (error) {
@@ -37,16 +45,18 @@ class UserServices {
                 console.log('Supprimé!');
             }
         });
-        Meteor.call('removeByServiceId',serviceId,
-            (error) => {
-                if (error) {
-                    console.log('Oops, echec suppression requete!');
-                } else {
-                    console.log('Requete supprimée!');
+            Meteor.call('removeByServiceId',serviceId,
+                (error) => {
+                    if (error) {
+                        console.log('Oops, echec suppression requete!');
+                    } else {
+                        console.log('Requete supprimée!');
+                    }
                 }
-            }
-        );
+            );},function(){});
     }
+
+
 }
 
 const name = 'userServices';
