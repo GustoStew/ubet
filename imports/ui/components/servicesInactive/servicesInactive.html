@@ -49,13 +49,16 @@
                                 </md-button>
                             </md-fab-actions>
                         </md-fab-speed-dial>
-
                     </md-card-actions>
+                </md-card-title>
+            </md-card>
+            <md-card class="card-info" ng-if="(servicesInactive.services).length <= 0">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Vous n'avez pas de services archivés</span>
+                    </md-card-title-text>
                 </md-card-title>
             </md-card>
         </div>
     </md-content>
-    <p ng-if="(servicesInactive.services).length <= 0">
-        Vous n'avez pas de services inactifs
-    </p>
 </div>
