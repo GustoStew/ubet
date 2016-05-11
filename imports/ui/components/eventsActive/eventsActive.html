@@ -11,16 +11,27 @@
                         <span class="md-subhead">{{event.description}}</span>
                     </md-card-title-text>
                     <md-card-actions layout="row" layout-align="end center">
-                        <details-event-button event="event"></details-event-button>
-                        <edit-event-button event="event"></edit-event-button>
-                        <md-button class="md-icon-button" aria-label="delete" ng-click="eventsActive.showConfirm($event,event._id)">
-                            <md-icon class="material-icons">delete</md-icon>
-                            <md-tooltip>Supprimer</md-tooltip>
-                        </md-button>
-                        <md-button class="md-icon-button" aria-label="store" ng-click="eventsActive.store(event._id)">
-                            <md-icon class="material-icons">archive</md-icon>
-                            <md-tooltip>Archiver</md-tooltip>
-                        </md-button>
+                        <md-fab-speed-dial md-open="event.isOpen" md-direction="left" class="md-scale"
+                                           ng-mouseenter="event.isOpen=true" ng-mouseleave="event.isOpen=false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-primary md-hue-2">
+                                    <md-icon class="material-icons">menu</md-icon>
+                                    <md-tooltip>Menu</md-tooltip>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button class="md-icon-button" aria-label="store" ng-click="eventsActive.store(event._id)">
+                                    <md-icon class="material-icons">archive</md-icon>
+                                    <md-tooltip>Archiver</md-tooltip>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="delete" ng-click="eventsActive.showConfirm($event,event._id)">
+                                    <md-icon class="material-icons">delete</md-icon>
+                                    <md-tooltip>Supprimer</md-tooltip>
+                                </md-button>
+                                <edit-event-button event="event"></edit-event-button>
+                                <details-event-button event="event"></details-event-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
                     </md-card-actions>
                 </md-card-title>
             </md-card>
