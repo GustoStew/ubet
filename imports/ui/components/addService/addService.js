@@ -6,6 +6,7 @@ import ngAnimate from 'angular-animate';
 import { Meteor } from 'meteor/meteor';
 import { ThemesService} from '../../../api/themesService';
 import { SubThemesService} from '../../../api/subThemesService';
+import { name as DisplayNameFilter} from '../../filters/displayNameFilter';
 
 
 import './addService.html';
@@ -101,9 +102,10 @@ const name = 'addService';
 
 // create a module
 export default angular.module(name, [
-         angularMeteor,
-         uiRouter,
-          ngAnimate
+        angularMeteor,
+        uiRouter,
+        ngAnimate,
+        DisplayNameFilter
     ]).component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,

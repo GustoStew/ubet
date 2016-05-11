@@ -1,27 +1,30 @@
-<div flex>
-    <md-content>
-        <h3>Propositions de troc : </h3>
-        <md-card ng-repeat="request in requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}">
-            <md-card-content>
-                <p>{{requestResponse.getRequestOwner(request.owner) | displayNameFilter}} vous propose ceci :</p>
-                <p><b>Titre : </b>{{request.title}}</p>
-                <p ng-show="request.theme"><b>Thème : </b>{{requestResponse.getTheme(request.theme).description}}</p>
-                <p ng-show="request.subtheme"><b>Type de service : </b>{{requestResponse.getSubTheme(request.subtheme, request.theme).description}}</p>
-                <p><b>Commentaires : </b>{{request.description}}</p>
-            </md-card-content>
-            <md-card-actions>
-                <md-button class="md-icon-button" aria-label="Accept" ng-click="requestResponse.accept(requestResponse.service._id, request._id, request.owner)">
-                    <md-icon class="material-icons">done</md-icon>
-                    <md-tooltip>Accepter</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Decline" ng-click="requestResponse.decline(request._id)">
-                    <md-icon class="material-icons">block</md-icon>
-                    <md-tooltip>Refuser</md-tooltip>
-                </md-button>
-            </md-card-actions>
-        </md-card>
-        <p ng-if="(requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}).length <= 0">
-            Vous n'avez pas de propositions pour ce service
-        </p>
-    </md-content>
+<div flex-xs flex-gt-xs="70" layout="column" class="container margin-top">
+    <md-card ng-repeat="request in requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}">
+        <md-toolbar layout="row"  layout-align="start center">
+            <img class="md-avatar-icon" style="width: 63px; height: 50px;" ng-src="/img/user-icon.png" >
+            <md-title>{{requestResponse.getRequestOwner(request.owner) | displayNameFilter}}</md-title>
+        </md-toolbar>
+        <md-divider></md-divider>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{request.title}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p ng-show="request.theme"><b>Thème : </b>{{requestResponse.getTheme(request.theme).description}}</p>
+            <p ng-show="request.subtheme"><b>Type de service : </b>{{requestResponse.getSubTheme(request.subtheme, request.theme).description}}</p>
+            <p><b>Description : </b>{{request.description}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="center">
+            <md-button class="md-raised button-ok" aria-label="Accept" ng-click="requestResponse.accept(requestResponse.service._id, request._id, request.owner)">
+                <span class="glyphicon glyphicon-ok"></span>    Accepter
+            </md-button>
+            <md-button class="md-raised button-refuse" aria-label="Decline" ng-click="requestResponse.decline(request._id)">
+                <span class="glyphicon glyphicon-remove "></span>  Refuser
+            </md-button>
+        </md-card-actions>
+    </md-card>
 </div>
+<p ng-if="(requestResponse.requests | filter:{onWait: true, serviceId: requestResponse.service._id}).length <= 0">
+    Vous n'avez pas de propositions pour ce service.
+</p>

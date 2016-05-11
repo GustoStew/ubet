@@ -3,6 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import './navigation.html';
+import { Meteor } from 'meteor/meteor';
 import {Events} from '../../../api/events';
 import {Services} from '../../../api/services';
 import {Requests} from '../../../api/requests';
@@ -67,11 +68,14 @@ class Navigation {
                 if(nb > 100)
                     return "+100";
                 return nb;
+            },
+            currentUser(){
+                return Meteor.user();
             }
         });
 
     }
-
+   
     openSideNavPanel() {
         this.$mdSidenav('left').open();
     }
@@ -89,6 +93,7 @@ class Navigation {
             }
         }));
     }
+    
 }
 
 const name = 'navigation';

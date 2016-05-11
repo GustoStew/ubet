@@ -3,49 +3,18 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import { Meteor } from 'meteor/meteor';
-import { Events } from '../../../api/events';
 import { name as EventsActive} from '../eventsActive/eventsActive';
 import { name as EventsInactive} from '../eventsInactive/eventsInactive';
 
 import './userEvents.html';
 
 class UserEvents {
-    constructor($scope, $reactive, $state, $mdDialog) {
+    constructor($scope, $reactive, $state) {
         'ngInject';
 
         this.$state = $state;
-        this.mdDialog = $mdDialog;
+
         $reactive(this).attach($scope);
-
-        this.subscribe('events');
-
-        this.helpers({
-            events() {
-                return Events.find({
-                    owner:Meteor.userId()
-                });
-            }
-        });
-    }
-
-    showConfirm(ev,eventId){
-        var confirm = this.mdDialog.confirm()
-            .title('Êtes-vous sûr de vouloir supprimer votre événement?')
-            .textContent('Une fois supprimé, votre action est irréversible.')
-            .ariaLabel('Remove Event').targetEvent(ev)
-            .ok('Yes please !')
-            .cancel('God no !');
-        this.mdDialog.show(confirm).then(function(){ 
-            Events.remove({
-                _id: eventId
-            }, (error) => {
-                if (error) {
-                    console.log('Oops, echec suppression..');
-                } else {
-                    console.log('Supprimé!');
-                }
-            })
-        },function(){});
     }
 }
 

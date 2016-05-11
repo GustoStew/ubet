@@ -7,7 +7,7 @@
         </div>
 
         <div class="contact" layout-gt-sm="row" layout-align="center center">
-            <p> {{addService.currentUser.profile.firstName}}</p>  <p>{{addService.currentUser.profile.lastName}}</p>
+            <p> {{addService.currentUser | displayNameFilter}}</p>
         </div>
 
         <div class="contact" layout-gt-sm="row" flex-offset="20">
@@ -30,7 +30,7 @@
     <md-content class="md-padding" flex="60"  layout="column" layout-align="center center">
 
         <h2 class="resume" layout="row" layout-align="center center">{{addService.newService.title}}</h2>
-        <div ng-show="addService.newService.date"> layout-gt-sm="row" layout-align="center center">
+        <div ng-show="addService.newService.date" layout-gt-sm="row" layout-align="center center">
             <i class="material-icons md-light md-36 md-margin" >insert_invitation</i>
             <h3>{{addService.newService.date | date:'dd/MM/yyyy'}}</h3>
         </div>

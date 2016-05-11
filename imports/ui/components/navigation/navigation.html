@@ -10,13 +10,16 @@
             </md-button>
             <span flex></span>
             <md-button class="md-icon-button" aria-label="Home" ui-sref="home" ng-show="navigation.isLoggedIn">
-                <md-tooltip>Home</md-tooltip>
+                <md-tooltip>Accueil</md-tooltip>
                 <md-icon class="material-icons">home</md-icon>
             </md-button>
             <md-button class="md-icon-button" aria-label="User" ui-sref="infos" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Mon Compte</md-tooltip>
                 <md-icon class="material-icons">face</md-icon>
             </md-button>
+            <h5>
+                <span><b>{{navigation.currentUser.profile.firstName}}</b></span>
+            </h5>
             <md-button class="md-icon-button" aria-label="Logout" ng-click="navigation.logout()" ng-show="navigation.isLoggedIn">
                 <md-tooltip>Déconnexion</md-tooltip>
                 <md-icon class="material-icons">power_settings_new</md-icon>
