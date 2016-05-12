@@ -1,110 +1,110 @@
-<div flex="75" class="container" layout="row" layout-align="center center">
-   <md-content layout-align="center center">
-       <md-content layout="row" layout-align="center center">
-         <img class="md-media-lg card-media" ng-src="/img/ubet_md.png">
-       </md-content>
-       <md-content class="test">
-           <p align="center"> L'échange de services devient enfin facile grâce à UBET : Université de Bordeaux Evenement et Troc </p>
-           <p align="center">Site d'entraide entre membres de l'université de Bordeaux.</p>
-       </md-content>
+<div flex="75" class="container home" layout="row" layout-align="center center">
+    <md-content layout-align="center center">
+        <md-content layout="row" layout-align="center center">
+            <img class="md-media-lg card-media logo" ng-src="/img/ubet_md.png">
+        </md-content>
+        <md-content class="test">
+            <p align="center"> L'échange de services devient enfin facile grâce à UBET : Université de Bordeaux Evenement et Troc </p>
+            <p align="center">Site d'entraide entre membres de l'université de Bordeaux.</p>
+        </md-content>
 
-   </md-content>
+    </md-content>
 </div>
 
 <div layout="row" layout-align="center" layout-wrap>
-        <div class="transparence" flex="50">
-            <md-card>
-                <md-toolbar>
-                    <h3 class="md-toolbar-tools">
-                        <span>Services les plus récents </span>
-                        <span flex></span>
-                        <md-card-actions>
-                            <md-button class="md-icon-button" ui-sref="addService.theme">
-                                <md-icon class="material-icons">add_circle</md-icon>
-                                <md-tooltip>Nouveau Service</md-tooltip>
-                            </md-button>
-                        </md-card-actions>
-                    </h3>
-                </md-toolbar>
-                <md-content >
-                    <md-list>
-                        <md-list-item class="md-3-line list-home" ng-repeat="service in home.services | orderBy: '-creationDate' " ng-if="$index < 5">
-                            <div class="md-list-item-text container" layout="row">
-                                <img ng-src="{{ service.icon }}" class="md-avatar" alt="{{service.title}}"/>
-                                <md-content class="home width-home" layout="row">
-                                    <div layout="row" layout-align="space-between center" class="width-home">
-                                        <div>
-                                            <md-content layout="column">
-                                                <h3>{{service.title}}</h3>
-                                                <p>{{service.description | limitTo : 50}} {{service.description.length > 50 ? '...' : ''}}</p>
-                                            </md-content>
-                                        </div>
-                                        <div>
-                                            <md-card-actions>
-                                                <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
-                                                    <md-icon class="material-icons">open_in_new</md-icon>
-                                                    <md-tooltip>Lire la suite</md-tooltip>
-                                                </md-button>
-                                            </md-card-actions>
-                                        </div>
+    <div class="transparence" flex="50">
+        <md-card>
+            <md-toolbar>
+                <h3 class="md-toolbar-tools">
+                    <span>Services les plus récents </span>
+                    <span flex></span>
+                    <md-card-actions>
+                        <md-button class="md-icon-button" ui-sref="addService.theme">
+                            <md-icon class="material-icons">add_circle</md-icon>
+                            <md-tooltip>Nouveau Service</md-tooltip>
+                        </md-button>
+                    </md-card-actions>
+                </h3>
+            </md-toolbar>
+            <md-content >
+                <md-list>
+                    <md-list-item class="md-3-line list-home" ng-repeat="service in home.services | orderBy: '-creationDate' " ng-if="$index < 5">
+                        <div class="md-list-item-text container" layout="row">
+                            <img ng-src="{{ service.icon }}" class="md-avatar" alt="{{service.title}}"/>
+                            <md-content class="home width-home" layout="row">
+                                <div layout="row" layout-align="space-between center" class="width-home">
+                                    <div>
+                                        <md-content layout="column">
+                                            <h3>{{service.title}}</h3>
+                                            <p>{{service.description | limitTo : 50}} {{service.description.length > 50 ? '...' : ''}}</p>
+                                        </md-content>
                                     </div>
-                                </md-content>
-                            </div>
-                            <md-divider ng-if="!$last"></md-divider>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-divider></md-divider>
-                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                    <md-button class="md-primary" ui-sref="listServices">Plus ></md-button>
-                    <md-tooltip>Tous les services</md-tooltip>
-                </section>
-            </md-card>
-        </div>
-
-        <div class= "transparence" flex = "50">
-                <md-card>
-                    <md-toolbar>
-                        <h3 class="md-toolbar-tools">
-                            <span>Evènements les plus récents </span>
-                            <span flex></span>
-                            <md-card-actions layout="row" layout-align="end center">
-                                <md-button class="md-icon-button" ui-sref="addEvent.theme">
-                                    <md-icon class="material-icons">add_circle</md-icon>
-                                    <md-tooltip>Nouvel évènement</md-tooltip>
-                                </md-button>
-                            </md-card-actions>
-                        </h3>
-                    </md-toolbar>
-                    <md-content>
-                        <md-list>
-                            <md-list-item class="md-3-line list-home" ng-repeat="event in home.events | orderBy: 'date' " ng-if="$index < 5">
-                                <div class="md-list-item-text container" layout="row">
-                                    <img ng-src="{{ event.icon }}" class="md-avatar" alt="{{event.title}}"/>
-                                    <md-content class="home width-home" layout="row" >
-                                        <div layout="row" layout-align="space-between center" class="width-home">
-                                            <div>
-                                                <md-content layout="column">
-                                                    <h3>{{event.title}}</h3>
-                                                    <p>{{event.description | limitTo : 50}} {{event.description.length > 50 ? '...' : ''}} </p>
-                                                </md-content>
-                                            </div>
-                                            <span flex></span>
-                                            <details-event-button event="event"></details-event-button>
-                                            <like-button identifiant="event._id"></like-button>
-
-                                        </div>
-                                    </md-content>
+                                    <div>
+                                        <md-card-actions>
+                                            <md-button class="md-icon-button" aria-label="Details" ui-sref="detailsService({ serviceId: service._id })">
+                                                <md-icon class="material-icons">open_in_new</md-icon>
+                                                <md-tooltip>Lire la suite</md-tooltip>
+                                            </md-button>
+                                        </md-card-actions>
+                                    </div>
                                 </div>
-                                <md-divider ng-if="!$last"></md-divider>
-                            </md-list-item>
-                        </md-list>
-                    </md-content>
-                    <md-divider ></md-divider>
-                    <section layout="row" layout-sm="column" layout-align="center center">
-                        <md-button class="md-primary" ui-sref="listEvents"> Plus > </md-button>
-                        <md-tooltip>Tous les évènements</md-tooltip>
-                    </section>
-                </md-card>
-        </div>
+                            </md-content>
+                        </div>
+                        <md-divider ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+            <md-divider></md-divider>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-primary" ui-sref="listServices">Plus ></md-button>
+                <md-tooltip>Tous les services</md-tooltip>
+            </section>
+        </md-card>
+    </div>
+
+    <div class= "transparence" flex = "50">
+        <md-card>
+            <md-toolbar>
+                <h3 class="md-toolbar-tools">
+                    <span>Evènements les plus récents </span>
+                    <span flex></span>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" ui-sref="addEvent.theme">
+                            <md-icon class="material-icons">add_circle</md-icon>
+                            <md-tooltip>Nouvel évènement</md-tooltip>
+                        </md-button>
+                    </md-card-actions>
+                </h3>
+            </md-toolbar>
+            <md-content>
+                <md-list>
+                    <md-list-item class="md-3-line list-home" ng-repeat="event in home.events | orderBy: 'date' " ng-if="$index < 5">
+                        <div class="md-list-item-text container" layout="row">
+                            <img ng-src="{{ event.icon }}" class="md-avatar" alt="{{event.title}}"/>
+                            <md-content class="home width-home" layout="row" >
+                                <div layout="row" layout-align="space-between center" class="width-home">
+                                    <div>
+                                        <md-content layout="column">
+                                            <h3>{{event.title}}</h3>
+                                            <p>{{event.description | limitTo : 50}} {{event.description.length > 50 ? '...' : ''}} </p>
+                                        </md-content>
+                                    </div>
+                                    <span flex></span>
+                                    <details-event-button event="event"></details-event-button>
+                                    <like-button identifiant="event._id"></like-button>
+
+                                </div>
+                            </md-content>
+                        </div>
+                        <md-divider ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+            <md-divider ></md-divider>
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-button class="md-primary" ui-sref="listEvents"> Plus > </md-button>
+                <md-tooltip>Tous les évènements</md-tooltip>
+            </section>
+        </md-card>
+    </div>
 </div>
