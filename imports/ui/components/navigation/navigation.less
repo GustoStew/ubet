@@ -4,7 +4,12 @@
   width : 100%;
 
 }
-
+md-backdrop.md-sidenav-backdrop{
+  height : auto;
+  display : block;
+  position : fixed !important;
+  z-index: 4001;
+}
 md-list-item > md-icon:first-child:not(.md-avatar-icon){
 
   margin-top : 10px!important;
@@ -22,4 +27,11 @@ md-icon.nav{
 
 img{
   margin-right: 10px;
+}
+.md-toolbar-fixed{
+  position: fixed; z-index:4000;
+}
+
+.md-sidenav-fixed{
+  position: fixed; z-index:4002; height : 100%;
 }

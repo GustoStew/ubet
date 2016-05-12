@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="fluid-container navigation">
-    <md-toolbar>
-        <div class="md-toolbar-tools" data-ng-show="navigation.showMobileMainHeader">
+    <md-toolbar  class="md-toolbar-fixed">
+        <div class="md-toolbar-tools" data-ng-show="navigation.showMobileMainHeader" >
 
             <md-button  aria-label="Menu"  ng-show="navigation.isLoggedIn">
                 <img class="md-media-sm card-media" ng-src="/img/ubet_sm_white.png" ng-click="navigation.openSideNavPanel()">
@@ -27,8 +27,7 @@
             </md-button>
         </div>
     </md-toolbar>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-                md-component-id="left">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-sidenav-fixed" md-component-id="left">
         <md-toolbar layout="row">
             <div class="md-toolbar-tools">
                 <h2>
