@@ -8,7 +8,7 @@
                     </md-card-title-media>
                     <md-card-title-text>
                         <span class="md-headline">{{service.title}}</span>
-                        <span class="md-subhead">{{service.description}}</span>
+                        <span class="md-subhead">{{service.description | limitTo : 55}} {{service.description.length > 55 ? '...' : ''}}</span>
                     </md-card-title-text>
                     <md-card-actions layout="row" layout-align="end center">
                         <md-fab-speed-dial md-open="service.isOpen" md-direction="left" class="md-scale"

@@ -50,7 +50,7 @@
                                         <div>
                                             <md-content layout="column">
                                                 <h3>{{service.title}}</h3>
-                                                <p>{{service.description | limitTo : 100}} {{service.description.length > 100 ? '...' : ''}}</p>
+                                                <p>{{service.description | limitTo : 50}} {{service.description.length > 50 ? '...' : ''}}</p>
                                             </md-content>
                                         </div>
                                         <div>
@@ -100,7 +100,7 @@
                                             <div>
                                                 <md-content layout="column">
                                                     <h3>{{event.title}}</h3>
-                                                    <p>{{event.description | limitTo : 90}} {{event.description.length > 90 ? '...' : ''}} </p>
+                                                    <p>{{event.description | limitTo : 50}} {{event.description.length > 50 ? '...' : ''}} </p>
                                                 </md-content>
                                             </div>
                                             <span flex></span>
