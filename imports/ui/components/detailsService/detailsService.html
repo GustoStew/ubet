@@ -5,10 +5,10 @@
             <md-tab label="Détails">
                 <consult-service service="detailsService.service"></consult-service>
             </md-tab>
-            <md-tab label="Faire une proposition" ng-if="!detailsService.isOwner()">
-                <request-form service="detailsService.service"></request-form>
+            <md-tab label="Faire une proposition" ng-if="!detailsService.isOwner() && detailsService.serviceActive()">
+                <request-form service="detailsService.service" ></request-form>
             </md-tab>
-            <md-tab label="Consulter les demandes" ng-if="detailsService.isOwner()">
+            <md-tab label="{{detailsService.nbRequestsOnWait()}}" ng-if="detailsService.isOwner() && detailsService.serviceActive()">
                 <request-response service="detailsService.service"></request-response>
             </md-tab>
         </md-tabs>

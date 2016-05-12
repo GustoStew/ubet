@@ -9,7 +9,7 @@ function LikedEventsFilter(events, user) {
     }
 
     return events.filter((event) => {
-        return _.contains(user.profile.likes, event._id);
+        return _.contains(user.profile.likes, event._id) && event.active && event.date >= new Date();
     });
 }
 

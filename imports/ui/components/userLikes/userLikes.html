@@ -19,7 +19,7 @@
                     </md-card-title-media>
                     <md-card-title-text>
                         <span class="md-headline">{{event.title}}</span>
-                        <span class="md-subhead">{{event.description}}</span>
+                        <span class="md-subhead">{{event.description  | limitTo : 80}} {{event.description.length > 80 ? '...' : ''}}</span>
                     </md-card-title-text>
                     <md-card-actions layout="row" layout-align="end center">
                         <details-event-button event="event"></details-event-button>

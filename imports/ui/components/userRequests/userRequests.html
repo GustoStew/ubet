@@ -14,9 +14,12 @@
                                 <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
                             </span>
                             <p>En échange du service <b>{{userRequests.getService(request.serviceId).title}}</b>
-                                (<a ui-sref="detailsService({ serviceId: request.serviceId })">
+                                (<a ui-sref="detailsService({ serviceId: request.serviceId })" ng-show="userRequests.serviceExist(userRequests.getService(request.serviceId))">
                                     Voir détails
-                                </a>)
+                                </a>
+                                <b ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))">
+                                    Ce service a été archivé
+                                </b>)
                             </p>
                             <p>Vous avez proposé ceci :</p>
                             <p><b>Titre : </b>{{request.title}}</p>
@@ -40,6 +43,7 @@
                         <md-card-content layout="row">
                             <md-content flex="40" layout="column">
                                 <h4>L'échange :</h4>
+                                <p ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><b>Ce service a été archivé</b></p>
                                 <p><b>Titre : </b>{{request.title}}</p>
                                 <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
                                 <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
@@ -74,6 +78,7 @@
                         <md-card-content layout="row">
                             <md-content flex="40" layout="column">
                                 <h4>L'échange :</h4>
+                                <p ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><b>Ce service a été archivé</b></p>
                                 <p><b>Titre : </b>{{request.title}}</p>
                                 <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
                                 <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>

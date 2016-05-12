@@ -37,7 +37,17 @@ class Navigation {
             },
             nbMyServices() {
                 var nb  = Services.find({
-                    owner:Meteor.userId()
+                    owner:Meteor.userId(),
+                    active:true,
+                    $or:[{
+                        date: {
+                            $exists:false
+                        }
+                    },{
+                        date : {
+                            $gte: new Date()
+                        }
+                    }]
                 }).count();
                 if(nb > 100)
                     return "+100";
@@ -45,27 +55,48 @@ class Navigation {
             },
             nbMyEvents() {
                 var nb  = Events.find({
-                    owner:Meteor.userId()
+                    owner:Meteor.userId(),
+                    active:true,
+                    date: {
+                        $gte: new Date()
+                    }
                 }).count();
                 if(nb > 100)
                     return "+100";
                 return nb;
             },
             nbServices() {
-                var nb  = Services.find().count();
+                var nb  = Services.find({
+                    active:true,
+                    $or:[{
+                        date: {
+                            $exists:false
+                        }
+                    },{
+                        date : {
+                            $gte: new Date()
+                        }
+                    }]
+                }).count();
                 if(nb > 100)
                     return "+100";
                 return nb;
             },
             nbEvents() {
-                var nb  = Events.find().count();
+                var nb  = Events.find({
+                    active:true,
+                    date: {
+                        $gte: new Date()
+                    }
+                }).count();
                 if(nb > 100)
                     return "+100";
                 return nb;
             },
             nbRequests(){
                 var nb = Requests.find({
-                    owner:Meteor.userId()
+                    owner:Meteor.userId(),
+                    onWait:true
                 }).count();
                 if(nb > 100)
                     return "+100";

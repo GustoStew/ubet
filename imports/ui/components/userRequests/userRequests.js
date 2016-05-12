@@ -61,6 +61,10 @@ class UserRequests {
         })
     }
 
+    serviceExist(service){
+        return service.active && ( !service.date || service.date >= new Date());
+    }
+
     delete(requestId){
         Requests.remove({
             _id: requestId

@@ -1,5 +1,38 @@
+    <md-card >
+        <md-toolbar layout="row"  layout-align="start center">
+                <img class="md-avatar-icon-title" ng-src="/img/user-icon.png" >
+            <div layout="column" style="">
+                <md-title class="md-title">{{detailsEvent.owner | displayNameFilter}}</md-title>
+                <md-subhead class="md-subhead">{{detailsEvent.event.creationDate | date:'dd/MM/yyyy'}}</md-subhead>
+            </div>
+        </md-toolbar>
+        
+        <div layout="row" layout-align="space-between start">
+            <div layout="column">    
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{detailsEvent.event.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p><b>Thème: </b>{{detailsEvent.theme.description}}</p>
+                <p><b>Type de service: </b>{{detailsEvent.subtheme.description}}</p>
+                <p ng-show="consultService.service.date"><b>Date: </b>{{detailsEvent.event.date | date:'dd/MM/yyyy'}}</p>
+                <p ng-show="consultService.service.showPhone"><b>Tel: </b>{{consultService.getOwner().profile.phone}}</p>
+                <p><b>Email: </b>{{detailsEvent.owner.emails[0].address}}</p>
+                <p><b>Adresse: </b> {{detailsEvent.event.address}}, {{detailsEvent.event.zipCode}} {{detailsEvent.event.city}}.</p>
+                <p><b>Description: </b>{{detailsEvent.event.description}}</p>
+            </md-card-content>
+            </div>
+            <md-card-media>
+                <img class="md-media-lg card-media-thumb-event"
+                    src="https://scontent-cdg2-1.xx.fbcdn.net/t31.0-8/1602010_788870731140523_1493872793_o.jpg">
+            </md-card-media>
+        </div>
+        
+    </md-card>
 
-<md-card>
+<!--<md-card>
     <md-card-header>
         <md-card-avatar>
             <img class="md-user-avatar"
@@ -31,7 +64,7 @@
                  src="http://img8.weemove.com/ressources/images/evenement/evenement_869223/flyer_869223.jpg">
         </md-card-title-media>
     </md-card-title>
-</md-card>
+</md-card>-->
 
 <!--
 <md-card>
