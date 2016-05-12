@@ -10,7 +10,9 @@
                 <md-content >
 
                     <div layout="row" layout-align="center">
-                        <img src="/img/user_add.png">
+                        <!--img src="/img/user_add.png" name="iconUser"-->
+                        <img ng-src="{{register.credentials.civility == 'Monsieur' && '/img/user_register_man.png' || register.credentials.civility == 'Madame' && '/img/user_register_woman.png' || '/img/user_register.png' }} "/>
+
                     </div>
 
                     <div class="form-horizontal">
@@ -20,6 +22,7 @@
                                 <label>Civilité</label>
                                     <md-select ng-model="register.credentials.civility" required>
                                         <md-option value="Madame">Mme.</md-option>
+
                                         <md-option value="Monsieur">M.</md-option>
                                     </md-select>
                             </md-input-container>
@@ -73,18 +76,10 @@
                         <div layout-gt-sm="row">
                             <i class="material-icons md-light md-36 md-margin" >lock_outline</i>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label for="password">Password</label>
+                                <label for="password">Mot de passe</label>
                                 <input class="form-control" id="password" name="password" type="password" ng-model="register.credentials.password" required>
                             </md-input-container>
                         </div>
-
-                        <!--<div layout-gt-sm="row">-->
-                            <!--<i class="material-icons md-light md-36 md-margin" >lock_outline</i>-->
-                            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                                <!--<label for="password">Password</label>-->
-                                <!--<input class="form-control" id="password" type="password" ng-model="register.credentials.password" required>-->
-                            <!--</md-input-container>-->
-                        <!--</div>-->
 
                         <div layout="row" layout-align="center">
                             <md-button layout-align="center center" ng-disabled="form-register.$invalid" ng-click="register.register()" class="md-raised done">

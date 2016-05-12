@@ -11,9 +11,9 @@
             <label>Titre:</label>
             <textarea ng-model="editEvent.event.title"  md-select-on-focus required></textarea>
         </md-input-container>
-        <label class="date">Date de l'événement (obligatoire) :</label>
+        <label class="date">Date de l'évènement (obligatoire) :</label>
         <md-content flex>
-            <md-datepicker ng-model="editEvent.event.date" md-placeholder="dd/mm/yyyy"></md-datepicker>
+            <md-datepicker ng-model="editEvent.event.date" md-placeholder="dd/mm/yyyy" md-min-date="editEvent.today"></md-datepicker>
         </md-content>
     </md-content>
     <md-content class="md-padding" flex="50"  layout="column">
