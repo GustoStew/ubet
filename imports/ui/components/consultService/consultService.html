@@ -7,26 +7,28 @@
                 <md-subhead class="md-subhead">{{consultService.service.creationDate | date:'dd/MM/yyyy'}}</md-subhead>
             </div>
         </md-toolbar>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">{{consultService.service.title}}</span>
-            </md-card-title-text>
-        </md-card-title>
         
         <div layout="row" layout-align="space-between start">
-        <md-card-content>
-            <p><b>Thème: </b>{{consultService.getTheme().description}}</p>
-            <p><b>Type de service: </b>{{consultService.getSubTheme().description}}</p>
-            <p ng-show="consultService.service.date"><b>Date: </b>{{consultService.service.date | date:'dd/MM/yyyy'}}</p>
-            <p ng-show="consultService.service.showPhone"><b>Tel: </b>{{consultService.getOwner().profile.phone}}</p>
-            <p><b>Email: </b>{{consultService.getOwner().emails[0].address}}</p>
-            <p><b>Adresse: </b> {{consultService.service.address}}, {{consultService.service.zipCode}} {{consultService.service.city}}.</p>
-            <p><b>Description: </b>"{{consultService.service.description}}"</p>
-        </md-card-content>
-        <md-card-media>
-            <img class="md-media-lg card-media-thumb"
-                src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg">
-        </md-card-media>
+            <div layout="column">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{consultService.service.title}}</span>
+                </md-card-title-text>
+            </md-card-title>       
+            <md-card-content>
+                <p><b>Thème: </b>{{consultService.getTheme().description}}</p>
+                <p><b>Type de service: </b>{{consultService.getSubTheme().description}}</p>
+                <p ng-show="consultService.service.date"><b>Date: </b>{{consultService.service.date | date:'dd/MM/yyyy'}}</p>
+                <p ng-show="consultService.service.showPhone"><b>Tel: </b>{{consultService.getOwner().profile.phone}}</p>
+                <p><b>Email: </b>{{consultService.getOwner().emails[0].address}}</p>
+                <p><b>Adresse: </b> {{consultService.service.address}}, {{consultService.service.zipCode}} {{consultService.service.city}}.</p>
+                <p><b>Description: </b>{{consultService.service.description}}</p>
+            </md-card-content>
+            </div>
+            <md-card-media>
+                <img class="md-media-lg card-media-thumb-service"
+                    src="http://www.stephenson-etudes.fr/sites/default/files/etudes/bricolage_1.jpg">
+            </md-card-media>
         </div>
         
     </md-card>
