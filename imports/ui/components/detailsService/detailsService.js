@@ -6,6 +6,8 @@ import { Meteor } from 'meteor/meteor';
 
 import './detailsService.html';
 import { Services } from '../../../api/services';
+import { Requests } from '../../../api/requests';
+
 import { name as RequestForm} from '../requestForm/requestForm';
 import { name as RequestResponse} from '../requestResponse/requestResponse';
 import { name as ConsultService} from '../consultService/consultService';
@@ -20,6 +22,7 @@ class DetailsService {
 
         this.serviceId = $stateParams.serviceId;
 
+        this.subscribe('requests');
         this.subscribe('services');
         this.subscribe('users');
         this.subscribe('themesService');
@@ -41,6 +44,24 @@ class DetailsService {
 
         return this.service.owner === Meteor.userId();
     }
+
+    serviceActive(){
+        return this.service.active && ( !this.service.date || this.service.date >= new Date());
+    }
+
+    nbRequestsOnWait(){
+        var nbRequest =  Requests.find({
+            serviceId: this.service._id,
+            onWait: true
+        }).count();
+        if(nbRequest > 1)
+            return nbRequest + ' demandes';
+        else if (nbRequest == 1)
+            return nbRequest + ' demande';
+        else
+            return 'Aucune demande'
+    }
+
     back(){
         history.back(-1);
     }
