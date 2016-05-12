@@ -1,32 +1,18 @@
-<div flex="60" class="container" layout="row" layout-align="center center">
-   <md-card layout-align="center center">
-        <md-toolbar>
-            <h3 class="md-toolbar-tools">
-                <span> Bienvenu(e), {{home.currentUser.profile.firstName}} {{home.currentUser.profile.lastName}}</span>
-            </h3>
-        </md-toolbar>
-       <md-card-title>
-           <md-card-title-media>
-               <img class="md-media-lg card-media" ng-src="/img/ubet_lg.png">
-           </md-card-title-media>
-       </md-card-title>
-       <md-card-content>
-           <br/>
+<div flex="75" class="container" layout="row" layout-align="center center">
+   <md-content layout-align="center center">
+       <md-content layout="row" layout-align="center center">
+         <img class="md-media-lg card-media" ng-src="/img/ubet_md.png">
+       </md-content>
+       <md-content class="test">
            <p align="center"> L'échange de services devient enfin facile grâce à UBET : Université de Bordeaux Evenement et Troc </p>
-           <p align="center">Le site d'entraide entre les membres de l'université de Bordeaux (étudiants, corps professoral et équipe administrative).</p>
-           <md-divider></md-divider>
-       </md-card-content>
-           <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-               <md-button class="md-primary" ui-sref="infos">
-                   Mon profil
-                   <md-icon  class="material-icons nav">account_circle</md-icon>
-               </md-button>
-           </section>
-   </md-card>
+           <p align="center">Site d'entraide entre membres de l'université de Bordeaux.</p>
+       </md-content>
+
+   </md-content>
 </div>
 
 <div layout="row" layout-align="center" layout-wrap>
-        <div flex = "50">
+        <div class="transparence" flex="50">
             <md-card>
                 <md-toolbar>
                     <h3 class="md-toolbar-tools">
@@ -40,7 +26,7 @@
                         </md-card-actions>
                     </h3>
                 </md-toolbar>
-                <md-content>
+                <md-content >
                     <md-list>
                         <md-list-item class="md-3-line list-home" ng-repeat="service in home.services | orderBy: '-creationDate' " ng-if="$index < 5">
                             <div class="md-list-item-text container" layout="row">
@@ -76,7 +62,7 @@
             </md-card>
         </div>
 
-        <div flex = "50">
+        <div class= "transparence" flex = "50">
                 <md-card>
                     <md-toolbar>
                         <h3 class="md-toolbar-tools">
