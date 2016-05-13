@@ -4,28 +4,60 @@ import {SubThemesEvent} from '../api/subThemesEvent';
 import {ThemesService} from '../api/themesService';
 import {SubThemesService} from '../api/subThemesService';
 import {Events} from '../api/events';
+import {Services} from '../api/services';
+
 
 
 Meteor.startup(() => {
-    if (Events.find().count() === 0) {
+/*    if (Events.find().count() === 0) {
         const events = [
-            // {
-            //     "active": true,
-            //     "creationDate": "2016-05-10T22:00:00.000Z",
-            //     "theme": "culture",
-            //     "subtheme": "art",
-            //     "address": "Halle des sports, allée Pierre de Coubertin",
-            //     "zipCode": 33400,
-            //     "city": "Talence",
-            //     "title": "Roller Derby : Triple Header",
-            //     "date": "2016-05-22T22:00:00.000Z",
-            //     "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, Le Mans et Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
-            //     "owner": "moehc9sq54E4pqKC8",
-            //     "icon": "/img/culturels_themes_icon.png",
-            //     "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
-            // },
-
             {
+                "active": true,
+                "creationDate": "2016-05-10T22:00:00.000Z",
+                "theme": "culture",
+                "subtheme": "art",
+                "address": "Halle des sports, allée Pierre de Coubertin",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": "Roller Derby : Triple Header",
+                "date": "2016-05-22T22:00:00.000Z",
+                "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, Le Mans et Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/culturels_themes_icon.png",
+                "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
+            },
+            {
+                "active": true,
+                "creationDate": "2016-05-10T22:00:00.000Z",
+                "theme": "pro",
+                "subtheme": "seminar",
+                "address": "Campus de Talence, amphi Poincaré A22",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": "Conférence grand public",
+                "date": "2016-05-28T22:00:00.000Z",
+                "description": "Première détection d'ondes gravitationnelles. David Smith présentera le mécanisme générant ces ondes gravitationnelles et le principe de leur détection. Ces observations annoncent la naissance d'une nouvelle astronomie et rendent possible l'étude d'un aspect de l'Univers jusqu'à présent voilé.",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/professionnels_themes_icon.png",
+                "image": "https://www.sfpnet.fr/uploads/tinymce/dossier%202015-2016/ondesgravitationnelles.png"
+            },
+            {
+                "active": true,
+                "creationDate": "2016-05-10T22:00:00.000Z",
+                "theme": "party",
+                "subtheme": "bar",
+                "address": "Grand préfabriqué, Chateau de Thouars",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": "Barbecue de fin d'année by AMB",
+                "date": "2016-06-18T22:00:00.000Z",
+                "description": "Comme le veut la tradition, cet événement est co-organisé entre l’ancienne et la nouvelle équipe pour marquer la passation entre les deux bureaux. Cette soirée sera donc l’occasion de rencontrer la nouvelle équipe ultra motivée et de dire au-revoir à l’ancienne qui a été très présente toute l’année à vos côtés. L’entrée est Gratuite et les tarifs sont tous petits !",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/festifs_themes_icon.png",
+                "image": "https://www.valpiform.com/wp-content/uploads/2015/07/Fotolia_83545283_S.jpg"
+             },
+             
+             {
                 "active": true,
                 "creationDate": "2016-05-16T22:00:00.000Z",
                 "theme": "Sportifs",
@@ -56,14 +88,37 @@ Meteor.startup(() => {
                 "icon": "/img/sportifs_themes_icon.png",
                 "image": "http://www.heritagepatriots.org/wp-content/uploads/2015/09/d35f5df2edd1dfeb2b801ae2c04ed9f2.jpg"
             }
-
-
         ];
 
         events.forEach((event) => {
             Events.insert(event)
         });
-    }
+    }*/
+
+    /*if (Services.find().count() === 0) {
+        const services = [
+            {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-10T22:00:00.000Z",
+                "theme": "",
+                "subtheme": "",
+                "address": "",
+                "zipCode": 33400,
+                "city": "",
+                "title": "",
+                "date": "2016-05-22T22:00:00.000Z",
+                "description": "",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/culturels_themes_icon.png",
+                "image": ""
+            }
+        ];
+
+        services.forEach((service) => {
+            Services.insert(service)
+        });
+    }*/
 
     if (ThemesEvent.find().count() === 0) {
         const themesEvent = [

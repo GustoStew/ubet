@@ -1,7 +1,7 @@
 <div class="container">
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
-            <md-card ng-repeat="event in eventsActive.events">
+            <md-card ng-repeat="event in eventsActive.events | orderBy: 'date'">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>
@@ -38,7 +38,7 @@
             <md-card class="card-info" ng-if="(eventsActive.events).length <= 0">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Vous n'avez pas d'évènements actifs</span>
+                        <span class="md-headline text-align-center">Vous n'avez pas d'évènements actifs</span>
                     </md-card-title-text>
                 </md-card-title>
             </md-card>

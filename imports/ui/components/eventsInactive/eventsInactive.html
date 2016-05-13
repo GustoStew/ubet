@@ -13,7 +13,7 @@
                     <md-button ng-click="eventsInactive.closeInfos()">J'ai compris !</md-button>
                 </md-card-actions>
             </md-card>
-            <md-card ng-repeat="event in eventsInactive.events">
+            <md-card ng-repeat="event in eventsInactive.events | orderBy: 'date'">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>
@@ -50,7 +50,7 @@
             <md-card class="card-info" ng-if="(eventsInactive.events).length <= 0">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Vous n'avez pas d'évènements inactifs</span>
+                        <span class="md-headline text-align-center">Vous n'avez pas d'évènements inactifs</span>
                     </md-card-title-text>
                 </md-card-title>
             </md-card>
