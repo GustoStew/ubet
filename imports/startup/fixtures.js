@@ -60,8 +60,8 @@ Meteor.startup(() => {
              {
                 "active": true,
                 "creationDate": "2016-05-16T22:00:00.000Z",
-                "theme": "Sportifs",
-                "subtheme": "Match",
+                "theme": "sport",
+                "subtheme": "Matchs",
                 "address": "Place Johnston",
                 "zipCode": 33000,
                 "city": "Bordeaux",
@@ -76,7 +76,7 @@ Meteor.startup(() => {
             {
                 "active": true,
                 "creationDate": "2016-05-14T22:00:00.000Z",
-                "theme": "Sportifs",
+                "theme": "sport",
                 "subtheme": "Entrainement",
                 "address": "Domaine de Rocquencourt, Avenue Jean Babin",
                 "zipCode": 33600,
@@ -100,19 +100,38 @@ Meteor.startup(() => {
             {
                 "active": true,
                 "showPhone": true,
-                "creationDate": "2016-05-10T22:00:00.000Z",
-                "theme": "",
-                "subtheme": "",
-                "address": "",
+                "creationDate": "2016-05-14T22:00:00.000Z",
+                "theme": "party",
+                "subtheme": "musicalEntertainment",
+                "address": "54 Avenue de La libération",
                 "zipCode": 33400,
-                "city": "",
-                "title": "",
-                "date": "2016-05-22T22:00:00.000Z",
-                "description": "",
+                "city": "Talence",
+                "title": "Recherche DJ pour soirée Anniversaire",
+                "date": "2016-06-04T22:00:00.000Z",
+                "description": "Afin d'ambiancer ma soirée d'anniversaire, je suis à la recherche d'un DJ pouvant amener le manétiel nécessaire : Audio et Lumière, disponibilitée souhaitée : 22h-04h00 ",
                 "owner": "moehc9sq54E4pqKC8",
-                "icon": "/img/culturels_themes_icon.png",
-                "image": ""
-            }
+                "icon": "/img/festivites_themes_icon.png",
+                "image": "http://campinglescedres.com/wp-content/uploads/2016/03/dj.jpg"
+            },
+
+             {
+             "active": true,
+             "showPhone": true,
+             "creationDate": "2016-05-17T14:2800.000Z",
+             "theme": "it",
+             "subtheme": "problemResolution",
+             "address": "124 Cour du Maréchal Ferrand",
+             "zipCode": 33600,
+             "city": "Pessac",
+             "title": "Recherche Informarticien pour réparer Ordinateur",
+             "date": "",
+             "description": "Mon ordinateur est infesté de virus et tourne au ralenti, je cherche quelqu'un qui puisse m'en débarrasser et mette en place des solutions afin que ca ne se reproduise plus",
+             "owner": "moehc9sq54E4pqKC8",
+             "icon": "/img/informatique_themes_icon.png",
+             "image": "http://hightech-solution-repair.e-monsite.com/medias/images/ordinateur.jpg"
+             }
+
+
         ];
 
         services.forEach((service) => {
@@ -324,7 +343,7 @@ Meteor.startup(() => {
                 'description': 'Aide à la préparation'
             }, {
                 'theme': 'party',
-                'key': 'musicalEntertainmenet',
+                'key': 'musicalEntertainment',
                 'description': 'Animation musicale'
             }, {
                 'theme': 'it',
