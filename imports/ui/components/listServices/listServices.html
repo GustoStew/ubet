@@ -50,6 +50,13 @@
                     </md-card-actions>
                 </md-card-title>
             </md-card>
+            <md-card class="card-info" ng-if="(listServices.services | filter:{theme: listServices.theme, subtheme:listServices.subtheme}).length <= 0">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline text-align-center">Il n'existe pas de services</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
         </div>
     </md-content>
 

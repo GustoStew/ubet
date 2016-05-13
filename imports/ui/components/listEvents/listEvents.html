@@ -51,6 +51,13 @@
                     </md-card-actions>
                 </md-card-title>
             </md-card>
+            <md-card class="card-info" ng-if="(listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}).length <= 0">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline text-align-center">Il n'existe pas d'évènements</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
         </div>
     </md-content>
 </div>
