@@ -9,23 +9,22 @@
             <md-tab label="En attente">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: true}">
-                        <md-card-content>
-                            <span class="md-headline clear">
-                                <md-icon class="material-icons" ng-click="userRequests.delete(request._id)">clear</md-icon>
-                            </span>
-                            <p>En échange du service <b>{{userRequests.getService(request.serviceId).title}}</b>
-                                (<a ui-sref="detailsService({ serviceId: request.serviceId })" ng-show="userRequests.serviceExist(userRequests.getService(request.serviceId))">
-                                    Voir détails
-                                </a>
-                                <b ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))">
-                                    Ce service a été archivé
-                                </b>)
+                        <md-toolbar layout="row"  layout-align="space-between center">
+                            <p class="card-request-title"> 
+                                En échange du service <b> "{{userRequests.getService(request.serviceId).title}}" </b> <span ng-show="userRequests.serviceExist(userRequests.getService(request.serviceId))"> (<a ui-sref="detailsService({ serviceId: request.serviceId })">Voir détails</a>) </span>
                             </p>
-                            <p>Vous avez proposé ceci :</p>
-                            <p><b>Titre : </b>{{request.title}}</p>
-                            <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
-                            <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
-                            <p><b>Commentaires : </b>{{request.description}}</p>
+                            <span class="md-headline clear">
+                                <md-icon class="material-icons clear-button" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                            </span>
+                        </md-toolbar>
+                        <md-card-content layout="row" layout-align="start center">
+                            <div flex="80" layout="column">
+                                <p><b>Titre : </b>{{request.title}}</p>
+                                <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                                <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                                <p><b>Commentaires : </b>{{request.description}}</p>
+                            </div>
+                            <h4 class="warning-alert" flex="20" ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><span class="glyphicon glyphicon-alert"></span><b>  Ce service a été archivé.</b></h4>
                         </md-card-content>
                     </md-card>
                     <md-card class="card-info" ng-if="(userRequests.requests | filter:{onWait: true}).length <= 0">
@@ -40,27 +39,31 @@
             <md-tab label="Confirmées">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:true}">
-                        <md-card-content layout="row">
-                            <md-content flex="40" layout="column">
-                                <h4>L'échange :</h4>
-                                <p ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><b>Ce service a été archivé</b></p>
-                                <p><b>Titre : </b>{{request.title}}</p>
-                                <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
-                                <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
-                                <p><b>Commentaires : </b>{{request.description}}</p>
-                            </md-content>
-                            <md-content flex="50" layout="column">
-                                <h4>contre</h4>
-                                <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
-                                <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
-                                </p>
-                                <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
-                                </p>
-                                <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
-                            </md-content>
+                        <md-toolbar layout="row"  layout-align="space-between center">
+                            <h4 class="card-request-title" flex="40">L'échange :</h4>
+                            <h4 flex="50">Contre :</h4>
                             <span class="md-headline" flex="10">
-                                <md-icon class="material-icons clear" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                                <md-icon class="material-icons clear-button" ng-click="userRequests.delete(request._id)">clear</md-icon>
                             </span>
+                        </md-toolbar>
+                        <md-card-content layout="column">
+                            <div layout="row" layout-align="start center">
+                                <div flex="40" layout="column">                               
+                                    <p><b>Titre : </b>{{request.title}}</p>
+                                    <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                                    <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                                    <p><b>Commentaires : </b>{{request.description}}</p>
+                                </div>
+                                <div flex="40" layout="column">
+                                    <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                                    <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                                    </p>
+                                    <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                                    </p>
+                                    <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                                </div>
+                                <h4 class="warning-alert" flex="20" ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><span class="glyphicon glyphicon-alert"></span><b>  Ce service a été archivé.</b></h4>
+                            </div>
                         </md-card-content>
                     </md-card>
                     <md-card class="card-info" ng-if="(userRequests.requests | filter:{onWait: false, confirm:true}).length <= 0">
@@ -75,30 +78,34 @@
             <md-tab label="Refusées">
                 <md-content>
                     <md-card ng-repeat="request in userRequests.requests | filter:{onWait: false, confirm:false}">
-                        <md-card-content layout="row">
-                            <md-content flex="40" layout="column">
-                                <h4>L'échange :</h4>
-                                <p ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><b>Ce service a été archivé</b></p>
-                                <p><b>Titre : </b>{{request.title}}</p>
-                                <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
-                                <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
-                                <p><b>Commentaires : </b>{{request.description}}</p>
-                            </md-content>
-                            <md-content flex="50" layout="column">
-                                <h4>contre</h4>
-                                <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
-                                <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
-                                </p>
-                                <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
-                                </p>
-                                <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
-                            </md-content>
+                        <md-toolbar layout="row"  layout-align="space-between center">
+                            <h4 class="card-request-title" flex="40">L'échange :</h4>
+                            <h4 flex="50">Contre :</h4>
                             <span class="md-headline" flex="10">
-                                <md-icon class="material-icons clear" ng-click="userRequests.delete(request._id)">clear</md-icon>
+                                <md-icon class="material-icons clear-button" ng-click="userRequests.delete(request._id)">clear</md-icon>
                             </span>
+                        </md-toolbar>
+                        <md-card-content layout="column">
+                            <div layout="row" layout-align="start center">
+                                <div flex="40" layout="column">                               
+                                    <p><b>Titre : </b>{{request.title}}</p>
+                                    <p ng-show="request.theme"><b>Thème: </b>{{userRequests.getTheme(request.theme).description}}</p>
+                                    <p ng-show="request.subtheme"><b>Type de service: </b>{{userRequests.getSubTheme(request.subtheme, request.theme).description}}</p>
+                                    <p><b>Commentaires : </b>{{request.description}}</p>
+                                </div>
+                                <div flex="40" layout="column">
+                                    <p><b>Titre : </b>{{userRequests.getService(request.serviceId).title}}</p>
+                                    <p><b>Thème: </b>{{userRequests.getTheme(userRequests.getService(request.serviceId).theme).description}}
+                                    </p>
+                                    <p><b>Type de service: </b>{{userRequests.getSubTheme(userRequests.getService(request.serviceId).subtheme, userRequests.getService(request.serviceId).theme).description}}
+                                    </p>
+                                    <p><b>Commentaires : </b>{{userRequests.getService(request.serviceId).description}}</p>
+                                </div>
+                                <h4 class="warning-alert" flex="20" ng-hide="userRequests.serviceExist(userRequests.getService(request.serviceId))"><span class="glyphicon glyphicon-alert"></span><b>  Ce service a été archivé.</b></h4>
+                            </div>
                         </md-card-content>
                     </md-card>
-                    <md-card class="card-info" ng-if="(userRequests.requests | filter:{onWait: false, confirm:false}).length <= 0">
+                    <md-card class="card-info" ng-if="(userRequests.requests | filter:{onWait: false, confirm:true}).length <= 0">
                         <md-card-title>
                             <md-card-title-text>
                                 <span class="md-headline text-align-center">Vous n'avez pas de demandes refusées</span>
