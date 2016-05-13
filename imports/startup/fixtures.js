@@ -158,6 +158,54 @@ Meteor.startup(() => {
 
     /*if (Services.find().count() === 0) {
         const services = [
+                     {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "car",
+                "subtheme": "carpooling",
+                "address": "2 Rue des Gants",
+                "zipCode": 33000,
+                "city": "Bordeaux",
+                "title": "Trajet Bordeaux-Toulouse",
+                "date": "2016-06-30T22:00:00.000Z",
+                "description": "Ne voyagez plus seul ! Faites des économies sur vos frais en prenant des passagers lors de vos longs trajets en voiture.",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/vehicule_themes_icon.png",
+                "image": "https://d30y9cdsu7xlg0.cloudfront.net/png/40506-200.png"
+            },
+    {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "pet",
+                "subtheme": "keeping",
+                "address": "2 Rue Arts et métiers",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": " Toutou Câlin",
+                "date": "2016-05-31T22:00:00.000Z",
+                "description": "Garde de chiens et chats à domicile, visite et promenade d'animaux",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/animaux_themes_icon.png",
+                "image": "https://www.surewise.com/sww.v4/wp-content/uploads/2015/07/dog-and-cat-02-150x150.png"
+            },
+     {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "children",
+                "subtheme": "keeping",
+                "address": "2 Rue de Saige",
+                "zipCode": 33600,
+                "city": "Pessac",
+                "title": " Nounou d'enfer",
+                "date": "2016-05-28T22:00:00.000Z",
+                "description": "Garde vos enfants pour 1h à quelques heures",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/enfant_themes_icon.png",
+                "image": "http://orchardprimaryacademy.org/kgfl/primary/chickenleypri/arenas/websitecontent/web/keepingchildrensafe.png?width=640&height=480&scale=LIMIT_MAXSIZE"
+            },
             {
                 "active": true,
                 "showPhone": true,
