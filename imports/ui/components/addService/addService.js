@@ -30,7 +30,8 @@ class AddService {
         this.newService = {
             showPhone : true,
             active : true,
-            creationDate: new Date()
+            creationDate: new Date(),
+            image : '/img/default_img.png'
         };
 
         this.today = new Date();
