@@ -6,7 +6,6 @@ import {SubThemesService} from '../api/subThemesService';
 import {Events} from '../api/events';
 
 
-
 Meteor.startup(() => {
     if (Events.find().count() === 0) {
         const events = [
