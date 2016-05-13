@@ -105,8 +105,8 @@ Meteor.startup(() => {
              {
                 "active": true,
                 "creationDate": "2016-05-16T22:00:00.000Z",
-                "theme": "Sportifs",
-                "subtheme": "Match",
+                "theme": "sport",
+                "subtheme": "Matchs",
                 "address": "Place Johnston",
                 "zipCode": 33000,
                 "city": "Bordeaux",
@@ -121,7 +121,7 @@ Meteor.startup(() => {
             {
                 "active": true,
                 "creationDate": "2016-05-14T22:00:00.000Z",
-                "theme": "Sportifs",
+                "theme": "sport",
                 "subtheme": "Entrainement",
                 "address": "Domaine de Rocquencourt, Avenue Jean Babin",
                 "zipCode": 33600,
@@ -132,7 +132,7 @@ Meteor.startup(() => {
                 "owner": "9HbRjcsTyqf9Ek9jo",
                 "icon": "/img/sportifs_themes_icon.png",
                 "image": "http://www.heritagepatriots.org/wp-content/uploads/2015/09/d35f5df2edd1dfeb2b801ae2c04ed9f2.jpg"
-            }
+            },
  {
  "active": true,
  "creationDate": "2016-05-10T22:00:00.000Z",
@@ -158,55 +158,122 @@ Meteor.startup(() => {
 
     /*if (Services.find().count() === 0) {
         const services = [
+                     {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "car",
+                "subtheme": "carpooling",
+                "address": "2 Rue des Gants",
+                "zipCode": 33000,
+                "city": "Bordeaux",
+                "title": "Trajet Bordeaux-Toulouse",
+                "date": "2016-06-30T22:00:00.000Z",
+                "description": "Ne voyagez plus seul ! Faites des économies sur vos frais en prenant des passagers lors de vos longs trajets en voiture.",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/vehicule_themes_icon.png",
+                "image": "https://d30y9cdsu7xlg0.cloudfront.net/png/40506-200.png"
+            },
+    {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "pet",
+                "subtheme": "keeping",
+                "address": "2 Rue Arts et métiers",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": " Toutou Câlin",
+                "date": "2016-05-31T22:00:00.000Z",
+                "description": "Garde de chiens et chats à domicile, visite et promenade d'animaux",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/animaux_themes_icon.png",
+                "image": "https://www.surewise.com/sww.v4/wp-content/uploads/2015/07/dog-and-cat-02-150x150.png"
+            },
+     {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-13T22:00:00.000Z",
+                "theme": "children",
+                "subtheme": "keeping",
+                "address": "2 Rue de Saige",
+                "zipCode": 33600,
+                "city": "Pessac",
+                "title": " Nounou d'enfer",
+                "date": "2016-05-28T22:00:00.000Z",
+                "description": "Garde vos enfants pour 1h à quelques heures",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/enfant_themes_icon.png",
+                "image": "http://orchardprimaryacademy.org/kgfl/primary/chickenleypri/arenas/websitecontent/web/keepingchildrensafe.png?width=640&height=480&scale=LIMIT_MAXSIZE"
+            },
             {
                 "active": true,
                 "showPhone": true,
-                "creationDate": "2016-05-10T22:00:00.000Z",
-                "theme": "",
-                "subtheme": "",
-                "address": "",
+                "creationDate": "2016-05-14T22:00:00.000Z",
+                "theme": "party",
+                "subtheme": "musicalEntertainment",
+                "address": "54 Avenue de La libération",
                 "zipCode": 33400,
-                "city": "",
-                "title": "",
-                "date": "2016-05-22T22:00:00.000Z",
-                "description": "",
+                "city": "Talence",
+                "title": "Recherche DJ pour soirée Anniversaire",
+                "date": "2016-06-04T22:00:00.000Z",
+                "description": "Afin d'ambiancer ma soirée d'anniversaire, je suis à la recherche d'un DJ pouvant amener le manétiel nécessaire : Audio et Lumière, disponibilitée souhaitée : 22h-04h00 ",
                 "owner": "moehc9sq54E4pqKC8",
-                "icon": "/img/culturels_themes_icon.png",
-                "image": ""
-            }
-     {
-     "active": true,
-     "showPhone": true,
-     "creationDate": "2016-05-13T22:00:00.000Z",
-     "theme": "home",
-     "subtheme": "move",
-     "address": "128, rue dubourdieu",
-     "zipCode": 33800,
-     "city": "Bordeaux",
-     "title": "Location camion déménagement avec chauffeur",
-     "date": "2016-07-22T22:00:00.000Z",
-     "description": "Bonjour, je loue mon camion de 25m3 avec chauffeur déménageur équiper en déménagement (sangle couverture,etc.....).     Je peux vous aider a faire votre déménagement et tout transport de   1 a 100 Km Sur Bordeaux Metropole." Prix: 5€/10km,
-     "owner": "moehc9sq54E4pqKC8",
-     "icon": "/img/maison_themes_icon.png",
-     "image": "http://ardeur.org/wp-content/uploads/2015/06/aide-demenagenment-boulogne.jpg"
-     }
+                "icon": "/img/festivites_themes_icon.png",
+                "image": "http://campinglescedres.com/wp-content/uploads/2016/03/dj.jpg"
+            },
 
-     {
-     "active": true,
-     "showPhone": true,
-     "creationDate": "2016-04-13T22:00:00.000Z",
-     "theme": "car",
-     "subtheme": "repairing",
-     "address": "20, avenue de bardanac",
-     "zipCode": 33600,
-     "city": "Pessac",
-     "title": "Mécanicien automobile",
-     "date": "2016-06-27T22:00:00.000Z",
-     "description": "Bonjour, je suis étudiant en master 1 mécanique et je propose mes services en tout ce qui concerne le vidange et le changement de consommable en échange d'un autre service. n'hesitez pas à me contacter pour plus d'infos.",
-     "owner": "moehc9sq54E4pqKC8",
-     "icon": "/img/vehicule_themes_icon.png",
-     "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
-     }
+             {
+             "active": true,
+             "showPhone": true,
+             "creationDate": "2016-05-17T14:2800.000Z",
+             "theme": "it",
+             "subtheme": "problemResolution",
+             "address": "124 Cour du Maréchal Ferrand",
+             "zipCode": 33600,
+             "city": "Pessac",
+             "title": "Recherche Informarticien pour réparer Ordinateur",
+             "date": "",
+             "description": "Mon ordinateur est infesté de virus et tourne au ralenti, je cherche quelqu'un qui puisse m'en débarrasser et mette en place des solutions afin que ca ne se reproduise plus",
+             "owner": "moehc9sq54E4pqKC8",
+             "icon": "/img/informatique_themes_icon.png",
+             "image": "http://hightech-solution-repair.e-monsite.com/medias/images/ordinateur.jpg"
+             },
+             
+             {
+             "active": true,
+             "showPhone": true,
+             "creationDate": "2016-05-13T22:00:00.000Z",
+             "theme": "home",
+             "subtheme": "move",
+             "address": "128, rue dubourdieu",
+             "zipCode": 33800,
+             "city": "Bordeaux",
+             "title": "Location camion déménagement avec chauffeur",
+             "date": "2016-07-22T22:00:00.000Z",
+             "description": "Bonjour, je loue mon camion de 25m3 avec chauffeur déménageur équiper en déménagement (sangle couverture,etc.....).     Je peux vous aider a faire votre déménagement et tout transport de   1 a 100 Km Sur Bordeaux Metropole." Prix: 5€/10km,
+             "owner": "moehc9sq54E4pqKC8",
+             "icon": "/img/maison_themes_icon.png",
+             "image": "http://ardeur.org/wp-content/uploads/2015/06/aide-demenagenment-boulogne.jpg"
+             },
+        
+             {
+             "active": true,
+             "showPhone": true,
+             "creationDate": "2016-04-13T22:00:00.000Z",
+             "theme": "car",
+             "subtheme": "repairing",
+             "address": "20, avenue de bardanac",
+             "zipCode": 33600,
+             "city": "Pessac",
+             "title": "Mécanicien automobile",
+             "date": "2016-06-27T22:00:00.000Z",
+             "description": "Bonjour, je suis étudiant en master 1 mécanique et je propose mes services en tout ce qui concerne le vidange et le changement de consommable en échange d'un autre service. n'hesitez pas à me contacter pour plus d'infos.",
+             "owner": "moehc9sq54E4pqKC8",
+             "icon": "/img/vehicule_themes_icon.png",
+             "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
+             }
+
         ];
 
         services.forEach((service) => {
