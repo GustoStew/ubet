@@ -6,13 +6,14 @@ Groupe 4:
 	- Ayoub Khachabi.
 	- Fabien le Flanchec.
 	- Germain le Guen.
+	- Nana Aichatou Idrissa
 
 Prerequis:
 
 	-Framework : Meteor (https://www.meteor.com/install).
 
 
-Démarrage de l'application:
+Dï¿½marrage de l'application:
 	
 	-meteor npm install --save
 	-meteor
