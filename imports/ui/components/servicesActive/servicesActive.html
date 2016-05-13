@@ -1,7 +1,7 @@
 <div class="container">
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
-            <md-card ng-repeat="service in servicesActive.services">
+            <md-card ng-repeat="service in servicesActive.services | orderBy: '-creationDate'">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{service.icon}}"/>

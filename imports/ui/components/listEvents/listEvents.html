@@ -36,7 +36,7 @@
 
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
         <div flex="80" layout="column">
-            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme}">
+            <md-card ng-repeat="event in listEvents.events | filter:{theme: listEvents.theme, subtheme:listEvents.subtheme} | orderBy: 'date'">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>

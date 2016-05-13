@@ -13,7 +13,7 @@
                     <md-button ng-click="eventsInactive.closeInfos()">J'ai compris !</md-button>
                 </md-card-actions>
             </md-card>
-            <md-card ng-repeat="event in eventsInactive.events">
+            <md-card ng-repeat="event in eventsInactive.events | orderBy: 'date'">
                 <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{event.icon}}"/>

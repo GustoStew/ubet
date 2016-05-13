@@ -33,7 +33,7 @@
 
     <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
         <div flex="80" layout="column">
-            <md-card ng-repeat="service in listServices.services | filter:{theme: listServices.theme, subtheme:listServices.subtheme}">
+            <md-card ng-repeat="service in listServices.services | filter:{theme: listServices.theme, subtheme:listServices.subtheme} | orderBy: '-creationDate'">
             <md-card-title>
                     <md-card-title-media>
                         <img class="md-media-sm card-media" ng-src="{{service.icon}}"/>
