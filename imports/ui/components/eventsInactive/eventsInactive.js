@@ -42,6 +42,19 @@ class EventsInactive {
         }
         else if(event.date<new Date()){
             this.alertDate();
+            Events.update({
+                _id:event._id
+            },{
+                $set: {
+                    active: false
+                }
+            }, (error) => {
+                if (error) {
+                    console.log('Oops, echec modification..');
+                } else {
+                    console.log('Succes !');
+                }
+            });
         }
         else {
             Events.update({

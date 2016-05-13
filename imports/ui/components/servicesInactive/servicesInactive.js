@@ -49,6 +49,19 @@ class ServicesInactive {
         }
         else if(!!service.date && service.date<new Date()){
             this.alertDate();
+            Services.update({
+                _id:service._id
+            },{
+                $set: {
+                    active: false
+                }
+            }, (error) => {
+                if (error) {
+                    console.log('Oops, echec modification..');
+                } else {
+                    console.log('Succes !');
+                }
+            });
         }
         else {
             Services.update({

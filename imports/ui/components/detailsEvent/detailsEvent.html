@@ -17,8 +17,7 @@
             <md-card-content>
                 <p><b>Thème: </b>{{detailsEvent.theme.description}}</p>
                 <p><b>Type de service: </b>{{detailsEvent.subtheme.description}}</p>
-                <p ng-show="consultService.service.date"><b>Date: </b>{{detailsEvent.event.date | date:'dd/MM/yyyy'}}</p>
-                <p ng-show="consultService.service.showPhone"><b>Tel: </b>{{consultService.getOwner().profile.phone}}</p>
+                <p><b>Date: </b>{{detailsEvent.event.date | date:'dd/MM/yyyy'}}</p>
                 <p><b>Email: </b>{{detailsEvent.owner.emails[0].address}}</p>
                 <p><b>Adresse: </b> {{detailsEvent.event.address}}, {{detailsEvent.event.zipCode}} {{detailsEvent.event.city}}.</p>
                 <p><b>Description: </b>{{detailsEvent.event.description}}</p>
