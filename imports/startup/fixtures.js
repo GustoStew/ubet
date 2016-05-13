@@ -8,29 +8,63 @@ import {Events} from '../api/events';
 
 
 Meteor.startup(() => {
-/*    if (Events.find().count() === 0) {
+    if (Events.find().count() === 0) {
         const events = [
+            // {
+            //     "active": true,
+            //     "creationDate": "2016-05-10T22:00:00.000Z",
+            //     "theme": "culture",
+            //     "subtheme": "art",
+            //     "address": "Halle des sports, allée Pierre de Coubertin",
+            //     "zipCode": 33400,
+            //     "city": "Talence",
+            //     "title": "Roller Derby : Triple Header",
+            //     "date": "2016-05-22T22:00:00.000Z",
+            //     "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, Le Mans et Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
+            //     "owner": "moehc9sq54E4pqKC8",
+            //     "icon": "/img/culturels_themes_icon.png",
+            //     "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
+            // },
+
             {
                 "active": true,
-                "creationDate": "2016-05-10T22:00:00.000Z",
-                "theme": "culture",
-                "subtheme": "art",
-                "address": "Halle des sports, allée Pierre de Coubertin",
-                "zipCode": 33400,
-                "city": "Talence",
-                "title": "Roller Derby : Triple Header",
-                "date": "2016-05-22T22:00:00.000Z",
-                "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, Le Mans et Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
-                "owner": "moehc9sq54E4pqKC8",
-                "icon": "/img/culturels_themes_icon.png",
-                "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
+                "creationDate": "2016-05-16T22:00:00.000Z",
+                "theme": "Sportifs",
+                "subtheme": "Match",
+                "address": "Place Johnston",
+                "zipCode": 33000,
+                "city": "Bordeaux",
+                "title": "Rencontre Top 14 : UBB Vs Brive",
+                "date": "2016-05-28T15:30:00.000Z",
+                "description": "Venez chercher vos billets aux guichets uniques du Batiment A21 afin d'assister gratuitement à la rencontre UBB - Brive, comptant pour la 27ème journée du championnat Top 14 et encourager votre équipe pour son dernier match de la saison a Chaban Delmas afin d'obtenir une victoire capitale dans sa course aux phases finales !! ",
+                "owner": "9HbRjcsTyqf9Ek9jo",
+                "icon": "/img/sportifs_themes_icon.png",
+                "image": "http://www.ubbrugby.com/application/uploads/files/ACTUS/UBB%20CAB/Date%20brive.jpg"
+            },
+
+            {
+                "active": true,
+                "creationDate": "2016-05-14T22:00:00.000Z",
+                "theme": "Sportifs",
+                "subtheme": "Entrainement",
+                "address": "Domaine de Rocquencourt, Avenue Jean Babin",
+                "zipCode": 33600,
+                "city": "Pessac",
+                "title": "Entrainement loisir Volley-Ball",
+                "date": "2016-05-18T19:00:00.000Z",
+                "description": "Venez vous essayer au Volley-ball dans une séance ou plaisir sera le maître mot",
+                "owner": "9HbRjcsTyqf9Ek9jo",
+                "icon": "/img/sportifs_themes_icon.png",
+                "image": "http://www.heritagepatriots.org/wp-content/uploads/2015/09/d35f5df2edd1dfeb2b801ae2c04ed9f2.jpg"
             }
+
+
         ];
 
         events.forEach((event) => {
             Events.insert(event)
         });
-    }*/
+    }
 
     if (ThemesEvent.find().count() === 0) {
         const themesEvent = [
