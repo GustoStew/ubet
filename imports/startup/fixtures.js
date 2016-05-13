@@ -88,6 +88,22 @@ Meteor.startup(() => {
                 "icon": "/img/sportifs_themes_icon.png",
                 "image": "http://www.heritagepatriots.org/wp-content/uploads/2015/09/d35f5df2edd1dfeb2b801ae2c04ed9f2.jpg"
             }
+ {
+ "active": true,
+ "creationDate": "2016-05-10T22:00:00.000Z",
+ "theme": "party",
+ "subtheme": "concert",
+ "address": "740 Cours de la libération",
+ "zipCode": 33400,
+ "city": "Talence",
+ "title": "Convergences Festival",
+ "date": "2016-06-22T22:00:00.000Z",
+ "description": "Pour la première fois en 2016, Convergences Festival investira l’espace bordelais avec la première édition de son festival de musique et arts urbains. Parce que la culture est un pilier de la démocratie, de la tolérance et de la cohésion sociale, nous avons créé un festival qui représente un moment de concert autour des valeurs du “bien vivre ensemble”, du partage et de la découverte. Notre objectif est de rassembler à l’occasion d’un évènement musical un public et des artistes de tous horizons pour leur faire vivre un moment unique et convivial. Convergences est un projet d’envergure pour la jeunesse bordelaise. Développé chaque jour par les quarante-cinq étudiants qu’il réunit, ce festival cristallise la volonté de la jeunesse de devenir acteur de la métamorphose galopante de la métropole bordelaise.",
+ "owner": "moehc9sq54E4pqKC8",
+ "icon": "/img/festivites_themes_icon.png",
+ "image": "https://www.getupetfaistontruc.carrefour.fr/uploads/images/4d084edecbd8ad2b51956f4cbb147ecf.jpeg"
+ }
+
         ];
 
         events.forEach((event) => {
@@ -113,6 +129,39 @@ Meteor.startup(() => {
                 "icon": "/img/culturels_themes_icon.png",
                 "image": ""
             }
+     {
+     "active": true,
+     "showPhone": true,
+     "creationDate": "2016-05-13T22:00:00.000Z",
+     "theme": "home",
+     "subtheme": "move",
+     "address": "128, rue dubourdieu",
+     "zipCode": 33800,
+     "city": "Bordeaux",
+     "title": "Location camion déménagement avec chauffeur",
+     "date": "2016-07-22T22:00:00.000Z",
+     "description": "Bonjour, je loue mon camion de 25m3 avec chauffeur déménageur équiper en déménagement (sangle couverture,etc.....).     Je peux vous aider a faire votre déménagement et tout transport de   1 a 100 Km Sur Bordeaux Metropole." Prix: 5€/10km,
+     "owner": "moehc9sq54E4pqKC8",
+     "icon": "/img/maison_themes_icon.png",
+     "image": "http://ardeur.org/wp-content/uploads/2015/06/aide-demenagenment-boulogne.jpg"
+     }
+
+     {
+     "active": true,
+     "showPhone": true,
+     "creationDate": "2016-04-13T22:00:00.000Z",
+     "theme": "car",
+     "subtheme": "repairing",
+     "address": "20, avenue de bardanac",
+     "zipCode": 33600,
+     "city": "Pessac",
+     "title": "Mécanicien automobile",
+     "date": "2016-06-27T22:00:00.000Z",
+     "description": "Bonjour, je suis étudiant en master 1 mécanique et je propose mes services en tout ce qui concerne le vidange et le changement de consommable en échange d'un autre service. n'hesitez pas à me contacter pour plus d'infos.",
+     "owner": "moehc9sq54E4pqKC8",
+     "icon": "/img/vehicule_themes_icon.png",
+     "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
+     }
         ];
 
         services.forEach((service) => {
