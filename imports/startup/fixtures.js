@@ -256,7 +256,58 @@ Meteor.startup(() => {
              "icon": "/img/maison_themes_icon.png",
              "image": "http://ardeur.org/wp-content/uploads/2015/06/aide-demenagenment-boulogne.jpg"
              },
-        
+             
+            {
+            "active": true,
+            "showPhone": true,
+            "creationDate": "2016-05-13T22:00:00.000Z",
+            "theme": "home",
+            "subtheme": "chore",
+            "address": "13, Rue François Rabelais",
+            "zipCode": 33400,
+            "city": "Talence",
+            "title": "Services Aide ménagère à domicile",
+            "date": "2016-05-16T22:00:00.000Z",
+            "description": "Mes disponibilités sont de 6h/semaine. Le service : travaux ménagers, accompagnement aux courses, Vitres, Entretien/Rangement général de la maison",
+            "owner": "moehc9sq54E4pqKC8",
+            "icon": "/img/maison_themes_icon.png",
+            "image": "http://cdn.simplesite.com/i/3b/93/285415632225473339/i285415639386082808._szw480h1280_.jpg"
+            },
+    
+            {
+            "active": true,
+            "showPhone": true,
+            "creationDate": "2016-05-13T22:00:00.000Z",
+            "theme": "home",
+            "subtheme": "shopping",
+            "address": "4, Allée des Vignes",
+            "zipCode": 33600,
+            "city": "Pessac",
+            "title": "Shopping & Courses",
+            "date": "2016-05-16T22:00:00.000Z",
+            "description": "Je propose de faire les courses de personnes âgées habitant dans un rayon de 30 km autour de Bordeaux.",
+            "owner": "moehc9sq54E4pqKC8",
+            "icon": "/img/maison_themes_icon.png",
+            "image": "http://peveleservices.fr/img/p/15-55-large.jpg"
+            },
+            
+            {
+            "active": true,
+            "showPhone": true,
+            "creationDate": "2016-04-13T22:00:00.000Z",
+            "theme": "healthcare",
+            "subtheme": "beauty",
+            "address": "Centre commercial Mériadeck",
+            "zipCode": 33000,
+            "city": "Bordeaux",
+            "title": "'40% de réduction pour l'Institut de Beauté Body'Minute",
+            "date": "2016-06-10T22:00:00.000Z",
+            "description": "Bon de réduction pour spécial étudiant. Manicure, Pédicure, Massage, etc.",
+            "owner": "moehc9sq54E4pqKC8",
+            "icon": "/img/bien-etre_themes_icon.png",
+            "image": "http://www.passionbeaute-villefranche.com/img/institut-de-beaute-villefranche-de-rouergue.jpg"
+            },
+             
              {
              "active": true,
              "showPhone": true,
