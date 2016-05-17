@@ -310,7 +310,7 @@ Meteor.startup(() => {
                 "city": "Pessac",
                 "title": "Mécanicien automobile",
                 "date": "2016-06-27T14:30:00.000Z",
-                "description": "Bonjour, je suis étudiant en master 1 mécanique et je propose mes services en tout ce qui concerne le vidange et le changement de consommable en échange d'un autre service. n'hesitez pas à me contacter pour plus d'infos.",
+                "description": "Bonjour, je suis étudiant en master 1 mécanique et je propose mes services en tout ce qui concerne la vidange et le changement de consommable en échange d'un autre service. N'hésitez pas à me contacter pour plus d'infos.",
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/vehicule_themes_icon.png",
                 "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
