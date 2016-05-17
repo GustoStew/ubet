@@ -14,6 +14,7 @@ class EditServiceButton {
 
   }
 
+  // Fontion ouvrant la pop-in contenant le composant editService
   open(event, serviceToEdit) {
     this.$mdDialog.show({
       controller($mdDialog) {
@@ -37,7 +38,6 @@ class EditServiceButton {
 
 const name = 'editServiceButton';
 
-// create a module
 export default angular.module(name, [
   angularMeteor,
   EditService

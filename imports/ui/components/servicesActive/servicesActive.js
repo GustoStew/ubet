@@ -86,7 +86,6 @@ class ServicesActive {
 
 const name = 'servicesActive';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,

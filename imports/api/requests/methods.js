@@ -19,7 +19,7 @@ export function accept(serviceId, requestId, ownerRequestId) {
         if (error) {
             console.log('Oops, pas de validation..');
         } else {
-            console.log('Done!');
+            console.log('Succes!');
         }
     });
     Requests.update({
@@ -36,7 +36,7 @@ export function accept(serviceId, requestId, ownerRequestId) {
         if (error) {
             console.log('Oops, pas d annulation...');
         } else {
-            console.log('Done!');
+            console.log('Succes!');
         }
     });
 

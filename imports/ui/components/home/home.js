@@ -54,7 +54,6 @@ class Home {
 
 const name = 'home';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,

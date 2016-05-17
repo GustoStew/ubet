@@ -25,8 +25,6 @@ class DetailsService {
         this.subscribe('requests');
         this.subscribe('services');
         this.subscribe('users');
-        this.subscribe('themesService');
-        this.subscribe('subThemesService');
 
         this.helpers({
             service() {

@@ -81,7 +81,6 @@ class ListEvents {
 
 const name = 'listEvents';
 
-// create a module
 export default angular.module(name, [
         angularMeteor,
         uiRouter,

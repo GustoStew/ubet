@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
@@ -21,11 +20,8 @@ class UserRequests {
         $reactive(this).attach($scope);
 
         this.subscribe('services');
-
         this.subscribe('requests');
-
         this.subscribe('themesService');
-
         this.subscribe('subThemesService');
 
         this.helpers({
@@ -74,7 +70,6 @@ class UserRequests {
 
 const name = 'userRequests';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter

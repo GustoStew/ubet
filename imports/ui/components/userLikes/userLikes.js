@@ -33,7 +33,6 @@ class UserLikes {
 
 const name = 'userLikes';
 
-// create a module
 export default angular.module(name, [
         angularMeteor,
         uiRouter,

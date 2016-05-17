@@ -2,7 +2,6 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-
 import { Meteor } from 'meteor/meteor';
 
 import './login.html';
@@ -29,7 +28,12 @@ class Login {
     
     showFailure(){
         this.mdDialog.show(
-            this.mdDialog.alert().parent(angular.element(document.querySelector('#popupContainer'))).clickOutsideToClose(true).textContent('Connexion impossible, email ou mot de passe incorrect').ariaLabel('Alert Dialog Demo').ok('Ok!')
+            this.mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .textContent('Connexion impossible, email ou mot de passe incorrect')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Ok!')
         );
     }
     
@@ -48,8 +52,6 @@ class Login {
 }
 
 const name = 'login';
-
-// create a module
 
 export default angular.module(name, [
         angularMeteor,

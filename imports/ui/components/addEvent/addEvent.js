@@ -90,7 +90,6 @@ class AddEvent {
 
 const name = 'addEvent';
 
-// create a module
 export default angular.module(name, [
         angularMeteor,
         uiRouter,

@@ -71,7 +71,6 @@ class EventsActive {
 
 const name = 'eventsActive';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
