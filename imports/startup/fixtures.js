@@ -342,6 +342,22 @@ Meteor.startup(() => {
                  "owner": "moehc9sq54E4pqKC8",
                  "icon": "/img/vehicule_themes_icon.png",
                  "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
+            },
+                         },
+    {           "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-17T22:00:00.000Z",
+                "theme": "school",
+                "subtheme": "Tutoring",
+                "address": "2 Rue de la Croix de Seguey",
+                "zipCode": 33400,
+                "city": "Talence",
+                "title": "Tutorat JS",
+                "date": "2016-05-31T22:00:00.000Z",
+                "description": "Etudiant Master2 Miage, donne tutorat en JS",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/universite_themes_icon.png",
+                "image": "https://stem.boisestate.edu/wp-content/uploads/2014/09/tutor.png"
             }
         ];
         services.forEach((service) => {
