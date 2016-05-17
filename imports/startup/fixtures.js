@@ -309,6 +309,23 @@ Meteor.startup(() => {
                 "icon": "/img/bien-etre_themes_icon.png",
                 "image": "http://www.passionbeaute-villefranche.com/img/institut-de-beaute-villefranche-de-rouergue.jpg"
             },
+            
+            {
+                "active": true,
+                "showPhone": true,
+                "creationDate": "2016-05-17T22:00:00.000Z",
+                "theme": "school",
+                "subtheme": "privateLessons",
+                "address": "2 Rue de Léonard de Vinci",
+                "zipCode": 33600,
+                "city": "Pessac",
+                "title": " Cours Particulier Niveau collège",
+                "date": "2016-06-28T22:00:00.000Z",
+                "description": "Tarif à négocier. Spécialité : mathématique, physique-chimie, SVT.",
+                "owner": "moehc9sq54E4pqKC8",
+                "icon": "/img/universite_themes_icon.png",
+                "image": "http://groupe-reussite.fr/wp-content/uploads/2015/07/cours-hebdo.jpg"
+            },
 
             {
                  "active": true,
