@@ -1,3 +1,6 @@
+// La gestion des utilisateurs se fait grâce à Meteor, qui fournit l'API Accounts
+// La fonction ci-dessous permet de renseigner les informations de l'utilisateur lors de sa création
+
 Accounts.onCreateUser(function(options, user) {
     user.profile = options.profile || {};
 

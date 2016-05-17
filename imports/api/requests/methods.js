@@ -3,6 +3,9 @@ import { check } from 'meteor/check';
 
 import { Requests } from './collection';
 
+// Les méthodes suivantes font des 'updates' et des 'removes' sur des documents sans les rechercher par leurs IDs.
+// Il était donc nécessaire de les éxécuter coté serveur car ce genre de requetes n'est pas sécurisé coté client
+
 export function accept(serviceId, requestId, ownerRequestId) {
     check(serviceId, String);
     check(requestId, String);
