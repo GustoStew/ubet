@@ -343,8 +343,7 @@ Meteor.startup(() => {
                  "icon": "/img/vehicule_themes_icon.png",
                  "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
             },
-                         },
-    {           "active": true,
+            {   "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-17T22:00:00.000Z",
                 "theme": "school",
