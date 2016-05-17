@@ -92,7 +92,7 @@ Meteor.startup(() => {
                 "city": "Talence",
                 "title": "Barbecue de fin d'année by AMB",
                 "date": "2016-06-18T19:00:00.000Z",
-                "description": "Comme le veut la tradition, cet événement est co-organisé entre l’ancienne et la nouvelle équipe pour marquer la passation entre les deux bureaux. Cette soirée sera donc l’occasion de rencontrer la nouvelle équipe ultra motivée et de dire au-revoir à l’ancienne qui a été très présente toute l’année à vos côtés. L’entrée est Gratuite et les tarifs sont tous petits !",
+                "description": "Comme le veut la tradition, cet évènement est co-organisé entre l’ancienne et la nouvelle équipe pour marquer la passation entre les deux bureaux. Cette soirée est donc l’occasion de rencontrer la nouvelle équipe ultra motivée et de dire au-revoir à l’ancienne qui a été très présente toute l’année. L’entrée est gratuite pour les adhérents AMB et les tarifs sont faibles pour les non-adhérents !",
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/festifs_themes_icon.png",
                 "image": "https://www.valpiform.com/wp-content/uploads/2015/07/Fotolia_83545283_S.jpg"
