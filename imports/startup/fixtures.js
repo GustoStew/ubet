@@ -7,6 +7,7 @@ import {Events} from '../api/events';
 import {Services} from '../api/services';
 
 
+// Fonction appelée au démarrage de l'application, elle permet d'insérer les éléments des collections statiques
 
 Meteor.startup(() => {
     if (Events.find().count() === 0) {
@@ -25,8 +26,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/culturels_themes_icon.png",
                 "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
-            },
-            {
+            }, {
                 "active": true,
                 "creationDate": "2015-12-18T22:00:00.000Z",
                 "theme": "culture",
@@ -40,8 +40,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/festifs_themes_icon.png",
                 "image": "http://www.aquitaine-cap-metiers.fr/image/image_gallery?uuid=a016d33d-3262-4037-8092-27f30460386b&groupId=103412&t=1392307573356"
-            },
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-05-09T22:00:00.000Z",
                 "theme": "pro",
@@ -55,14 +54,13 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/professionnels_themes_icon.png",
                 "image": "https://www.facebook.com/photo.php?fbid=10152008617519450&set=oa.709674575711429&type=3"
-            },
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-02-24T20:00:00.000Z",
                 "theme": "party",
                 "subtheme": "gala",
                 "address": "2041 avenue de Bordeaux",
-                "zipCode": 33127 ,
+                "zipCode": 33127,
                 "city": "Saint-Jean-d'Illac",
                 "title": "Gala Miage Bordeaux",
                 "date": "2016-06-17T18:00:00.000Z",
@@ -70,8 +68,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/culturels_themes_icon.png",
                 "image": "http://gala.miagebordeaux.fr//images/banner.jpg"
-            },
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-05-10T22:00:00.000Z",
                 "theme": "pro",
@@ -85,8 +82,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/professionnels_themes_icon.png",
                 "image": "https://www.sfpnet.fr/uploads/tinymce/dossier%202015-2016/ondesgravitationnelles.png"
-            },
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-05-10T22:00:00.000Z",
                 "theme": "party",
@@ -100,13 +96,11 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/festifs_themes_icon.png",
                 "image": "https://www.valpiform.com/wp-content/uploads/2015/07/Fotolia_83545283_S.jpg"
-            },
-
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-05-16T22:00:00.000Z",
                 "theme": "sport",
-                "subtheme": "Matchs",
+                "subtheme": "match",
                 "address": "Place Johnston",
                 "zipCode": 33000,
                 "city": "Bordeaux",
@@ -116,13 +110,11 @@ Meteor.startup(() => {
                 "owner": "9HbRjcsTyqf9Ek9jo",
                 "icon": "/img/sportifs_themes_icon.png",
                 "image": "http://www.ubbrugby.com/application/uploads/files/ACTUS/UBB%20CAB/Date%20brive.jpg"
-            },
-
-            {
+            }, {
                 "active": true,
                 "creationDate": "2016-05-14T22:00:00.000Z",
                 "theme": "sport",
-                "subtheme": "Entrainement",
+                "subtheme": "training",
                 "address": "Domaine de Rocquencourt, Avenue Jean Babin",
                 "zipCode": 33600,
                 "city": "Pessac",
@@ -132,9 +124,7 @@ Meteor.startup(() => {
                 "owner": "9HbRjcsTyqf9Ek9jo",
                 "icon": "/img/sportifs_themes_icon.png",
                 "image": "http://www.heritagepatriots.org/wp-content/uploads/2015/09/d35f5df2edd1dfeb2b801ae2c04ed9f2.jpg"
-            },
-
-                 {
+            }, {
                  "active": true,
                  "creationDate": "2016-05-10T22:00:00.000Z",
                  "theme": "party",
@@ -159,12 +149,11 @@ Meteor.startup(() => {
 
     if (Services.find().count() === 0) {
         const services = [
-
             {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-13T22:00:00.000Z",
-                "theme": "car",
+                "theme": "vehicle",
                 "subtheme": "carpooling",
                 "address": "2 Rue des Gants",
                 "zipCode": 33000,
@@ -175,9 +164,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/vehicule_themes_icon.png",
                 "image": "https://d30y9cdsu7xlg0.cloudfront.net/png/40506-200.png"
-            },
-
-            {
+            }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-13T22:00:00.000Z",
@@ -192,8 +179,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/animaux_themes_icon.png",
                 "image": "https://www.surewise.com/sww.v4/wp-content/uploads/2015/07/dog-and-cat-02-150x150.png"
-            },
-            {
+            }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-13T22:00:00.000Z",
@@ -208,8 +194,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/enfant_themes_icon.png",
                 "image": "http://orchardprimaryacademy.org/kgfl/primary/chickenleypri/arenas/websitecontent/web/keepingchildrensafe.png?width=640&height=480&scale=LIMIT_MAXSIZE"
-            },
-            {
+            }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-14T22:00:00.000Z",
@@ -224,8 +209,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/festivites_themes_icon.png",
                 "image": "http://campinglescedres.com/wp-content/uploads/2016/03/dj.jpg"
-            },
-            {
+            }, {
                  "active": true,
                  "showPhone": true,
                  "creationDate": "2016-05-17T14:28:00.000Z",
@@ -240,9 +224,7 @@ Meteor.startup(() => {
                  "owner": "moehc9sq54E4pqKC8",
                  "icon": "/img/informatique_themes_icon.png",
                  "image": "http://hightech-solution-repair.e-monsite.com/medias/images/ordinateur.jpg"
-             },
-
-             {
+             }, {
                  "active": true,
                  "showPhone": true,
                  "creationDate": "2016-05-13T22:00:00.000Z",
@@ -257,9 +239,7 @@ Meteor.startup(() => {
                  "owner": "moehc9sq54E4pqKC8",
                  "icon": "/img/maison_themes_icon.png",
                  "image": "http://ardeur.org/wp-content/uploads/2015/06/aide-demenagenment-boulogne.jpg"
-             },
-
-             {
+             }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-13T22:00:00.000Z",
@@ -274,9 +254,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/maison_themes_icon.png",
                 "image": "http://cdn.simplesite.com/i/3b/93/285415632225473339/i285415639386082808._szw480h1280_.jpg"
-             },
-
-                {
+             }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-13T22:00:00.000Z",
@@ -291,9 +269,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/maison_themes_icon.png",
                 "image": "http://peveleservices.fr/img/p/15-55-large.jpg"
-            },
-
-            {
+            }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-04-13T22:00:00.000Z",
@@ -308,9 +284,7 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/bien-etre_themes_icon.png",
                 "image": "http://www.passionbeaute-villefranche.com/img/institut-de-beaute-villefranche-de-rouergue.jpg"
-            },
-            
-            {
+            }, {
                 "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-17T22:00:00.000Z",
@@ -325,13 +299,11 @@ Meteor.startup(() => {
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/universite_themes_icon.png",
                 "image": "http://groupe-reussite.fr/wp-content/uploads/2015/07/cours-hebdo.jpg"
-            },
-
-            {
+            }, {
                  "active": true,
                  "showPhone": true,
                  "creationDate": "2016-04-13T22:00:00.000Z",
-                 "theme": "car",
+                 "theme": "vehicle",
                  "subtheme": "repairing",
                  "address": "20, avenue de bardanac",
                  "zipCode": 33600,
@@ -342,13 +314,12 @@ Meteor.startup(() => {
                  "owner": "moehc9sq54E4pqKC8",
                  "icon": "/img/vehicule_themes_icon.png",
                  "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
-            },
-
-    {           "active": true,
+            }, {
+                "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-17T22:00:00.000Z",
                 "theme": "school",
-                "subtheme": "Tutoring",
+                "subtheme": "tutoring",
                 "address": "2 Rue de la Croix de Seguey",
                 "zipCode": 33400,
                 "city": "Talence",
@@ -448,7 +419,7 @@ Meteor.startup(() => {
             'description': 'Université',
             'icon': '/img/universite_themes_icon.png'
         }, {
-            'key': 'car',
+            'key': 'vehicle',
             'description': 'Véhicule',
             'icon': '/img/vehicule_themes_icon.png'
         }, {
@@ -524,15 +495,15 @@ Meteor.startup(() => {
                 'key': 'coaching',
                 'description': 'Coaching (Rédiger CV, conseils entretien...)'
             }, {
-                'theme': 'car',
+                'theme': 'vehicle',
                 'key': 'carpooling',
                 'description': 'Covoiturage'
             }, {
-                'theme': 'car',
+                'theme': 'vehicle',
                 'key': 'cleaning',
                 'description': 'Nettoyage'
             }, {
-                'theme': 'car',
+                'theme': 'vehicle',
                 'key': 'repairing',
                 'description': 'Réparations (Changement de pièces, Vidange …)'
             }, {
