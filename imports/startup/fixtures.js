@@ -34,7 +34,7 @@ Meteor.startup(() => {
                 "address": "Aquitaine Cap Métiers Centre régional Vincent Merle 102 Avenue de Canéjan",
                 "zipCode": 33610,
                 "city": "Pessac",
-                "title": "Exposition interactive de découverte des métiers Transformation Les métiers des industries agroalimentaires",
+                "title": "Exposition des métiers des industries agroalimentaires",
                 "date": "2016-06-18T10:00:00.000Z",
                 "description": "Les objectifs de l'exposition sont: l'exploration des métiers, la connaissance des formations associées, la découverte des emplois que le secteur des industries agroalimentaires offre en Aquitaine. La durée d'une exposition est de 2 heures.L'exposition concerne tout public, scolaire, personne en reconversion professionnelle ou en recherche d'emploi.",
                 "owner": "moehc9sq54E4pqKC8",
@@ -302,7 +302,7 @@ Meteor.startup(() => {
                 "address": "Centre commercial Mériadeck",
                 "zipCode": 33000,
                 "city": "Bordeaux",
-                "title": "40% de réduction pour l'Institut de Beauté Body Minute",
+                "title": "40% de réduction 'Beauté Body Minute'",
                 "date": "2016-06-10T16:30:00.000Z",
                 "description": "Bon de réduction pour spécial étudiant. Manicure, Pédicure, Massage, etc.",
                 "owner": "moehc9sq54E4pqKC8",
@@ -343,7 +343,8 @@ Meteor.startup(() => {
                  "icon": "/img/vehicule_themes_icon.png",
                  "image": "http://www.choisirlartisanat.fr/wp-content/uploads/2015/08/mecanicien-automobile-465x350.jpg"
             },
-            {   "active": true,
+
+    {           "active": true,
                 "showPhone": true,
                 "creationDate": "2016-05-17T22:00:00.000Z",
                 "theme": "school",
