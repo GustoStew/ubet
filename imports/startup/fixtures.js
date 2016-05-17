@@ -22,7 +22,7 @@ Meteor.startup(() => {
                 "city": "Talence",
                 "title": "Roller Derby : Triple Header",
                 "date": "2016-05-22T21:00:00.000Z",
-                "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, Le Mans et Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
+                "description": "Le Roller Derby Bordeaux Men organise un triple header le 22 mai 2016 à la Halle des Sports de Talence. Nous aurons le plaisir d’accueillir les Trackass, l’équipe de valeureux skaters venus de Tours, du Mans et de Bourges, ainsi que les Madriders, qui se déplaceront spécialement depuis Madrid à cette occasion.",
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/culturels_themes_icon.png",
                 "image": "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/12936549_681510831952122_2067431148304474574_n.jpg?oh=28ba47fd9be4afdd85036331375cd8ee&oe=57AEBB5E"
