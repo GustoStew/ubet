@@ -53,7 +53,7 @@ Meteor.startup(() => {
                 "description": "Comme chaque année, la Journée Entreprises est organisée pour tous les étudiants de MIAGe (Licence 3, Master 1, Master 2) et pour les Master Informatique (Master 1, Master 2). Cette journée est l'occasion de découvrir des entreprises, des métiers et d'échanger avec des professionnels.",
                 "owner": "moehc9sq54E4pqKC8",
                 "icon": "/img/professionnels_themes_icon.png",
-                "image": "https://www.facebook.com/photo.php?fbid=10152008617519450&set=oa.709674575711429&type=3"
+                "image": "https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/s960x960/1404888_10152008617519450_663342667_o.jpg"
             }, {
                 "active": true,
                 "creationDate": "2016-02-24T20:00:00.000Z",
