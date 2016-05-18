@@ -1,5 +1,7 @@
 import angular from 'angular';
 
+// Filtre prennant un document de la collection users et renvoyant la concaténation de son nom et prénom
+
 const name = 'displayNameFilter';
 
 function DisplayNameFilter(user) {
@@ -18,7 +20,6 @@ function DisplayNameFilter(user) {
     return user;
 }
 
-// create a module
 export default angular.module(name, [])
     .filter(name, () => {
         return DisplayNameFilter;

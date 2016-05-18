@@ -36,9 +36,10 @@ class EventsInactive {
             }
         });
     }
+    // Restaure l'évènement, affiche une pop-in d'alerte si l'utilisateur souhaite restaurer un évènement ayant une date antérieur à aujourd'hui
     restore(event){
         if(!event){
-            console.log('Oops, événement undefined..');
+            console.log('Oops, événement indéfini..');
         }
         else if(event.date<new Date()){
             this.alertDate();

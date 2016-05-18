@@ -14,6 +14,7 @@ class DetailsEventButton {
 
   }
 
+  // Fonction ouvrant la pop-in contenant le composant detailsEvent
   open(event, eventToDisplay) {
     this.$mdDialog.show({
       controller($mdDialog) {
@@ -37,7 +38,6 @@ class DetailsEventButton {
 
 const name = 'detailsEventButton';
 
-// create a module
 export default angular.module(name, [
   angularMeteor,
   DetailsEvent

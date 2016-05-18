@@ -50,9 +50,9 @@ class RequestResponse {
         Meteor.call('accept',serviceId, requestId, ownerRequestId,
             (error) => {
                 if (error) {
-                    console.log('Oops, unable to accept!');
+                    console.log('Oops, erreur lors de l acceptation!');
                 } else {
-                    console.log('Accepted!');
+                    console.log('Accepté!');
                 }
             }
         );
@@ -68,9 +68,9 @@ class RequestResponse {
             }
         }, (error) => {
             if (error) {
-                console.log('Oops, pas de annulation..');
+                console.log('Oops, pas d annulation..');
             } else {
-                console.log('Done!');
+                console.log('Succes!');
             }
         });
     }
@@ -78,7 +78,6 @@ class RequestResponse {
 
 const name = 'requestResponse';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,

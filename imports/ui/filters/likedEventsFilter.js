@@ -1,6 +1,8 @@
 import angular from 'angular';
 import _ from 'underscore';
 
+// Filtre prennant une liste de documents de la collection events et renvoie uniquement ceux que l'utilisateur (paramètre user) a aimé
+
 const name = 'likedEventsFilter';
 
 function LikedEventsFilter(events, user) {

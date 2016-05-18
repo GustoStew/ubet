@@ -22,17 +22,14 @@ class Register {
             lastName: '',
             firstName: '',
             phone: ''
-
         };
-
-        this.error = '';
     }
 
     register() {
         Accounts.createUser(this.credentials,
             this.$bindToContext((err) => {
                 if (err) {
-                    this.error = err;
+                    console.log(err);
                 } else {
                     this.$state.go('login');
                 }
@@ -43,7 +40,6 @@ class Register {
 
 const name = 'register';
 
-// create a module
 export default angular.module(name, [
         angularMeteor,
         uiRouter

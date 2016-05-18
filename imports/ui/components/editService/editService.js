@@ -43,9 +43,9 @@ class EditService {
             }
         }, (error) => {
             if (error) {
-                console.log('Oops, unable to update event infos...');
+                console.log('Oops, erreur lors de la mise à jour des infos...');
             } else {
-                console.log('Done!');
+                console.log('Succes!');
             }
         });
         if(this.done)
@@ -56,7 +56,6 @@ class EditService {
 
 const name = 'editService';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter

@@ -4,20 +4,20 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './ubet.html';
+import { name as Home} from '../home/home';
+import { name as Login} from '../login/login';
+import { name as Register} from '../register/register';
 import { name as Navigation } from '../navigation/navigation';
 import { name as UserInfos } from '../userInfos/userInfos';
 import { name as UserEvents} from '../userEvents/userEvents';
-import { name as Register} from '../register/register';
-import { name as AddEvent} from '../addEvent/addEvent';
-import { name as Home} from '../home/home';
 import { name as UserServices } from '../userServices/userServices';
+import { name as UserRequests} from '../userRequests/userRequests';
+import { name as UserLikes} from '../userLikes/userLikes';
+import { name as AddEvent} from '../addEvent/addEvent';
 import { name as AddService } from '../addService/addService';
 import { name as ListEvents} from '../listEvents/listEvents';
 import { name as ListServices} from '../listServices/listServices';
 import { name as DetailsService} from '../detailsService/detailsService';
-import { name as DetailsEvent} from '../detailsEvent/detailsEvent';
-import { name as UserRequests} from '../userRequests/userRequests';
-import { name as UserLikes} from '../userLikes/userLikes';
 
 class Ubet {}
 
@@ -28,6 +28,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter,
     Navigation,
+    Login,
     UserInfos,
     UserEvents,
     Register,
@@ -38,7 +39,6 @@ export default angular.module(name, [
     ListEvents,
     ListServices,
     ngMaterial,
-    DetailsEvent,
     DetailsService,
     UserRequests,
     UserLikes,

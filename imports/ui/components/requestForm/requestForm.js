@@ -16,9 +16,7 @@ class RequestForm {
 
         $reactive(this).attach($scope);
 
-
         this.$state = $state;
-
 
         this.subscribe('themesService');
         this.subscribe('subThemesService');
@@ -51,7 +49,6 @@ class RequestForm {
 
 const name = 'requestForm';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter

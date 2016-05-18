@@ -28,7 +28,7 @@ class EditEvent {
             }
         });
     }
-
+    
     modify() {
         Events.update(this.event._id, {
             $set: {
@@ -42,9 +42,9 @@ class EditEvent {
             }
         }, (error) => {
             if (error) {
-                console.log('Oops, unable to update event infos...');
+                console.log('Oops, erreur lors de la mise à jour des infos...');
             } else {
-                console.log('Done!');
+                console.log('Succes!');
             }
         });
         if(this.done)

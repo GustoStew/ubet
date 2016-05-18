@@ -16,13 +16,10 @@ class UserServices {
 
         $reactive(this).attach($scope);
     }
-
-
 }
 
 const name = 'userServices';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,

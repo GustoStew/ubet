@@ -8,10 +8,8 @@ import {Events} from '../../../api/events';
 import {Services} from '../../../api/services';
 import {Requests} from '../../../api/requests';
 
-import {name as Login} from '../login/login';
+
 import { name as LikedEventsFilter} from '../../filters/likedEventsFilter';
-
-
 
 class Navigation {
     constructor($scope, $reactive, $state, $mdSidenav) {
@@ -26,9 +24,7 @@ class Navigation {
         this.$mdSidenav = $mdSidenav;
 
         this.subscribe('events');
-
         this.subscribe('services');
-
         this.subscribe('requests');
 
         this.helpers({
@@ -138,7 +134,6 @@ const name = 'navigation';
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
-    Login,
     LikedEventsFilter
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,

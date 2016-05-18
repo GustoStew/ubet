@@ -14,6 +14,7 @@ class EditEventButton {
 
   }
 
+  // Fonction ouvrant la pop-in contenant le composant editEvent
   open(event, eventToEdit) {
     this.$mdDialog.show({
       controller($mdDialog) {
@@ -37,7 +38,6 @@ class EditEventButton {
 
 const name = 'editEventButton';
 
-// create a module
 export default angular.module(name, [
   angularMeteor,
   EditEvent

@@ -103,7 +103,6 @@ class AddService {
 
 const name = 'addService';
 
-// create a module
 export default angular.module(name, [
         angularMeteor,
         uiRouter,

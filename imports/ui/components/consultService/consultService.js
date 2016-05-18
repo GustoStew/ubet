@@ -42,7 +42,6 @@ class ConsultService {
 
 const name = 'consultService';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,

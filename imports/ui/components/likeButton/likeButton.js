@@ -5,7 +5,6 @@ import _ from 'underscore';
 
 import { Meteor } from 'meteor/meteor';
 
-
 import './likeButton.html';
 
 class LikeButton {
@@ -21,6 +20,7 @@ class LikeButton {
         return _.contains(Meteor.user().profile.likes, identifiant);
     }
 
+    // Ajoute l'identifiant de l'évènement (paramètre identifiant) à la liste likes de l'utilisateur
     like(identifiant){
         if(!identifiant)
             return false;
@@ -31,13 +31,14 @@ class LikeButton {
                 }
             }, (error) => {
                 if (error) {
-                    console.log('Oops, error on like...');
+                    console.log('Oops, erreur lors du like...');
                 } else {
                     console.log('Liked!');
                 }
             })
     }
 
+    // Supprime l'identifiant de l'évènement (paramètre identifiant) de la liste likes de l'utilisateur
     dislike(identifiant){
         if(!identifiant)
             return false;
@@ -48,7 +49,7 @@ class LikeButton {
                 }
             }, (error) => {
                 if (error) {
-                    console.log('Oops, error on dislike...');
+                    console.log('Oops, erreur lors du dislike...');
                 } else {
                     console.log('Disliked!');
                 }
@@ -58,7 +59,6 @@ class LikeButton {
 
 const name = 'likeButton';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter

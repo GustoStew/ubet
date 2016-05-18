@@ -49,7 +49,6 @@ class DetailsEvent {
 
 const name = 'detailsEvent';
 
-// create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
